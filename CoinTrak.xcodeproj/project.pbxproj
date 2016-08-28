@@ -1,0 +1,741 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00C5C213C120A1E6FC3A68F8 /* Pods_CoinTrakUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0D66C83D0BCC1214F51A53 /* Pods_CoinTrakUITests.framework */; };
+		203ED6F689B99137E15C0610 /* Pods_CoinTrakTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A83B74961F74656DB5D68DD5 /* Pods_CoinTrakTests.framework */; };
+		522923431D28920A0093EB3B /* images in Resources */ = {isa = PBXBuildFile; fileRef = 522923421D28920A0093EB3B /* images */; };
+		525ED6B91D3C216C00ADBF67 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525ED6B81D3C216C00ADBF67 /* ThirdViewController.swift */; };
+		529291331D1CED9600F63D3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529291321D1CED9600F63D3E /* AppDelegate.swift */; };
+		529291351D1CED9600F63D3E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529291341D1CED9600F63D3E /* FirstViewController.swift */; };
+		529291371D1CED9600F63D3E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529291361D1CED9600F63D3E /* SecondViewController.swift */; };
+		5292913A1D1CED9600F63D3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529291381D1CED9600F63D3E /* Main.storyboard */; };
+		5292913C1D1CED9600F63D3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5292913B1D1CED9600F63D3E /* Assets.xcassets */; };
+		5292913F1D1CED9600F63D3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5292913D1D1CED9600F63D3E /* LaunchScreen.storyboard */; };
+		5292914A1D1CED9600F63D3E /* CoinTrakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529291491D1CED9600F63D3E /* CoinTrakTests.swift */; };
+		529291551D1CED9700F63D3E /* CoinTrakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529291541D1CED9700F63D3E /* CoinTrakUITests.swift */; };
+		529291631D1CEEAE00F63D3E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529291621D1CEEAE00F63D3E /* Data.swift */; };
+		52C8CEEA1D1D9EC500B0E063 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8CEE91D1D9EC500B0E063 /* CustomCell.swift */; };
+		52C8CF001D2471F400B0E063 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C8CEFF1D2471F400B0E063 /* SWRevealViewController.m */; };
+		52C8CF0A1D275E3500B0E063 /* SlideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8CF091D275E3500B0E063 /* SlideMenuTableViewController.swift */; };
+		52E1C9181D62AB6500CEF455 /* refreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52E1C9171D62AB6500CEF455 /* refreshView.xib */; };
+		52E51CEA1D540D0A00F4B910 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E51CE91D540D0A00F4B910 /* FourthViewController.swift */; };
+		52FAAAC51D28B9A400E078FA /* CoinDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAAAC41D28B9A400E078FA /* CoinDetailViewController.swift */; };
+		99156AA809544436AEF0CAF2 /* Pods_CoinTrak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA252E4E17A6DD4CDA200181 /* Pods_CoinTrak.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		529291461D1CED9600F63D3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 529291271D1CED9600F63D3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5292912E1D1CED9600F63D3E;
+			remoteInfo = CoinTrak;
+		};
+		529291511D1CED9700F63D3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 529291271D1CED9600F63D3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5292912E1D1CED9600F63D3E;
+			remoteInfo = CoinTrak;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F3A3CECF9878B4EA61CED3D /* Pods-CoinTrak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinTrak.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinTrak/Pods-CoinTrak.debug.xcconfig"; sourceTree = "<group>"; };
+		510039309F7DCC497421F7CA /* Pods-CoinTrakUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinTrakUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinTrakUITests/Pods-CoinTrakUITests.release.xcconfig"; sourceTree = "<group>"; };
+		522923421D28920A0093EB3B /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		525ED6B81D3C216C00ADBF67 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		5292912F1D1CED9600F63D3E /* CoinTrak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinTrak.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		529291321D1CED9600F63D3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		529291341D1CED9600F63D3E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		529291361D1CED9600F63D3E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		529291391D1CED9600F63D3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5292913B1D1CED9600F63D3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5292913E1D1CED9600F63D3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		529291401D1CED9600F63D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		529291451D1CED9600F63D3E /* CoinTrakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinTrakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		529291491D1CED9600F63D3E /* CoinTrakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTrakTests.swift; sourceTree = "<group>"; };
+		5292914B1D1CED9700F63D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		529291501D1CED9700F63D3E /* CoinTrakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinTrakUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		529291541D1CED9700F63D3E /* CoinTrakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTrakUITests.swift; sourceTree = "<group>"; };
+		529291561D1CED9700F63D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		529291621D1CEEAE00F63D3E /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		52C8CEE91D1D9EC500B0E063 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		52C8CEFD1D2471F300B0E063 /* CoinTrak-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoinTrak-Bridging-Header.h"; sourceTree = "<group>"; };
+		52C8CEFE1D2471F400B0E063 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		52C8CEFF1D2471F400B0E063 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		52C8CF091D275E3500B0E063 /* SlideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuTableViewController.swift; sourceTree = "<group>"; };
+		52E1C9171D62AB6500CEF455 /* refreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = refreshView.xib; sourceTree = "<group>"; };
+		52E51CE91D540D0A00F4B910 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		52FAAAC41D28B9A400E078FA /* CoinDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinDetailViewController.swift; sourceTree = "<group>"; };
+		8E008C90E104951BD9673496 /* Pods-CoinTrakTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinTrakTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinTrakTests/Pods-CoinTrakTests.release.xcconfig"; sourceTree = "<group>"; };
+		A4405BCE515DB66053F6B76F /* Pods-CoinTrakUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinTrakUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinTrakUITests/Pods-CoinTrakUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A83B74961F74656DB5D68DD5 /* Pods_CoinTrakTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinTrakTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA19FE53B99B34952EFFC1F3 /* Pods-CoinTrakTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinTrakTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinTrakTests/Pods-CoinTrakTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E805C50E2161200847AC954A /* Pods-CoinTrak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinTrak.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinTrak/Pods-CoinTrak.release.xcconfig"; sourceTree = "<group>"; };
+		EA252E4E17A6DD4CDA200181 /* Pods_CoinTrak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinTrak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0D66C83D0BCC1214F51A53 /* Pods_CoinTrakUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinTrakUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5292912C1D1CED9600F63D3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99156AA809544436AEF0CAF2 /* Pods_CoinTrak.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		529291421D1CED9600F63D3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				203ED6F689B99137E15C0610 /* Pods_CoinTrakTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5292914D1D1CED9700F63D3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C5C213C120A1E6FC3A68F8 /* Pods_CoinTrakUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06621BD61822EA58525D24D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA252E4E17A6DD4CDA200181 /* Pods_CoinTrak.framework */,
+				A83B74961F74656DB5D68DD5 /* Pods_CoinTrakTests.framework */,
+				FB0D66C83D0BCC1214F51A53 /* Pods_CoinTrakUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		529291261D1CED9600F63D3E = {
+			isa = PBXGroup;
+			children = (
+				529291311D1CED9600F63D3E /* CoinTrak */,
+				529291481D1CED9600F63D3E /* CoinTrakTests */,
+				529291531D1CED9700F63D3E /* CoinTrakUITests */,
+				529291301D1CED9600F63D3E /* Products */,
+				6A8D9F2A486FABD180E6BE25 /* Pods */,
+				06621BD61822EA58525D24D8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		529291301D1CED9600F63D3E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5292912F1D1CED9600F63D3E /* CoinTrak.app */,
+				529291451D1CED9600F63D3E /* CoinTrakTests.xctest */,
+				529291501D1CED9700F63D3E /* CoinTrakUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		529291311D1CED9600F63D3E /* CoinTrak */ = {
+			isa = PBXGroup;
+			children = (
+				52C8CF091D275E3500B0E063 /* SlideMenuTableViewController.swift */,
+				52C8CEE91D1D9EC500B0E063 /* CustomCell.swift */,
+				529291321D1CED9600F63D3E /* AppDelegate.swift */,
+				529291341D1CED9600F63D3E /* FirstViewController.swift */,
+				529291361D1CED9600F63D3E /* SecondViewController.swift */,
+				525ED6B81D3C216C00ADBF67 /* ThirdViewController.swift */,
+				52E51CE91D540D0A00F4B910 /* FourthViewController.swift */,
+				52FAAAC41D28B9A400E078FA /* CoinDetailViewController.swift */,
+				529291621D1CEEAE00F63D3E /* Data.swift */,
+				529291381D1CED9600F63D3E /* Main.storyboard */,
+				52E1C9171D62AB6500CEF455 /* refreshView.xib */,
+				522923421D28920A0093EB3B /* images */,
+				5292913B1D1CED9600F63D3E /* Assets.xcassets */,
+				5292913D1D1CED9600F63D3E /* LaunchScreen.storyboard */,
+				529291401D1CED9600F63D3E /* Info.plist */,
+				52C8CEFE1D2471F400B0E063 /* SWRevealViewController.h */,
+				52C8CEFF1D2471F400B0E063 /* SWRevealViewController.m */,
+				52C8CEFD1D2471F300B0E063 /* CoinTrak-Bridging-Header.h */,
+			);
+			path = CoinTrak;
+			sourceTree = "<group>";
+		};
+		529291481D1CED9600F63D3E /* CoinTrakTests */ = {
+			isa = PBXGroup;
+			children = (
+				529291491D1CED9600F63D3E /* CoinTrakTests.swift */,
+				5292914B1D1CED9700F63D3E /* Info.plist */,
+			);
+			path = CoinTrakTests;
+			sourceTree = "<group>";
+		};
+		529291531D1CED9700F63D3E /* CoinTrakUITests */ = {
+			isa = PBXGroup;
+			children = (
+				529291541D1CED9700F63D3E /* CoinTrakUITests.swift */,
+				529291561D1CED9700F63D3E /* Info.plist */,
+			);
+			path = CoinTrakUITests;
+			sourceTree = "<group>";
+		};
+		6A8D9F2A486FABD180E6BE25 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F3A3CECF9878B4EA61CED3D /* Pods-CoinTrak.debug.xcconfig */,
+				E805C50E2161200847AC954A /* Pods-CoinTrak.release.xcconfig */,
+				DA19FE53B99B34952EFFC1F3 /* Pods-CoinTrakTests.debug.xcconfig */,
+				8E008C90E104951BD9673496 /* Pods-CoinTrakTests.release.xcconfig */,
+				A4405BCE515DB66053F6B76F /* Pods-CoinTrakUITests.debug.xcconfig */,
+				510039309F7DCC497421F7CA /* Pods-CoinTrakUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5292912E1D1CED9600F63D3E /* CoinTrak */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 529291591D1CED9700F63D3E /* Build configuration list for PBXNativeTarget "CoinTrak" */;
+			buildPhases = (
+				1065A3D9DBBFB84157900AE8 /* [CP] Check Pods Manifest.lock */,
+				5292912B1D1CED9600F63D3E /* Sources */,
+				5292912C1D1CED9600F63D3E /* Frameworks */,
+				5292912D1D1CED9600F63D3E /* Resources */,
+				1E5BA90B2045E22EB0B4358C /* [CP] Embed Pods Frameworks */,
+				35A56F929B1650CB20DEBBD5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoinTrak;
+			productName = CoinTrak;
+			productReference = 5292912F1D1CED9600F63D3E /* CoinTrak.app */;
+			productType = "com.apple.product-type.application";
+		};
+		529291441D1CED9600F63D3E /* CoinTrakTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5292915C1D1CED9700F63D3E /* Build configuration list for PBXNativeTarget "CoinTrakTests" */;
+			buildPhases = (
+				9FF3228C1EA76FE767D4FBAF /* [CP] Check Pods Manifest.lock */,
+				529291411D1CED9600F63D3E /* Sources */,
+				529291421D1CED9600F63D3E /* Frameworks */,
+				529291431D1CED9600F63D3E /* Resources */,
+				87FCFD607BE92D524FFDA770 /* [CP] Embed Pods Frameworks */,
+				5274E7967F7F518654F4887E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				529291471D1CED9600F63D3E /* PBXTargetDependency */,
+			);
+			name = CoinTrakTests;
+			productName = CoinTrakTests;
+			productReference = 529291451D1CED9600F63D3E /* CoinTrakTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5292914F1D1CED9700F63D3E /* CoinTrakUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5292915F1D1CED9700F63D3E /* Build configuration list for PBXNativeTarget "CoinTrakUITests" */;
+			buildPhases = (
+				35A004ADB97E2A3488D17FB3 /* [CP] Check Pods Manifest.lock */,
+				5292914C1D1CED9700F63D3E /* Sources */,
+				5292914D1D1CED9700F63D3E /* Frameworks */,
+				5292914E1D1CED9700F63D3E /* Resources */,
+				3670FD7DB41767E8E275B0C2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				529291521D1CED9700F63D3E /* PBXTargetDependency */,
+			);
+			name = CoinTrakUITests;
+			productName = CoinTrakUITests;
+			productReference = 529291501D1CED9700F63D3E /* CoinTrakUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		529291271D1CED9600F63D3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "John Chiaramonte";
+				TargetAttributes = {
+					5292912E1D1CED9600F63D3E = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = XF2UJ6K9F2;
+					};
+					529291441D1CED9600F63D3E = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 5292912E1D1CED9600F63D3E;
+					};
+					5292914F1D1CED9700F63D3E = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 5292912E1D1CED9600F63D3E;
+					};
+				};
+			};
+			buildConfigurationList = 5292912A1D1CED9600F63D3E /* Build configuration list for PBXProject "CoinTrak" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 529291261D1CED9600F63D3E;
+			productRefGroup = 529291301D1CED9600F63D3E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5292912E1D1CED9600F63D3E /* CoinTrak */,
+				529291441D1CED9600F63D3E /* CoinTrakTests */,
+				5292914F1D1CED9700F63D3E /* CoinTrakUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5292912D1D1CED9600F63D3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				522923431D28920A0093EB3B /* images in Resources */,
+				5292913F1D1CED9600F63D3E /* LaunchScreen.storyboard in Resources */,
+				52E1C9181D62AB6500CEF455 /* refreshView.xib in Resources */,
+				5292913C1D1CED9600F63D3E /* Assets.xcassets in Resources */,
+				5292913A1D1CED9600F63D3E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		529291431D1CED9600F63D3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5292914E1D1CED9700F63D3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1065A3D9DBBFB84157900AE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1E5BA90B2045E22EB0B4358C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoinTrak/Pods-CoinTrak-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35A004ADB97E2A3488D17FB3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		35A56F929B1650CB20DEBBD5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoinTrak/Pods-CoinTrak-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3670FD7DB41767E8E275B0C2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoinTrakUITests/Pods-CoinTrakUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5274E7967F7F518654F4887E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoinTrakTests/Pods-CoinTrakTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87FCFD607BE92D524FFDA770 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoinTrakTests/Pods-CoinTrakTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FF3228C1EA76FE767D4FBAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5292912B1D1CED9600F63D3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				529291371D1CED9600F63D3E /* SecondViewController.swift in Sources */,
+				525ED6B91D3C216C00ADBF67 /* ThirdViewController.swift in Sources */,
+				52E51CEA1D540D0A00F4B910 /* FourthViewController.swift in Sources */,
+				529291331D1CED9600F63D3E /* AppDelegate.swift in Sources */,
+				52C8CF0A1D275E3500B0E063 /* SlideMenuTableViewController.swift in Sources */,
+				52C8CEEA1D1D9EC500B0E063 /* CustomCell.swift in Sources */,
+				52FAAAC51D28B9A400E078FA /* CoinDetailViewController.swift in Sources */,
+				529291351D1CED9600F63D3E /* FirstViewController.swift in Sources */,
+				529291631D1CEEAE00F63D3E /* Data.swift in Sources */,
+				52C8CF001D2471F400B0E063 /* SWRevealViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		529291411D1CED9600F63D3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5292914A1D1CED9600F63D3E /* CoinTrakTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5292914C1D1CED9700F63D3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				529291551D1CED9700F63D3E /* CoinTrakUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		529291471D1CED9600F63D3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5292912E1D1CED9600F63D3E /* CoinTrak */;
+			targetProxy = 529291461D1CED9600F63D3E /* PBXContainerItemProxy */;
+		};
+		529291521D1CED9700F63D3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5292912E1D1CED9600F63D3E /* CoinTrak */;
+			targetProxy = 529291511D1CED9700F63D3E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		529291381D1CED9600F63D3E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				529291391D1CED9600F63D3E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5292913D1D1CED9600F63D3E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5292913E1D1CED9600F63D3E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		529291571D1CED9700F63D3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		529291581D1CED9700F63D3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5292915A1D1CED9700F63D3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F3A3CECF9878B4EA61CED3D /* Pods-CoinTrak.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = CoinTrak/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.cointrak.CoinTrak;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "CoinTrak/CoinTrak-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5292915B1D1CED9700F63D3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E805C50E2161200847AC954A /* Pods-CoinTrak.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = CoinTrak/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.cointrak.CoinTrak;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "CoinTrak/CoinTrak-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		5292915D1D1CED9700F63D3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA19FE53B99B34952EFFC1F3 /* Pods-CoinTrakTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CoinTrakTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.cointrak.CoinTrakTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoinTrak.app/CoinTrak";
+			};
+			name = Debug;
+		};
+		5292915E1D1CED9700F63D3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E008C90E104951BD9673496 /* Pods-CoinTrakTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CoinTrakTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.cointrak.CoinTrakTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoinTrak.app/CoinTrak";
+			};
+			name = Release;
+		};
+		529291601D1CED9700F63D3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4405BCE515DB66053F6B76F /* Pods-CoinTrakUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = CoinTrakUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.cointrak.CoinTrakUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CoinTrak;
+			};
+			name = Debug;
+		};
+		529291611D1CED9700F63D3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 510039309F7DCC497421F7CA /* Pods-CoinTrakUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = CoinTrakUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.cointrak.CoinTrakUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CoinTrak;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5292912A1D1CED9600F63D3E /* Build configuration list for PBXProject "CoinTrak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				529291571D1CED9700F63D3E /* Debug */,
+				529291581D1CED9700F63D3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		529291591D1CED9700F63D3E /* Build configuration list for PBXNativeTarget "CoinTrak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5292915A1D1CED9700F63D3E /* Debug */,
+				5292915B1D1CED9700F63D3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5292915C1D1CED9700F63D3E /* Build configuration list for PBXNativeTarget "CoinTrakTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5292915D1D1CED9700F63D3E /* Debug */,
+				5292915E1D1CED9700F63D3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5292915F1D1CED9700F63D3E /* Build configuration list for PBXNativeTarget "CoinTrakUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				529291601D1CED9700F63D3E /* Debug */,
+				529291611D1CED9700F63D3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 529291271D1CED9600F63D3E /* Project object */;
+}
