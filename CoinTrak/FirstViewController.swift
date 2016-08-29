@@ -188,13 +188,12 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
             view.removeFromSuperview()
         }
         
-        
         let refreshContents = NSBundle.mainBundle().loadNibNamed("refreshView", owner: self, options: nil)
         
         let customView = refreshContents[0] as! UIView
         
         customView.frame = refreshControl.bounds
-        customView.backgroundColor = UIColor(red: 222.0/255, green: 222.0/255, blue: 222.0/255, alpha: 1)
+        //customView.backgroundColor = UIColor(red: 222.0/255, green: 222.0/255, blue: 222.0/255, alpha: 1)
         
         let dateLabel = customView.viewWithTag(1) as! UILabel
         
