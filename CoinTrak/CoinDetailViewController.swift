@@ -102,7 +102,7 @@ class CoinDetailViewController: UIViewController {
         infoMarketCap.text = data.assessNumberStringFormat(localMarketCap[indexCell])
         infoVol24.text = data.assessNumberStringFormat(localVolume[indexCell])
         infoSupply.text = data.assessNumberStringFormat(localTotalSupply[indexCell])
-        priceLabel.text = "\(localPrices[indexCell])"
+        priceLabel.text = "$\(localPrices[indexCell])"
     }
 
     //set chart, dset data and display data

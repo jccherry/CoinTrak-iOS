@@ -884,8 +884,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dfn-mk-FOg"/>
+                    <navigationItem key="navigationItem" id="dfn-mk-FOg">
+                        <barButtonItem key="leftBarButtonItem" image="menu_filled" id="dfC-5T-9rJ"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="menuButton" destination="dfC-5T-9rJ" id="XBe-kl-4Rx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwG-NC-TFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1799,8 +1804,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="aBX-pb-pXL"/>
+                    <navigationItem key="navigationItem" id="aBX-pb-pXL">
+                        <barButtonItem key="leftBarButtonItem" image="menu_filled" id="6ax-AP-aKC"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="menuButton" destination="6ax-AP-aKC" id="6fC-Cp-Jbu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTW-Dj-tTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1827,7 +1837,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ffy-W8-5lH"/>
+                    <navigationItem key="navigationItem" id="ffy-W8-5lH">
+                        <barButtonItem key="leftBarButtonItem" image="menu_filled" id="gnP-VZ-m56"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="gnP-VZ-m56" id="8Ja-9d-nup"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N98-pf-aqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1885,7 +1900,7 @@
         <image name="wallet_filled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n3f-V4-9RA"/>
+        <segue reference="h9r-rk-OUa"/>
         <segue reference="rAh-xn-4CV"/>
     </inferredMetricsTieBreakers>
 </document>
