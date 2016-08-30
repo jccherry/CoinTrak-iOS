@@ -853,17 +853,20 @@
                     <size key="freeformSize" width="260" height="667"/>
                     <connections>
                         <outlet property="menuTable" destination="q2m-7o-6MQ" id="suu-3q-wPQ"/>
-                        <segue destination="9vF-Cn-iai" kind="custom" identifier="test" customClass="SWRevealViewControllerSeguePushController" id="eib-He-J20"/>
+                        <segue destination="9vF-Cn-iai" kind="custom" identifier="aboutSegue" customClass="SWRevealViewControllerSeguePushController" id="dFF-sK-C71"/>
+                        <segue destination="aZ6-eh-Xuf" kind="custom" identifier="contributeSegue" customClass="SWRevealViewControllerSeguePushController" id="iUk-NC-bA4"/>
+                        <segue destination="EAJ-4o-dO6" kind="custom" identifier="donateSegue" customClass="SWRevealViewControllerSeguePushController" id="S0x-W4-1tX"/>
+                        <segue destination="49e-Tb-3d3" kind="custom" identifier="tickerSegue" customClass="SWRevealViewControllerSeguePushController" id="rAh-xn-4CV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fle-h0-aja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-59" y="1573.5"/>
         </scene>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="xqc-ZY-N7c">
             <objects>
-                <viewController id="ike-3x-SAR" sceneMemberID="viewController">
+                <viewController id="ike-3x-SAR" customClass="AboutViewController" customModule="CoinTrak" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8un-au-6GN"/>
                         <viewControllerLayoutGuide type="bottom" id="JQe-OI-q1a"/>
@@ -1144,7 +1147,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1665.5" y="1918.5"/>
+            <point key="canvasLocation" x="2477.5" y="1918.5"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="hcY-IS-UkE">
@@ -1754,7 +1757,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsH-NE-MGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1187.5" y="1918.5"/>
+            <point key="canvasLocation" x="1999.5" y="1918.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KMo-RD-FFx">
@@ -1775,6 +1778,99 @@
             </objects>
             <point key="canvasLocation" x="-1105.5" y="1573.5"/>
         </scene>
+        <!--Contribute View Controller-->
+        <scene sceneID="vls-4S-CHS">
+            <objects>
+                <viewController id="6ml-29-Zxf" customClass="ContributeViewController" customModule="CoinTrak" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gJ8-CB-ANY"/>
+                        <viewControllerLayoutGuide type="bottom" id="GLI-xz-4bW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qyQ-An-y0i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contribute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fy0-4l-Q0E">
+                                <rect key="frame" x="111" y="182" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aBX-pb-pXL"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fTW-Dj-tTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-593.5" y="2357.5"/>
+        </scene>
+        <!--Donate View Controller-->
+        <scene sceneID="qwz-e5-GGe">
+            <objects>
+                <viewController id="lif-eF-Xc4" customClass="DonateViewController" customModule="CoinTrak" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fm9-mE-fSr"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Ts-my-VNr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GcI-rb-qj8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Donate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8o-2w-5xB">
+                                <rect key="frame" x="184" y="208" width="56" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ffy-W8-5lH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N98-pf-aqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-593.5" y="3161.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Fad-Iz-Wpj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aZ6-eh-Xuf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NGG-L2-PQK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6ml-29-Zxf" kind="relationship" relationship="rootViewController" id="d5p-Cp-WQ4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b8J-bI-WPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1105.5" y="2357.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zF5-Td-QM0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EAJ-4o-dO6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sph-8k-JOc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lif-eF-Xc4" kind="relationship" relationship="rootViewController" id="Lc7-Pw-mYT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WX7-mY-hCx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1105.5" y="3161.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BTC" width="100" height="100"/>
@@ -1790,5 +1886,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="n3f-V4-9RA"/>
+        <segue reference="rAh-xn-4CV"/>
     </inferredMetricsTieBreakers>
 </document>

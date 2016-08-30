@@ -16,7 +16,28 @@ class SlideMenuTableViewController: UITableViewController {
     @IBOutlet var menuTable: UITableView!
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("test", sender: UITableViewCell.self)
+        let cellNum = indexPath.row
+        
+        switch cellNum{
+            case 1:
+                self.performSegueWithIdentifier("tickerSegue", sender: UITableViewCell.self)
+                break
+            
+            case 2:
+                self.performSegueWithIdentifier("aboutSegue", sender: UITableViewCell.self)
+                break
+            
+            case 3:
+                self.performSegueWithIdentifier("contributeSegue", sender: UITableViewCell.self)
+                break
+            
+            case 4:
+                self.performSegueWithIdentifier("donateSegue", sender: UITableViewCell.self)
+                break
+            
+            default:
+                break
+        }
     }
     
     override func viewDidLoad() {
