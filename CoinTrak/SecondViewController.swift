@@ -147,6 +147,9 @@ class SecondViewController: UIViewController, UITextViewDelegate {
         
         print("Converter View Controller Loaded")
         
+        //gesture recognizer to open reveal view controller
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
         //reload all picker view components by default
         firstCoinPicker.reloadAllComponents()
         secondCoinPicker.reloadAllComponents()

@@ -15,6 +15,9 @@ class SlideMenuTableViewController: UITableViewController {
     //main table view for the view controller
     @IBOutlet var menuTable: UITableView!
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("test", sender: UITableViewCell.self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

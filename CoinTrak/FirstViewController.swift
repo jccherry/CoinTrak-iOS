@@ -266,6 +266,10 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         print("Ticker View Controller Loaded")
         
+        //gesture recognizer to open reveal view controller
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+        
         infoViewHeader.layer.borderColor = UIColor.blueColor().CGColor
         infoViewHeader.layer.borderWidth = 0.5
         

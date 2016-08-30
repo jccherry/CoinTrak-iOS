@@ -238,6 +238,9 @@ class FourthViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         print("Favorites View Controller Loaded")
         
+        //gesture recognizer to open reveal view controller
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         

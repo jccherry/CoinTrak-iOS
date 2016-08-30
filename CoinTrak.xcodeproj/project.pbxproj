@@ -11,6 +11,9 @@
 		203ED6F689B99137E15C0610 /* Pods_CoinTrakTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A83B74961F74656DB5D68DD5 /* Pods_CoinTrakTests.framework */; };
 		522923431D28920A0093EB3B /* images in Resources */ = {isa = PBXBuildFile; fileRef = 522923421D28920A0093EB3B /* images */; };
 		525ED6B91D3C216C00ADBF67 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525ED6B81D3C216C00ADBF67 /* ThirdViewController.swift */; };
+		5278BB901D7540AB0017FC66 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278BB8F1D7540AB0017FC66 /* AboutViewController.swift */; };
+		5278BB921D7540C10017FC66 /* ContributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278BB911D7540C10017FC66 /* ContributeViewController.swift */; };
+		5278BB941D7540D40017FC66 /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278BB931D7540D40017FC66 /* DonateViewController.swift */; };
 		529291331D1CED9600F63D3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529291321D1CED9600F63D3E /* AppDelegate.swift */; };
 		529291351D1CED9600F63D3E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529291341D1CED9600F63D3E /* FirstViewController.swift */; };
 		529291371D1CED9600F63D3E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529291361D1CED9600F63D3E /* SecondViewController.swift */; };
@@ -51,6 +54,9 @@
 		510039309F7DCC497421F7CA /* Pods-CoinTrakUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinTrakUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinTrakUITests/Pods-CoinTrakUITests.release.xcconfig"; sourceTree = "<group>"; };
 		522923421D28920A0093EB3B /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		525ED6B81D3C216C00ADBF67 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		5278BB8F1D7540AB0017FC66 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		5278BB911D7540C10017FC66 /* ContributeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributeViewController.swift; sourceTree = "<group>"; };
+		5278BB931D7540D40017FC66 /* DonateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
 		5292912F1D1CED9600F63D3E /* CoinTrak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinTrak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		529291321D1CED9600F63D3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		529291341D1CED9600F63D3E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +162,9 @@
 				52FAAAC41D28B9A400E078FA /* CoinDetailViewController.swift */,
 				529291621D1CEEAE00F63D3E /* Data.swift */,
 				529291381D1CED9600F63D3E /* Main.storyboard */,
+				5278BB8F1D7540AB0017FC66 /* AboutViewController.swift */,
+				5278BB911D7540C10017FC66 /* ContributeViewController.swift */,
+				5278BB931D7540D40017FC66 /* DonateViewController.swift */,
 				52E1C9171D62AB6500CEF455 /* refreshView.xib */,
 				522923421D28920A0093EB3B /* images */,
 				5292913B1D1CED9600F63D3E /* Assets.xcassets */,
@@ -466,10 +475,13 @@
 			files = (
 				529291371D1CED9600F63D3E /* SecondViewController.swift in Sources */,
 				525ED6B91D3C216C00ADBF67 /* ThirdViewController.swift in Sources */,
+				5278BB901D7540AB0017FC66 /* AboutViewController.swift in Sources */,
 				52E51CEA1D540D0A00F4B910 /* FourthViewController.swift in Sources */,
 				529291331D1CED9600F63D3E /* AppDelegate.swift in Sources */,
+				5278BB941D7540D40017FC66 /* DonateViewController.swift in Sources */,
 				52C8CF0A1D275E3500B0E063 /* SlideMenuTableViewController.swift in Sources */,
 				52C8CEEA1D1D9EC500B0E063 /* CustomCell.swift in Sources */,
+				5278BB921D7540C10017FC66 /* ContributeViewController.swift in Sources */,
 				52FAAAC51D28B9A400E078FA /* CoinDetailViewController.swift in Sources */,
 				529291351D1CED9600F63D3E /* FirstViewController.swift in Sources */,
 				529291631D1CEEAE00F63D3E /* Data.swift in Sources */,

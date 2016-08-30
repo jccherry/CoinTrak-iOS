@@ -684,8 +684,8 @@
         <!--Slide Menu Table View Controller-->
         <scene sceneID="IAd-G3-S4y">
             <objects>
-                <tableViewController id="EWb-Ei-Szw" customClass="SlideMenuTableViewController" customModule="CoinTrak" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="q2m-7o-6MQ">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="EWb-Ei-Szw" customClass="SlideMenuTableViewController" customModule="CoinTrak" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="q2m-7o-6MQ">
                         <rect key="frame" x="0.0" y="0.0" width="260" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -853,11 +853,40 @@
                     <size key="freeformSize" width="260" height="667"/>
                     <connections>
                         <outlet property="menuTable" destination="q2m-7o-6MQ" id="suu-3q-wPQ"/>
+                        <segue destination="9vF-Cn-iai" kind="custom" identifier="test" customClass="SWRevealViewControllerSeguePushController" id="eib-He-J20"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fle-h0-aja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1023" y="769.5"/>
+            <point key="canvasLocation" x="-59" y="1573.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xqc-ZY-N7c">
+            <objects>
+                <viewController id="ike-3x-SAR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8un-au-6GN"/>
+                        <viewControllerLayoutGuide type="bottom" id="JQe-OI-q1a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dak-zp-kgK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGl-mS-42i">
+                                <rect key="frame" x="161" y="181" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dfn-mk-FOg"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwG-NC-TFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-593.5" y="1573.5"/>
         </scene>
         <!--Wallet Checker-->
         <scene sceneID="vba-qe-Cuh">
@@ -1115,7 +1144,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="853.5" y="1918.5"/>
+            <point key="canvasLocation" x="1665.5" y="1918.5"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="hcY-IS-UkE">
@@ -1467,7 +1496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rtj-fV-4LZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="853.5" y="1160.5"/>
+            <point key="canvasLocation" x="1665.5" y="1160.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gja-vr-7GR">
@@ -1485,7 +1514,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKg-83-nTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375.5" y="1160.5"/>
+            <point key="canvasLocation" x="1187.5" y="1160.5"/>
         </scene>
         <!--Converter-->
         <scene sceneID="cjl-wd-KMc">
@@ -1693,7 +1722,7 @@
         <!--Tickers-->
         <scene sceneID="fsi-Zk-CUT">
             <objects>
-                <navigationController id="rsI-r6-2QH" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="tickerView" id="rsI-r6-2QH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tickers" image="list" selectedImage="list_filled" id="LfD-9g-7am"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ymh-qp-R7H">
@@ -1725,7 +1754,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsH-NE-MGj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375.5" y="1918.5"/>
+            <point key="canvasLocation" x="1187.5" y="1918.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KMo-RD-FFx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9vF-Cn-iai" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fyk-qH-6Qi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ike-3x-SAR" kind="relationship" relationship="rootViewController" id="8bT-3g-XdA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rca-J9-AR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1105.5" y="1573.5"/>
         </scene>
     </scenes>
     <resources>
