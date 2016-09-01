@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -876,7 +877,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGl-mS-42i">
-                                <rect key="frame" x="23" y="90" width="329" height="91"/>
+                                <rect key="frame" x="16" y="72" width="337" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="Eom-iu-Nlf"/>
                                 </constraints>
@@ -886,7 +887,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjt-9h-wz4">
-                                <rect key="frame" x="23" y="423" width="340" height="224"/>
+                                <rect key="frame" x="16" y="397" width="343" height="224"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="224" id="wUM-AJ-7v5"/>
                                 </constraints>
@@ -896,49 +897,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pricing and Historical Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wL8-y4-679">
-                                <rect key="frame" x="23" y="189" width="237" height="24"/>
+                                <rect key="frame" x="16" y="163" width="237" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Checking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khh-2g-5Pu">
-                                <rect key="frame" x="23" y="279" width="164" height="24"/>
+                                <rect key="frame" x="16" y="253" width="164" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CoinMarketCap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oi7-rJ-19Q">
-                                <rect key="frame" x="23" y="221" width="119" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CryptoCompare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWJ-oJ-L2Q">
-                                <rect key="frame" x="23" y="250" width="122" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BlockChain.info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGp-s0-c8k">
-                                <rect key="frame" x="23" y="311" width="120" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DogeChain.info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bom-0X-dsG">
-                                <rect key="frame" x="23" y="369" width="118" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EtherChain.org" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGr-7C-hj3">
-                                <rect key="frame" x="23" y="340" width="115" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disclaimer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JU-Ef-1vx">
-                                <rect key="frame" x="23" y="398" width="98" height="21"/>
+                                <rect key="frame" x="16" y="372" width="98" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="98" id="4Y1-CO-rJ5"/>
                                     <constraint firstAttribute="height" constant="21" id="GXs-9a-nsl"/>
@@ -947,31 +918,99 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CoinTrak sources some icons from " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdg-0E-aUZ">
+                                <rect key="frame" x="16" y="629" width="224" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="N8H-bt-zXO"/>
+                                    <constraint firstAttribute="width" constant="224" id="f1Y-ll-gbd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNy-lK-KUR">
+                                <rect key="frame" x="16" y="195" width="119" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="tdi-dW-MJH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="CoinMarketCap"/>
+                                <connections>
+                                    <action selector="cmcButton:" destination="ike-3x-SAR" eventType="touchUpInside" id="P1d-0F-V06"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2u-W2-eip">
+                                <rect key="frame" x="16" y="221" width="122" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="CryptoCompare"/>
+                                <connections>
+                                    <action selector="cryptoCompButton:" destination="ike-3x-SAR" eventType="touchUpInside" id="RUp-QT-fhM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvT-L8-MA5">
+                                <rect key="frame" x="16" y="343" width="118" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="DogeChain.info"/>
+                                <connections>
+                                    <action selector="dogeChainButton:" destination="ike-3x-SAR" eventType="touchUpInside" id="Bl0-F0-opf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKH-4x-xBQ">
+                                <rect key="frame" x="16" y="276" width="120" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="BlockChain.info"/>
+                                <connections>
+                                    <action selector="blockChainButton:" destination="ike-3x-SAR" eventType="touchUpInside" id="7HL-y4-paq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cT6-T4-t69">
+                                <rect key="frame" x="16" y="310" width="115" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="EtherChain.org"/>
+                                <connections>
+                                    <action selector="etherChainButton:" destination="ike-3x-SAR" eventType="touchUpInside" id="GGd-Bz-E6J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AjR-Yt-GOs">
+                                <rect key="frame" x="241" y="628" width="46" height="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Icons8"/>
+                                <connections>
+                                    <action selector="iconsEightButton:" destination="ike-3x-SAR" eventType="touchUpInside" id="Ete-3c-Oya"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Oi7-rJ-19Q" firstAttribute="leading" secondItem="wL8-y4-679" secondAttribute="leading" id="25p-GG-AEu"/>
-                            <constraint firstItem="kGr-7C-hj3" firstAttribute="leading" secondItem="Bom-0X-dsG" secondAttribute="leading" id="BM1-l2-Cpb"/>
-                            <constraint firstItem="Khh-2g-5Pu" firstAttribute="top" secondItem="GWJ-oJ-L2Q" secondAttribute="bottom" constant="8" symbolic="YES" id="C2a-XI-cKD"/>
+                            <constraint firstItem="JKH-4x-xBQ" firstAttribute="top" secondItem="P2u-W2-eip" secondAttribute="bottom" constant="22" id="56U-Bp-PW7"/>
+                            <constraint firstItem="BNy-lK-KUR" firstAttribute="leading" secondItem="P2u-W2-eip" secondAttribute="leading" id="9cw-ZN-2hz"/>
+                            <constraint firstItem="Hdg-0E-aUZ" firstAttribute="top" secondItem="Yjt-9h-wz4" secondAttribute="bottom" constant="8" symbolic="YES" id="9gL-85-Zxd"/>
+                            <constraint firstItem="Khh-2g-5Pu" firstAttribute="leading" secondItem="JKH-4x-xBQ" secondAttribute="leading" id="9jt-TD-qT0"/>
+                            <constraint firstItem="BNy-lK-KUR" firstAttribute="leading" secondItem="wL8-y4-679" secondAttribute="leading" id="Bbk-PP-Lka"/>
+                            <constraint firstItem="cT6-T4-t69" firstAttribute="leading" secondItem="RvT-L8-MA5" secondAttribute="leading" id="C8V-Wa-qvu"/>
+                            <constraint firstItem="Hdg-0E-aUZ" firstAttribute="bottom" secondItem="AjR-Yt-GOs" secondAttribute="bottom" id="CHb-fk-rkH"/>
                             <constraint firstItem="NGl-mS-42i" firstAttribute="leading" secondItem="wL8-y4-679" secondAttribute="leading" id="CfE-R8-cJe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Yjt-9h-wz4" secondAttribute="trailing" constant="-4" id="DaS-Ax-b97"/>
-                            <constraint firstItem="Khh-2g-5Pu" firstAttribute="leading" secondItem="GWJ-oJ-L2Q" secondAttribute="leading" id="Ea0-OQ-fFl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yjt-9h-wz4" secondAttribute="trailing" id="DaS-Ax-b97"/>
                             <constraint firstItem="Yjt-9h-wz4" firstAttribute="leading" secondItem="8JU-Ef-1vx" secondAttribute="leading" id="Eh0-9o-VTy"/>
-                            <constraint firstItem="NGl-mS-42i" firstAttribute="leading" secondItem="Dak-zp-kgK" secondAttribute="leadingMargin" constant="7" id="HSe-lw-en0"/>
+                            <constraint firstItem="P2u-W2-eip" firstAttribute="top" secondItem="BNy-lK-KUR" secondAttribute="bottom" constant="3" id="GzL-j8-92H"/>
+                            <constraint firstItem="NGl-mS-42i" firstAttribute="leading" secondItem="Dak-zp-kgK" secondAttribute="leadingMargin" id="HSe-lw-en0"/>
                             <constraint firstItem="NGl-mS-42i" firstAttribute="leading" secondItem="8JU-Ef-1vx" secondAttribute="leading" id="HmF-dm-ber"/>
-                            <constraint firstItem="Bom-0X-dsG" firstAttribute="top" secondItem="kGr-7C-hj3" secondAttribute="bottom" constant="8" symbolic="YES" id="LE0-6H-yNR"/>
-                            <constraint firstItem="DGp-s0-c8k" firstAttribute="leading" secondItem="Khh-2g-5Pu" secondAttribute="leading" id="TM1-Py-f8R"/>
-                            <constraint firstItem="NGl-mS-42i" firstAttribute="top" secondItem="8un-au-6GN" secondAttribute="bottom" constant="26" id="U67-m5-hTb"/>
-                            <constraint firstItem="Oi7-rJ-19Q" firstAttribute="top" secondItem="wL8-y4-679" secondAttribute="bottom" constant="8" symbolic="YES" id="Wir-kD-q1U"/>
-                            <constraint firstItem="8JU-Ef-1vx" firstAttribute="top" secondItem="Bom-0X-dsG" secondAttribute="bottom" constant="8" symbolic="YES" id="Yg6-ls-UlE"/>
-                            <constraint firstItem="kGr-7C-hj3" firstAttribute="top" secondItem="DGp-s0-c8k" secondAttribute="bottom" constant="8" symbolic="YES" id="Z6z-yx-WQv"/>
-                            <constraint firstItem="NGl-mS-42i" firstAttribute="centerX" secondItem="Dak-zp-kgK" secondAttribute="centerX" id="cex-3Y-Vwu"/>
-                            <constraint firstItem="GWJ-oJ-L2Q" firstAttribute="top" secondItem="Oi7-rJ-19Q" secondAttribute="bottom" constant="8" symbolic="YES" id="igk-zb-30B"/>
-                            <constraint firstItem="wL8-y4-679" firstAttribute="top" secondItem="NGl-mS-42i" secondAttribute="bottom" constant="8" symbolic="YES" id="jae-wZ-4Lx"/>
-                            <constraint firstItem="Oi7-rJ-19Q" firstAttribute="leading" secondItem="GWJ-oJ-L2Q" secondAttribute="leading" id="oVn-nt-6GQ"/>
+                            <constraint firstItem="RvT-L8-MA5" firstAttribute="top" secondItem="cT6-T4-t69" secondAttribute="bottom" id="Mua-df-foC"/>
+                            <constraint firstItem="Yjt-9h-wz4" firstAttribute="top" secondItem="RvT-L8-MA5" secondAttribute="bottom" constant="21" id="NGt-Gt-rKa"/>
+                            <constraint firstItem="P2u-W2-eip" firstAttribute="leading" secondItem="Khh-2g-5Pu" secondAttribute="leading" id="OvU-aZ-KU1"/>
+                            <constraint firstItem="cT6-T4-t69" firstAttribute="top" secondItem="JKH-4x-xBQ" secondAttribute="bottom" constant="1" id="PL5-E1-vER"/>
+                            <constraint firstItem="NGl-mS-42i" firstAttribute="top" secondItem="8un-au-6GN" secondAttribute="bottom" constant="8" id="U67-m5-hTb"/>
+                            <constraint firstItem="Hdg-0E-aUZ" firstAttribute="leading" secondItem="Yjt-9h-wz4" secondAttribute="leading" id="Uy4-hS-bev"/>
+                            <constraint firstItem="Hdg-0E-aUZ" firstAttribute="firstBaseline" secondItem="AjR-Yt-GOs" secondAttribute="firstBaseline" id="ZJh-RV-ADe"/>
+                            <constraint firstItem="RvT-L8-MA5" firstAttribute="leading" secondItem="8JU-Ef-1vx" secondAttribute="leading" id="anV-Ac-8ND"/>
+                            <constraint firstItem="NGl-mS-42i" firstAttribute="centerX" secondItem="Dak-zp-kgK" secondAttribute="centerX" constant="-3" id="cex-3Y-Vwu"/>
+                            <constraint firstItem="AjR-Yt-GOs" firstAttribute="baseline" secondItem="Hdg-0E-aUZ" secondAttribute="firstBaseline" id="d5q-ut-V9l"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AjR-Yt-GOs" secondAttribute="trailing" constant="72" id="dwp-R2-2H7"/>
+                            <constraint firstItem="wL8-y4-679" firstAttribute="top" secondItem="NGl-mS-42i" secondAttribute="bottom" id="jae-wZ-4Lx"/>
+                            <constraint firstItem="AjR-Yt-GOs" firstAttribute="leading" secondItem="Hdg-0E-aUZ" secondAttribute="trailing" constant="1" id="nnF-bb-nPM"/>
+                            <constraint firstItem="cT6-T4-t69" firstAttribute="top" secondItem="Khh-2g-5Pu" secondAttribute="bottom" constant="33" id="p2H-BO-awX"/>
                             <constraint firstItem="Yjt-9h-wz4" firstAttribute="top" secondItem="8JU-Ef-1vx" secondAttribute="bottom" constant="4" id="pIN-Dd-kgJ"/>
-                            <constraint firstItem="DGp-s0-c8k" firstAttribute="top" secondItem="Khh-2g-5Pu" secondAttribute="bottom" constant="8" symbolic="YES" id="uQv-2y-3ER"/>
-                            <constraint firstItem="DGp-s0-c8k" firstAttribute="leading" secondItem="kGr-7C-hj3" secondAttribute="leading" id="woc-VE-r6Y"/>
+                            <constraint firstItem="BNy-lK-KUR" firstAttribute="top" secondItem="wL8-y4-679" secondAttribute="bottom" constant="8" symbolic="YES" id="xKh-06-QEK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About CoinTrak" id="dfn-mk-FOg">
@@ -1022,7 +1061,7 @@
                                                     <action selector="btcButton:" destination="fzC-rK-Tge" eventType="touchUpInside" id="9rl-C1-Mfm"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coin Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEx-9u-7UO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEx-9u-7UO">
                                                 <rect key="frame" x="58" y="0.0" width="172" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1036,7 +1075,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="VpF-ti-9AZ"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MK4-Iy-94C">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MK4-Iy-94C">
                                                 <rect key="frame" x="238" y="0.0" width="129" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="129" id="maH-Hm-dKY"/>
@@ -1084,7 +1123,7 @@
                                                     <action selector="ethButton:" destination="fzC-rK-Tge" eventType="touchUpInside" id="YDT-LG-nuK"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coin Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3y-WG-Zjx">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3y-WG-Zjx">
                                                 <rect key="frame" x="58" y="0.0" width="179" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="179" id="Qxz-N0-naM"/>
@@ -1099,7 +1138,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="nAr-n6-63t"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XcL-qL-a1j">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XcL-qL-a1j">
                                                 <rect key="frame" x="217" y="0.0" width="150" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="9cI-PD-jtf"/>
@@ -1147,7 +1186,7 @@
                                                     <action selector="dogeButton:" destination="fzC-rK-Tge" eventType="touchUpInside" id="Ufm-LN-OCa"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coin Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fhw-Cs-V8J">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fhw-Cs-V8J">
                                                 <rect key="frame" x="58" y="0.0" width="179" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="179" id="sf6-4v-a7P"/>
@@ -1162,7 +1201,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="I5F-Hx-spx"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6l-aY-b0P">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6l-aY-b0P">
                                                 <rect key="frame" x="217" y="0.0" width="150" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="ydM-LA-nsC"/>

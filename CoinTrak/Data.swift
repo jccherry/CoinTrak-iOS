@@ -612,4 +612,11 @@ class Data {
         return dateFormatter.stringFromDate(date)
     }
     
+    func openURL(url: String) {
+        
+        let url = NSURL(string: url)!
+        UIApplication.sharedApplication().openURL(url)
+        
+    }
+    
 }
