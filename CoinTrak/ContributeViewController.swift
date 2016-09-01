@@ -10,7 +10,18 @@ import UIKit
 
 class ContributeViewController: UIViewController {
 
+    let data = Data.sharedInstance
+    
     @IBOutlet var menuButton: UIBarButtonItem!
+    
+    @IBAction func githubButton(sender: AnyObject) {
+        data.openURL("http://github.com/cointrak/cointrak-ios")
+    }
+    
+    @IBAction func websiteButton(sender: AnyObject) {
+        data.openURL("http://cointrak.me")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

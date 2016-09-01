@@ -10,7 +10,17 @@ import UIKit
 
 class DonateViewController: UIViewController {
 
+    let data = Data.sharedInstance
+    
     @IBOutlet var menuButton: UIBarButtonItem!
+    
+    @IBAction func emailButton(sender: AnyObject) {
+        data.openURL("mailto:cointrak@gmail.com")
+    }
+    
+    @IBAction func websiteButton(sender: AnyObject) {
+        data.openURL("http://cointrak.me")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

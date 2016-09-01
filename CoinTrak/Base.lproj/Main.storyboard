@@ -1925,41 +1925,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7D-er-pMs">
-                                <rect key="frame" x="16" y="93" width="343" height="169"/>
+                                <rect key="frame" x="16" y="93" width="343" height="162.5"/>
                                 <string key="text">CoinTrak is a firm believer in the open source movement, and therefore all of the code that makes up this application is hosted on out github page for anyone to see and contribute to.  We encourage users who want to know more about where this information comes from to check the about page as well as perusing the source code.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our GitHub Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZ7-VJ-i6m">
-                                <rect key="frame" x="16" y="270" width="130" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rO-ih-5ZW">
+                                <rect key="frame" x="16" y="263" width="114" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="tGr-hM-ksU"/>
+                                    <constraint firstAttribute="height" constant="21" id="NQ1-FD-ZhD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yoq-mF-U5D">
-                                <rect key="frame" x="16" y="299" width="95" height="21"/>
+                                <state key="normal" title="Our Github Page"/>
+                                <connections>
+                                    <action selector="githubButton:" destination="6ml-29-Zxf" eventType="touchUpInside" id="GHF-7V-lbp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2s-Ks-e5r">
+                                <rect key="frame" x="16" y="292.5" width="86" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Ith-Sz-Ox7"/>
+                                    <constraint firstAttribute="height" constant="21" id="Rda-7R-FYI"/>
+                                    <constraint firstAttribute="width" constant="86" id="tvs-A8-jCn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Our Website"/>
+                                <connections>
+                                    <action selector="websiteButton:" destination="6ml-29-Zxf" eventType="touchUpInside" id="8WR-XT-A6j"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GLI-xz-4bW" firstAttribute="top" secondItem="Yoq-mF-U5D" secondAttribute="bottom" constant="347" id="0pS-IO-JHr"/>
-                            <constraint firstItem="gZ7-VJ-i6m" firstAttribute="top" secondItem="E7D-er-pMs" secondAttribute="bottom" constant="8" symbolic="YES" id="14U-0t-1J6"/>
                             <constraint firstAttribute="leadingMargin" secondItem="E7D-er-pMs" secondAttribute="leading" id="3fK-f2-UcW"/>
-                            <constraint firstItem="Yoq-mF-U5D" firstAttribute="top" secondItem="gZ7-VJ-i6m" secondAttribute="bottom" constant="8" symbolic="YES" id="4Ig-SQ-iqQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="E7D-er-pMs" secondAttribute="trailing" id="8TX-tf-Fqf"/>
-                            <constraint firstItem="gZ7-VJ-i6m" firstAttribute="leading" secondItem="Yoq-mF-U5D" secondAttribute="leading" id="M9q-Yx-81b"/>
-                            <constraint firstItem="E7D-er-pMs" firstAttribute="leading" secondItem="gZ7-VJ-i6m" secondAttribute="leading" id="hUp-Kw-Fss"/>
+                            <constraint firstItem="K2s-Ks-e5r" firstAttribute="top" secondItem="1rO-ih-5ZW" secondAttribute="bottom" constant="8" symbolic="YES" id="Dw3-Y6-fJi"/>
+                            <constraint firstItem="1rO-ih-5ZW" firstAttribute="top" secondItem="E7D-er-pMs" secondAttribute="bottom" constant="8" symbolic="YES" id="brc-iS-7Xu"/>
+                            <constraint firstItem="1rO-ih-5ZW" firstAttribute="leading" secondItem="K2s-Ks-e5r" secondAttribute="leading" id="gMe-32-uV4"/>
                             <constraint firstItem="E7D-er-pMs" firstAttribute="top" secondItem="gJ8-CB-ANY" secondAttribute="bottom" constant="29" id="pHf-4K-qrp"/>
+                            <constraint firstItem="E7D-er-pMs" firstAttribute="leading" secondItem="1rO-ih-5ZW" secondAttribute="leading" id="wbc-Fs-NNh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contribute to CoinTrak" id="aBX-pb-pXL">
@@ -1987,40 +1989,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="If you have any comments, questions, or suggestions, e-mail us and we'll get back to you as soon as possible" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZQ-9F-Utd">
-                                <rect key="frame" x="28" y="92" width="319" height="68"/>
+                                <rect key="frame" x="20" y="92" width="335" height="68"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="E-mail Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5L-aM-kQb">
-                                <rect key="frame" x="28" y="168" width="74" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARy-fW-EnH">
+                                <rect key="frame" x="20" y="168" width="66" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="2Fn-0K-BNb"/>
+                                    <constraint firstAttribute="height" constant="21" id="gke-xw-Hzo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Our Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psz-J8-FCd">
-                                <rect key="frame" x="28" y="197" width="95" height="21"/>
+                                <state key="normal" title="E-mail Us"/>
+                                <connections>
+                                    <action selector="emailButton:" destination="lif-eF-Xc4" eventType="touchUpInside" id="9Dy-9Q-pxj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAr-4P-Kiq">
+                                <rect key="frame" x="20" y="197" width="85" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="1eb-CU-rcr"/>
+                                    <constraint firstAttribute="height" constant="22" id="rh6-uu-rDp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Our Website"/>
+                                <connections>
+                                    <action selector="websiteButton:" destination="lif-eF-Xc4" eventType="touchUpInside" id="bPv-YA-ebu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6Ts-my-VNr" firstAttribute="top" secondItem="psz-J8-FCd" secondAttribute="bottom" constant="449" id="2fT-gj-aJF"/>
-                            <constraint firstItem="k5L-aM-kQb" firstAttribute="leading" secondItem="psz-J8-FCd" secondAttribute="leading" id="5ys-3M-0eI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lZQ-9F-Utd" secondAttribute="trailing" constant="8" id="9KI-gZ-zrS"/>
-                            <constraint firstItem="lZQ-9F-Utd" firstAttribute="leading" secondItem="k5L-aM-kQb" secondAttribute="leading" id="Hvv-Aj-Vgk"/>
-                            <constraint firstItem="psz-J8-FCd" firstAttribute="top" secondItem="k5L-aM-kQb" secondAttribute="bottom" constant="8" symbolic="YES" id="HwJ-1a-5fx"/>
+                            <constraint firstItem="gAr-4P-Kiq" firstAttribute="top" secondItem="ARy-fW-EnH" secondAttribute="bottom" constant="8" symbolic="YES" id="8c7-Um-1mb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lZQ-9F-Utd" secondAttribute="trailing" constant="4" id="9KI-gZ-zrS"/>
+                            <constraint firstItem="lZQ-9F-Utd" firstAttribute="leading" secondItem="ARy-fW-EnH" secondAttribute="leading" id="GUo-9e-tiC"/>
                             <constraint firstItem="lZQ-9F-Utd" firstAttribute="centerX" secondItem="GcI-rb-qj8" secondAttribute="centerX" id="cVi-dn-xzA"/>
-                            <constraint firstItem="lZQ-9F-Utd" firstAttribute="leading" secondItem="GcI-rb-qj8" secondAttribute="leadingMargin" constant="8" id="hVn-Z4-SwP"/>
-                            <constraint firstItem="k5L-aM-kQb" firstAttribute="top" secondItem="lZQ-9F-Utd" secondAttribute="bottom" constant="8" symbolic="YES" id="hfb-vT-xXK"/>
+                            <constraint firstItem="lZQ-9F-Utd" firstAttribute="leading" secondItem="GcI-rb-qj8" secondAttribute="leadingMargin" constant="4" id="hVn-Z4-SwP"/>
+                            <constraint firstItem="ARy-fW-EnH" firstAttribute="top" secondItem="lZQ-9F-Utd" secondAttribute="bottom" constant="8" symbolic="YES" id="hd3-uE-EV7"/>
+                            <constraint firstItem="ARy-fW-EnH" firstAttribute="leading" secondItem="gAr-4P-Kiq" secondAttribute="leading" id="pZb-BL-cW0"/>
                             <constraint firstItem="lZQ-9F-Utd" firstAttribute="top" secondItem="fm9-mE-fSr" secondAttribute="bottom" constant="28" id="uCc-c1-M3X"/>
                         </constraints>
                     </view>
@@ -2091,7 +2094,7 @@
         <image name="wallet_filled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rAh-xn-4CV"/>
+        <segue reference="oV4-XU-6nH"/>
         <segue reference="n3f-V4-9RA"/>
     </inferredMetricsTieBreakers>
 </document>
