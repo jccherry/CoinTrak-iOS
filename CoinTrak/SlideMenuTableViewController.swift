@@ -32,7 +32,7 @@ class SlideMenuTableViewController: UITableViewController {
                 break
             
             case 4:
-                self.performSegueWithIdentifier("donateSegue", sender: UITableViewCell.self)
+                self.performSegueWithIdentifier("contactSegue", sender: UITableViewCell.self)
                 break
             
             default:
