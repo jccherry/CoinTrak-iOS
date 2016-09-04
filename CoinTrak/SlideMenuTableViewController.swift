@@ -50,6 +50,7 @@ class SlideMenuTableViewController: UITableViewController, GADBannerViewDelegate
         super.viewDidLoad()
         
         bannerView.adUnitID = "ca-app-pub-7526118464921133/2847092806"
+        bannerView.delegate = self
         bannerView.rootViewController = self
         let request = GADRequest()
         request.testDevices = data.testDevices

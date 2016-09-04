@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class AboutViewController: UIViewController {
+class AboutViewController: UIViewController, GADBannerViewDelegate {
 
     let data = Data.sharedInstance
     
+    //bottom banner ad
+    @IBOutlet var bannerView: GADBannerView!
+    
+    //menu button
     @IBOutlet var menuButton: UIBarButtonItem!
     
     //coinMarketCap link
@@ -43,6 +48,12 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
         
         print("About View Controller loaded")
+        
+        bannerView.adUnitID = "ca-app-pub-7526118464921133/5242156004"
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        request.testDevices = data.testDevices
+        bannerView.loadRequest(request)
         
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))

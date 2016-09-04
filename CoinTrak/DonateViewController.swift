@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class DonateViewController: UIViewController {
 
     let data = Data.sharedInstance
+    
+    //banner ad view
+    @IBOutlet var bannerView: GADBannerView!
     
     @IBOutlet var menuButton: UIBarButtonItem!
     
@@ -26,6 +30,12 @@ class DonateViewController: UIViewController {
         super.viewDidLoad()
 
         print("Donate View Controller Loaded")
+        
+        bannerView.adUnitID = "ca-app-pub-7526118464921133/2149088802"
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        request.testDevices = data.testDevices
+        bannerView.loadRequest(request)
         
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))

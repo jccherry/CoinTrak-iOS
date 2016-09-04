@@ -9,13 +9,15 @@
 import Foundation
 import SwiftyJSON
 import UIKit
+import GoogleMobileAds
 
 class Data {
 
     static let sharedInstance = Data()
     init(){}
     
-    let testDevices: [AnyObject] = ["a602ccfafd871943181aea6dc7401ddf"]
+    let testDevices: [AnyObject] = ["a602ccfafd871943181aea6dc7401ddf",kGADSimulatorID]
+    //let testDevices: [AnyObject] = []
     
     //Coin data variable arrays
     var coinNames: [String] = []
@@ -610,7 +612,7 @@ class Data {
     func stringTimeFromDate(date: NSDate) -> String {
         let dateFormatter = NSDateFormatter()
         //dateFormatter.locale = NSLocale.currentLocale()
-        dateFormatter.dateFormat = "H:mm"
+        dateFormatter.dateFormat = "h:mm a"
         return dateFormatter.stringFromDate(date)
     }
     

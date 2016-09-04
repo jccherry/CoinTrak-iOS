@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class ContributeViewController: UIViewController {
+class ContributeViewController: UIViewController, GADBannerViewDelegate {
 
     let data = Data.sharedInstance
     
