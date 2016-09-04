@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class SlideMenuTableViewController: UITableViewController {
+class SlideMenuTableViewController: UITableViewController, GADBannerViewDelegate {
     
     let data = Data.sharedInstance
+    
+    @IBOutlet var bannerView: GADBannerView!
     
     //main table view for the view controller
     @IBOutlet var menuTable: UITableView!
@@ -45,6 +48,12 @@ class SlideMenuTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bannerView.adUnitID = "ca-app-pub-7526118464921133/2847092806"
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        request.testDevices = ["a602ccfafd871943181aea6dc7401ddf"]
+        bannerView.loadRequest(request)
         
         //styling separator
         menuTable.layoutMargins = UIEdgeInsetsZero

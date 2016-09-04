@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class ContributeViewController: UIViewController {
 
     let data = Data.sharedInstance
     
     @IBOutlet var menuButton: UIBarButtonItem!
+    
+    @IBOutlet var bannerView: GADBannerView!
     
     @IBAction func githubButton(sender: AnyObject) {
         data.openURL("http://github.com/cointrak/cointrak-ios")
@@ -27,6 +30,12 @@ class ContributeViewController: UIViewController {
         super.viewDidLoad()
     
         print("Contribute View Controller Loaded")
+        
+        bannerView.adUnitID = "ca-app-pub-7526118464921133/4463426801"
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        request.testDevices = ["a602ccfafd871943181aea6dc7401ddf"]
+        bannerView.loadRequest(request)
 
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))

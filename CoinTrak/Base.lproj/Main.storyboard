@@ -826,19 +826,29 @@
                                         <rect key="frame" x="0.0" y="265" width="260" height="404"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rxB-zd-tRi" id="pDd-9V-MnC">
-                                            <rect key="frame" x="0.0" y="0.0" width="260" height="403.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="260" height="404"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CoinTrak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phx-n7-Me4">
-                                                    <rect key="frame" x="97" y="360" width="67" height="21"/>
+                                                    <rect key="frame" x="97" y="327" width="67" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGR-Pv-QbE" customClass="GADBannerView">
+                                                    <rect key="frame" x="0.0" y="354" width="320" height="50"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="320" id="G49-tA-guH"/>
+                                                        <constraint firstAttribute="height" constant="50" id="GHF-bc-fiz"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="HGR-Pv-QbE" firstAttribute="leading" secondItem="pDd-9V-MnC" secondAttribute="leadingMargin" constant="-8" id="CV5-OL-1cE"/>
                                                 <constraint firstItem="phx-n7-Me4" firstAttribute="leading" secondItem="pDd-9V-MnC" secondAttribute="leadingMargin" constant="89" id="L6k-cs-4CM"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="phx-n7-Me4" secondAttribute="bottom" constant="15" id="dtq-PI-bpj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HGR-Pv-QbE" secondAttribute="bottom" constant="-8" id="Rqh-be-OCu"/>
+                                                <constraint firstItem="HGR-Pv-QbE" firstAttribute="top" secondItem="phx-n7-Me4" secondAttribute="bottom" constant="6" id="aob-xt-Ofw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -853,6 +863,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="260" height="667"/>
                     <connections>
+                        <outlet property="bannerView" destination="HGR-Pv-QbE" id="mm0-r3-mEj"/>
                         <outlet property="menuTable" destination="q2m-7o-6MQ" id="suu-3q-wPQ"/>
                         <segue destination="9vF-Cn-iai" kind="custom" identifier="aboutSegue" customClass="SWRevealViewControllerSeguePushController" id="dFF-sK-C71"/>
                         <segue destination="aZ6-eh-Xuf" kind="custom" identifier="contributeSegue" customClass="SWRevealViewControllerSeguePushController" id="iUk-NC-bA4"/>
@@ -1952,16 +1963,26 @@
                                     <action selector="websiteButton:" destination="6ml-29-Zxf" eventType="touchUpInside" id="8WR-XT-A6j"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZA-SL-d0f" customClass="GADBannerView">
+                                <rect key="frame" x="27" y="617" width="320" height="50"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="KPX-Fe-cU3"/>
+                                    <constraint firstAttribute="height" constant="50" id="Oo2-Hn-zXB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="E7D-er-pMs" secondAttribute="leading" id="3fK-f2-UcW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="E7D-er-pMs" secondAttribute="trailing" id="8TX-tf-Fqf"/>
                             <constraint firstItem="K2s-Ks-e5r" firstAttribute="top" secondItem="1rO-ih-5ZW" secondAttribute="bottom" constant="8" symbolic="YES" id="Dw3-Y6-fJi"/>
+                            <constraint firstItem="GLI-xz-4bW" firstAttribute="top" secondItem="EZA-SL-d0f" secondAttribute="bottom" id="Zjx-SJ-5Kd"/>
                             <constraint firstItem="1rO-ih-5ZW" firstAttribute="top" secondItem="E7D-er-pMs" secondAttribute="bottom" constant="8" symbolic="YES" id="brc-iS-7Xu"/>
                             <constraint firstItem="1rO-ih-5ZW" firstAttribute="leading" secondItem="K2s-Ks-e5r" secondAttribute="leading" id="gMe-32-uV4"/>
                             <constraint firstItem="E7D-er-pMs" firstAttribute="top" secondItem="gJ8-CB-ANY" secondAttribute="bottom" constant="29" id="pHf-4K-qrp"/>
                             <constraint firstItem="E7D-er-pMs" firstAttribute="leading" secondItem="1rO-ih-5ZW" secondAttribute="leading" id="wbc-Fs-NNh"/>
+                            <constraint firstItem="EZA-SL-d0f" firstAttribute="centerX" secondItem="qyQ-An-y0i" secondAttribute="centerX" id="y8J-gc-KRb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contribute to CoinTrak" id="aBX-pb-pXL">
@@ -1969,6 +1990,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="bannerView" destination="EZA-SL-d0f" id="bgp-PX-OQP"/>
                         <outlet property="menuButton" destination="6ax-AP-aKC" id="6fC-Cp-Jbu"/>
                     </connections>
                 </viewController>
@@ -2094,7 +2116,7 @@
         <image name="wallet_filled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oV4-XU-6nH"/>
+        <segue reference="rAh-xn-4CV"/>
         <segue reference="h9r-rk-OUa"/>
     </inferredMetricsTieBreakers>
 </document>

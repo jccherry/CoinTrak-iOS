@@ -11,6 +11,17 @@
 		203ED6F689B99137E15C0610 /* Pods_CoinTrakTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A83B74961F74656DB5D68DD5 /* Pods_CoinTrakTests.framework */; };
 		522923431D28920A0093EB3B /* images in Resources */ = {isa = PBXBuildFile; fileRef = 522923421D28920A0093EB3B /* images */; };
 		525ED6B91D3C216C00ADBF67 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525ED6B81D3C216C00ADBF67 /* ThirdViewController.swift */; };
+		5268D3BA1D7C97460071CD56 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3B91D7C97460071CD56 /* GoogleMobileAds.framework */; };
+		5268D3BC1D7CA2670071CD56 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3BB1D7CA2670071CD56 /* SystemConfiguration.framework */; };
+		5268D3BE1D7CA2740071CD56 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3BD1D7CA2740071CD56 /* MessageUI.framework */; };
+		5268D3C01D7CA2890071CD56 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3BF1D7CA2890071CD56 /* EventKit.framework */; };
+		5268D3C21D7CA2910071CD56 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3C11D7CA2910071CD56 /* EventKitUI.framework */; };
+		5268D3C41D7CA2A40071CD56 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3C31D7CA2A40071CD56 /* CoreTelephony.framework */; };
+		5268D3C61D7CA2AB0071CD56 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3C51D7CA2AB0071CD56 /* CoreMedia.framework */; };
+		5268D3C81D7CA2B50071CD56 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3C71D7CA2B50071CD56 /* CoreGraphics.framework */; };
+		5268D3CA1D7CA2C00071CD56 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3C91D7CA2C00071CD56 /* AudioToolbox.framework */; };
+		5268D3CC1D7CA2C90071CD56 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3CB1D7CA2C90071CD56 /* AVFoundation.framework */; };
+		5268D3CE1D7CA2D40071CD56 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3CD1D7CA2D40071CD56 /* AdSupport.framework */; };
 		5278BB901D7540AB0017FC66 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278BB8F1D7540AB0017FC66 /* AboutViewController.swift */; };
 		5278BB921D7540C10017FC66 /* ContributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278BB911D7540C10017FC66 /* ContributeViewController.swift */; };
 		5278BB941D7540D40017FC66 /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278BB931D7540D40017FC66 /* DonateViewController.swift */; };
@@ -54,6 +65,17 @@
 		510039309F7DCC497421F7CA /* Pods-CoinTrakUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinTrakUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinTrakUITests/Pods-CoinTrakUITests.release.xcconfig"; sourceTree = "<group>"; };
 		522923421D28920A0093EB3B /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		525ED6B81D3C216C00ADBF67 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		5268D3B91D7C97460071CD56 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		5268D3BB1D7CA2670071CD56 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5268D3BD1D7CA2740071CD56 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		5268D3BF1D7CA2890071CD56 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		5268D3C11D7CA2910071CD56 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		5268D3C31D7CA2A40071CD56 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		5268D3C51D7CA2AB0071CD56 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		5268D3C71D7CA2B50071CD56 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5268D3C91D7CA2C00071CD56 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5268D3CB1D7CA2C90071CD56 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5268D3CD1D7CA2D40071CD56 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		5278BB8F1D7540AB0017FC66 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		5278BB911D7540C10017FC66 /* ContributeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributeViewController.swift; sourceTree = "<group>"; };
 		5278BB931D7540D40017FC66 /* DonateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +116,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5268D3CE1D7CA2D40071CD56 /* AdSupport.framework in Frameworks */,
+				5268D3CC1D7CA2C90071CD56 /* AVFoundation.framework in Frameworks */,
+				5268D3CA1D7CA2C00071CD56 /* AudioToolbox.framework in Frameworks */,
+				5268D3C81D7CA2B50071CD56 /* CoreGraphics.framework in Frameworks */,
+				5268D3C61D7CA2AB0071CD56 /* CoreMedia.framework in Frameworks */,
+				5268D3C41D7CA2A40071CD56 /* CoreTelephony.framework in Frameworks */,
+				5268D3C21D7CA2910071CD56 /* EventKitUI.framework in Frameworks */,
+				5268D3C01D7CA2890071CD56 /* EventKit.framework in Frameworks */,
+				5268D3BE1D7CA2740071CD56 /* MessageUI.framework in Frameworks */,
+				5268D3BC1D7CA2670071CD56 /* SystemConfiguration.framework in Frameworks */,
+				5268D3BA1D7C97460071CD56 /* GoogleMobileAds.framework in Frameworks */,
 				99156AA809544436AEF0CAF2 /* Pods_CoinTrak.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +153,16 @@
 		06621BD61822EA58525D24D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5268D3CD1D7CA2D40071CD56 /* AdSupport.framework */,
+				5268D3CB1D7CA2C90071CD56 /* AVFoundation.framework */,
+				5268D3C91D7CA2C00071CD56 /* AudioToolbox.framework */,
+				5268D3C71D7CA2B50071CD56 /* CoreGraphics.framework */,
+				5268D3C51D7CA2AB0071CD56 /* CoreMedia.framework */,
+				5268D3C31D7CA2A40071CD56 /* CoreTelephony.framework */,
+				5268D3C11D7CA2910071CD56 /* EventKitUI.framework */,
+				5268D3BF1D7CA2890071CD56 /* EventKit.framework */,
+				5268D3BD1D7CA2740071CD56 /* MessageUI.framework */,
+				5268D3BB1D7CA2670071CD56 /* SystemConfiguration.framework */,
 				EA252E4E17A6DD4CDA200181 /* Pods_CoinTrak.framework */,
 				A83B74961F74656DB5D68DD5 /* Pods_CoinTrakTests.framework */,
 				FB0D66C83D0BCC1214F51A53 /* Pods_CoinTrakUITests.framework */,
@@ -130,6 +173,7 @@
 		529291261D1CED9600F63D3E = {
 			isa = PBXGroup;
 			children = (
+				5268D3B91D7C97460071CD56 /* GoogleMobileAds.framework */,
 				529291311D1CED9600F63D3E /* CoinTrak */,
 				529291481D1CED9600F63D3E /* CoinTrakTests */,
 				529291531D1CED9700F63D3E /* CoinTrakUITests */,
@@ -631,6 +675,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CoinTrak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.cointrak.CoinTrak;
@@ -649,6 +697,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CoinTrak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.cointrak.CoinTrak;
