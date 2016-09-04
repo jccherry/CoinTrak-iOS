@@ -6,6 +6,7 @@ target 'CoinTrak' do
   use_frameworks!
   pod 'SwiftyJSON', '~> 2.3.2'
   pod ‘Charts’
+  pod 'Firebase/Core'
 
   # Pods for CoinTrak
 

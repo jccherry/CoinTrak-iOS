@@ -34,7 +34,7 @@ class ContributeViewController: UIViewController {
         bannerView.adUnitID = "ca-app-pub-7526118464921133/4463426801"
         bannerView.rootViewController = self
         let request = GADRequest()
-        request.testDevices = ["a602ccfafd871943181aea6dc7401ddf"]
+        request.testDevices = data.testDevices
         bannerView.loadRequest(request)
 
         menuButton.target = self.revealViewController()
