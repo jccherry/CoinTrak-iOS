@@ -73,10 +73,6 @@ class SecondViewController: UIViewController, UITextViewDelegate {
         }
         
     }
-    
-    
-
-
 
     @IBAction func convertButton(sender: UIButton) {
         convert()
