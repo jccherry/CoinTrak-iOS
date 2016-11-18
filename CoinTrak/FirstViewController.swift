@@ -191,7 +191,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         let refreshContents = NSBundle.mainBundle().loadNibNamed("refreshView", owner: self, options: nil)
         
-        let customView = refreshContents[0] as! UIView
+        let customView = refreshContents![0] as! UIView
         
         customView.frame = refreshControl.bounds
         //customView.backgroundColor = UIColor(red: 222.0/255, green: 222.0/255, blue: 222.0/255, alpha: 1)
@@ -287,7 +287,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         coinTable.layoutMargins = UIEdgeInsetsZero
         coinTable.separatorInset = UIEdgeInsetsMake(0, 10, 0, 10)
         
-        coinTable.rowHeight = coinTable.bounds.size.height / 7
+        coinTable.rowHeight = coinTable.bounds.height / (7*2.6666666) //+ (coinTable.bounds.height / 105)
         
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
