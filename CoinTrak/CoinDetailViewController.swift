@@ -130,11 +130,12 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
         lineChartDataSet.drawValuesEnabled = false
         lineChartDataSet.drawVerticalHighlightIndicatorEnabled = true
         lineChartDataSet.drawHorizontalHighlightIndicatorEnabled = false
-        lineChartDataSet.highlightLineWidth = 5
-        lineChartDataSet.highlightColor = NSUIColor.blueColor()
+        lineChartDataSet.highlightLineWidth = 4.5
+        lineChartDataSet.highlightColor = UIColor(red: 0.0/255.0, green: 102.0/255.0, blue: 1.0, alpha: 150.0/255)
         lineChartDataSet.highlightEnabled = true
         //lineChartDataSet.axisDependency = .Left
-        
+
+        lineChartView.delegate = self
         
         //set description text
         lineChartView.descriptionText =  ""
@@ -145,9 +146,10 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
         //lines slide in from left
         lineChartView.animate(xAxisDuration: 1.0)
         
-        
+        lineChartView.doubleTapToZoomEnabled = false
         //set size make it the size of the full view in storyboard
         lineChartView.setViewPortOffsets(left: CGFloat(0), top: CGFloat(0), right: CGFloat(0), bottom: CGFloat(0))
+        
         
         //let legend: ChartLegend = lineChartView.legend
         
@@ -166,16 +168,6 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
     //executes when view loads
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        sixtyMinutesChart.delegate = self
-        twentyFourHourChart.delegate = self
-        thirtyDaysChart.delegate = self
-        oneYearChart.delegate = self
-        
-        sixtyMinutesChart.doubleTapToZoomEnabled = false
-        twentyFourHourChart.doubleTapToZoomEnabled = false
-        thirtyDaysChart.doubleTapToZoomEnabled = false
-        oneYearChart.doubleTapToZoomEnabled = false
         
         print("Coin Detail View Controller Loaded")
         
