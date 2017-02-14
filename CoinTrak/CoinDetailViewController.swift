@@ -131,9 +131,10 @@ class CoinDetailViewController: UIViewController {
         lineChartDataSet.drawVerticalHighlightIndicatorEnabled = true
         lineChartDataSet.drawHorizontalHighlightIndicatorEnabled = false
         lineChartDataSet.highlightLineWidth = 5
-        lineChartDataSet.highlightColor = NSUIColor.lightGrayColor()
-        lineChartDataSet.highlightEnabled = false
+        lineChartDataSet.highlightColor = NSUIColor.blueColor()
+        lineChartDataSet.highlightEnabled = true
         //lineChartDataSet.axisDependency = .Left
+        
         
         //set description text
         lineChartView.descriptionText =  ""
@@ -207,6 +208,9 @@ class CoinDetailViewController: UIViewController {
                 self.setChart(self.data.twentyFourHoursDates, values: self.data.twentyFourHoursPrices, lineChartView: self.twentyFourHourChart,description: "24 Hours")
                 self.setChart(self.data.thirtyDaysDates, values: self.data.thirtyDaysPrices, lineChartView: self.thirtyDaysChart,description: "30 Days")
                 self.setChart(self.data.oneYearDates, values: self.data.oneYearPrices, lineChartView: self.oneYearChart, description: "1 Year")
+                
+                
+                
             }
         }
         
