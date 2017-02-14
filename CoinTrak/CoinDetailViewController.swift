@@ -118,7 +118,7 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
         }
         
         let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: description)
-        let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
+        
         
         
         //style the chart
@@ -139,6 +139,8 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
         
         //set description text
         lineChartView.descriptionText =  ""
+        
+        let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
         
         //actually set the data
         lineChartView.data = lineChartData
@@ -161,7 +163,6 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
     
     //chartView Delegate Methods
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
-        print(entry.value)
         chartView.descriptionText = String("$\(entry.value)")
     }
     
