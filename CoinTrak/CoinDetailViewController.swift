@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import Charts
 
-class CoinDetailViewController: UIViewController {
+class CoinDetailViewController: UIViewController, ChartViewDelegate {
 
     let data = Data.sharedInstance
     
@@ -157,9 +157,25 @@ class CoinDetailViewController: UIViewController {
     }
     
     
+    //chartView Delegate Methods
+    func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
+        print(entry.value)
+        chartView.descriptionText = String("$\(entry.value)")
+    }
+    
     //executes when view loads
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sixtyMinutesChart.delegate = self
+        twentyFourHourChart.delegate = self
+        thirtyDaysChart.delegate = self
+        oneYearChart.delegate = self
+        
+        sixtyMinutesChart.doubleTapToZoomEnabled = false
+        twentyFourHourChart.doubleTapToZoomEnabled = false
+        thirtyDaysChart.doubleTapToZoomEnabled = false
+        oneYearChart.doubleTapToZoomEnabled = false
         
         print("Coin Detail View Controller Loaded")
         
