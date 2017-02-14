@@ -83,7 +83,7 @@ class SecondViewController: UIViewController, UITextViewDelegate {
         print("Converting...")
         
         //the reason that this conditional is cringingly long is so that because they were problems with extracting doubles from empty text boxes
-        if (firstTextField.text != "" && Double(firstTextField.text!)! != firstCoinCurrent) || (firstTextField.text != "" && secondTextField.text == "") || ((data.coinPrices[firstPickerRowSelected] != lastConvertedPriceFirst || data.coinPrices[secondPickerRowSelected] != lastConvertedPriceSecond) && firstTextField.text != "") {
+        if (firstTextField.text != "" && Double(firstTextField.text!)! != firstCoinCurrent) || (firstTextField.text != "" && secondTextField.text! == "") || ((data.coinPrices[firstPickerRowSelected] != lastConvertedPriceFirst || data.coinPrices[secondPickerRowSelected] != lastConvertedPriceSecond) && firstTextField.text != ""){
             
             //set the text fields value to the current value
             firstCoinCurrent = Double(firstTextField.text!)!
@@ -97,7 +97,7 @@ class SecondViewController: UIViewController, UITextViewDelegate {
             //make the coin's current value what u see on screen for accuracy
             secondCoinCurrent = Double(secondTextField.text!)!
             
-        } else if (secondTextField.text != "" && Double(secondTextField.text!)! != secondCoinCurrent) || (secondTextField.text != "" && firstTextField.text == "") {
+        } else if (secondTextField.text != "" && Double(secondTextField.text!)! != secondCoinCurrent) || (secondTextField.text != "" && firstTextField.text! == ""){
             
             secondCoinCurrent = Double(secondTextField.text!)!
             firstCoinCurrent = (secondCoinCurrent * data.coinPrices[secondPickerRowSelected]) / data.coinPrices[firstPickerRowSelected]

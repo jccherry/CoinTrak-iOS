@@ -112,19 +112,27 @@ class FourthViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Remove" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             
-            print("Removing \(self.data.favoriteNames[indexPath.row]) from Favorites.")
-            self.data.favoriteIdentifiers.removeAtIndex(indexPath.row)
-            //print("after delete\(self.data.favoriteIdentifiers)")
-            
-            NSUserDefaults.standardUserDefaults().setObject(self.data.favoriteIdentifiers, forKey: "favoriteIdentifiers")
-            NSUserDefaults.standardUserDefaults().synchronize()
-            
-            self.data.favoriteSetup()
-            self.data.initFavoriteArrays(self.data.favoriteIdentifiers.count)
-            self.coinTable.reloadData()
-            self.data.selectedFavoriteCell = 0
-            self.updateInfoDisplay()
-            //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
+            if self.data.favoriteIdentifiers.count > 1 {
+                print("Removing \(self.data.favoriteNames[indexPath.row]) from Favorites.")
+                self.data.favoriteIdentifiers.removeAtIndex(indexPath.row)
+                //print("after delete\(self.data.favoriteIdentifiers)")
+                
+                NSUserDefaults.standardUserDefaults().setObject(self.data.favoriteIdentifiers, forKey: "favoriteIdentifiers")
+                NSUserDefaults.standardUserDefaults().synchronize()
+                
+                
+                
+                self.data.favoriteSetup()
+                self.data.initFavoriteArrays(self.data.favoriteIdentifiers.count)
+                
+                self.coinTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                
+                //self.coinTable.reloadData()
+                self.data.selectedFavoriteCell = 0
+                self.updateInfoDisplay()
+                //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
+            }
+
         })
         
         
@@ -260,7 +268,7 @@ class FourthViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         coinTable.reloadData()
         
-        coinTable.rowHeight = coinTable.bounds.height / (7*2.6666666)
+        coinTable.rowHeight = coinTable.bounds.height / (7)
         
         updateInfoDisplay()
     }

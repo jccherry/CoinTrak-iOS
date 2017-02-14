@@ -136,7 +136,7 @@ class CoinDetailViewController: UIViewController {
         //lineChartDataSet.axisDependency = .Left
         
         //set description text
-        lineChartView.descriptionText = description
+        lineChartView.descriptionText =  ""
         
         //actually set the data
         lineChartView.data = lineChartData
