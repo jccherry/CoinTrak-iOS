@@ -2,9 +2,7 @@
 Live Cryptocurrency Ticker, Calculator, and Investment Tracker for iOS/Android
 [Website](http://cointrak.me)
 
-**CoinTrak**'s iOS version is in the early beta stages of development as of 8/10, and hopes to have an App Store launch by the end of 2016.
-
-**Note:** I myself have used 100% swift when coding this project, but some of the libraries that i am using are large and only in Objective-C, hence the majority of the code in the repository being Objective-C.  Also, this repository was uploaded to GitHub after it was mostly finished with 50+ commits, however i was not able to upload that copy of the repository due to 2 large binary files and GitHub's limit of 2GB push via SSH.  Therefore i re initialized the repository and started from where i had left off
+**CoinTrak**'s iOS version is in late beta stages of development as of 1/22.
 
 
 ### Welcome to CoinTrak
