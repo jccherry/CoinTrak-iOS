@@ -287,7 +287,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         coinTable.layoutMargins = UIEdgeInsetsZero
         coinTable.separatorInset = UIEdgeInsetsMake(0, 10, 0, 10)
         
-        coinTable.rowHeight = coinTable.bounds.height / (7) //+ (coinTable.bounds.height / 105)
+        coinTable.rowHeight = coinTable.bounds.height / (8) //+ (coinTable.bounds.height / 105)
         
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
