@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class SecondViewController: UIViewController, UITextViewDelegate {
+class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewDelegate {
 
     let data = Data.sharedInstance
+    
+    //ad banner
+    @IBOutlet var bannerView: GADBannerView!
     
     //text boxes
     @IBOutlet weak var firstTextField: UITextField!
@@ -142,6 +146,13 @@ class SecondViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         print("Converter View Controller Loaded")
+        
+        //ad stuff
+        bannerView.adUnitID = "ca-app-pub-7526118464921133/3054025608"
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        request.testDevices = data.testDevices
+        bannerView.loadRequest(request)
         
         //gesture recognizer to open reveal view controller
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())

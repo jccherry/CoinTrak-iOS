@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class ThirdViewController: UIViewController {
+class ThirdViewController: UIViewController, GADBannerViewDelegate {
 
     let data = Data.sharedInstance
 
@@ -16,6 +17,7 @@ class ThirdViewController: UIViewController {
     
     @IBOutlet var menuButton: UIBarButtonItem!
     
+    @IBOutlet var bannerView: GADBannerView!
     
     //view one
     @IBOutlet var btcImage: UIImageView!
@@ -134,6 +136,14 @@ class ThirdViewController: UIViewController {
         super.viewDidLoad()
         
         print("Wallet View Controller Loaded")
+        
+        
+        //ad stuff
+        bannerView.adUnitID = "ca-app-pub-7526118464921133/7484225201"
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        request.testDevices = data.testDevices
+        bannerView.loadRequest(request)
         
         //gesture recognizer to open reveal view controller
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())

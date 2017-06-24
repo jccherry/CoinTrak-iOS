@@ -16,8 +16,8 @@ class Data {
     static let sharedInstance = Data()
     init(){}
     
-    let testDevices: [AnyObject] = ["a602ccfafd871943181aea6dc7401ddf",kGADSimulatorID]
-    //let testDevices: [AnyObject] = []
+    //let testDevices: [AnyObject] = ["a602ccfafd871943181aea6dc7401ddf",kGADSimulatorID]
+    let testDevices: [AnyObject] = []
     
     //Coin data variable arrays
     var coinNames: [String] = []
