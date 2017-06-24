@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,25 +20,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CoinTrak" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3s-Pk-eEM">
-                                <rect key="frame" x="128" y="314" width="119" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CoinTrak" translatesAutoresizingMaskIntoConstraints="NO" id="hZz-4Y-JYp">
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hZz-4Y-JYp" secondAttribute="height" multiplier="1:1" id="tFV-uF-d9a"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="i3s-Pk-eEM" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="294" id="LeU-2O-y4X"/>
-                            <constraint firstItem="i3s-Pk-eEM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="kDm-x0-6c6"/>
-                            <constraint firstItem="i3s-Pk-eEM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sbg-1l-O0O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hZz-4Y-JYp" secondAttribute="trailing" constant="82" id="7Aa-tp-NP9"/>
+                            <constraint firstItem="hZz-4Y-JYp" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="NXr-s6-FNR"/>
+                            <constraint firstItem="hZz-4Y-JYp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RwK-qX-gt8"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="395"/>
+            <point key="canvasLocation" x="52" y="394.45277361319341"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CoinTrak" width="256" height="256"/>
+    </resources>
 </document>

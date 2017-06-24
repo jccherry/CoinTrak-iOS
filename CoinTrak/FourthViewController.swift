@@ -268,7 +268,7 @@ class FourthViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         coinTable.reloadData()
         
-        //coinTable.rowHeight = coinTable.bounds.height / (7)
+        coinTable.rowHeight = coinTable.bounds.height / 24 + (coinTable.bounds.height/200)
         
         updateInfoDisplay()
     }

@@ -55,14 +55,27 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         cell.coinImage.image = UIImage(named: "images/defaultImage.png")
         
         //image path, must put the PNG images in image folder with the ticker in all caps ie: BTC.png
-        var imageLoc = "images/\(data.coinTickers[indexPath.row+1]).png"
+
+        //var imageLoc = "images/\(data.coinTickers[indexPath.row+1]).png" //for the internal folder
         
-        if UIImage(named: imageLoc) == nil {
-            imageLoc = "images/defaultImage.png"
+        //var imageLoc = "http://cointrak.me/images/\(data.coinTickers[indexPath.row+1]).png"
+        
+        cell.coinImage.image = UIImage(named: "images/\(data.coinTickers[indexPath.row+1]).png")
+        
+        if UIImage(named: "images/\(data.coinTickers[indexPath.row+1]).png") == nil {
+            cell.coinImage.image = UIImage(named: "images/defaultImage.png")
         }
         
+        
+        
+        
+        /*if UIImage(named: imageLoc) == nil {
+            imageLoc = "images/defaultImage.png"
+        }
+ */
+ 
         //set image to the predetermined image Path
-        cell.coinImage.image = UIImage(named: imageLoc)
+
         
         
         
@@ -287,7 +300,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         coinTable.layoutMargins = UIEdgeInsetsZero
         coinTable.separatorInset = UIEdgeInsetsMake(0, 10, 0, 10)
         
-        //coinTable.rowHeight = coinTable.bounds.height
+        coinTable.rowHeight = coinTable.bounds.height / 24 + (coinTable.bounds.height/200)
         
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
