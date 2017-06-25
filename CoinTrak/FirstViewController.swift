@@ -349,10 +349,6 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
                     
                 }
                 
-                
-                
-
-                
             }
         
         }

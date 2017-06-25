@@ -7,6 +7,7 @@ target 'CoinTrak' do
   pod 'SwiftyJSON', '~> 2.3.2'
   pod ‘Charts’
   pod 'Firebase/Core'
+  pod 'SDWebImage', '~> 3.7'
 
   # Pods for CoinTrak
 
