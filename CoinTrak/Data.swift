@@ -17,7 +17,8 @@ class Data {
     init(){}
     
     //let testDevices: [AnyObject] = ["a602ccfafd871943181aea6dc7401ddf",kGADSimulatorID]
-    let testDevices: [AnyObject] = []
+    //let testDevices: [AnyObject] = []
+    let testDevices: [AnyObject] = [kGADSimulatorID]
     
     //Coin data variable arrays
     var coinNames: [String] = []
@@ -291,11 +292,11 @@ class Data {
         
         
         if percentage > 0 {
-            percentString = "\(upArrow)\(abs(percentage))%"
+            percentString = "\(upArrow)\(abs(percentage))% "
         } else if percentage < 0 {
             percentString = "\(downArrow)\(abs(percentage))%"
         } else {
-            percentString = "\(percentage)%"
+            percentString = "\(percentage)% "
         }
         
         return percentString

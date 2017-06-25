@@ -44,12 +44,22 @@ class AboutViewController: UIViewController, GADBannerViewDelegate {
         data.openURL("http://icons8.com")
     }
     
+    
+    func adViewDidReceiveAd(bannerView: GADBannerView!) {
+        print("ad received")
+    }
+    
+    func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+        print("fail to receive ad with error: \(error.localizedDescription)")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("About View Controller loaded")
         
-        bannerView.adUnitID = "ca-app-pub-7526118464921133/5242156004"
+        bannerView.adSize = kGADAdSizeSmartBannerLandscape
+        bannerView.adUnitID = "ca-app-pub-7526118464921133/3339900404"
         bannerView.rootViewController = self
         let request = GADRequest()
         request.testDevices = data.testDevices

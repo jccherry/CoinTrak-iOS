@@ -26,12 +26,21 @@ class DonateViewController: UIViewController {
         data.openURL("http://cointrak.me")
     }
     
+    func adViewDidReceiveAd(bannerView: GADBannerView!) {
+        print("ad received")
+    }
+    
+    func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+        print("fail to receive ad with error: \(error.localizedDescription)")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print("Donate View Controller Loaded")
         
-        bannerView.adUnitID = "ca-app-pub-7526118464921133/2149088802"
+        bannerView.adSize = kGADAdSizeSmartBannerLandscape
+        bannerView.adUnitID = "ca-app-pub-7526118464921133/4816633601"
         bannerView.rootViewController = self
         let request = GADRequest()
         request.testDevices = data.testDevices

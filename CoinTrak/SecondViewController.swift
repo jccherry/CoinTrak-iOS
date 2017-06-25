@@ -142,13 +142,22 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
         
     }
     
+    func adViewDidReceiveAd(bannerView: GADBannerView!) {
+        print("ad received")
+    }
+    
+    func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+        print("fail to receive ad with error: \(error.localizedDescription)")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("Converter View Controller Loaded")
         
         //ad stuff
-        bannerView.adUnitID = "ca-app-pub-7526118464921133/3054025608"
+        bannerView.adSize = kGADAdSizeSmartBannerLandscape
+        bannerView.adUnitID = "ca-app-pub-7526118464921133/7770100007"
         bannerView.rootViewController = self
         let request = GADRequest()
         request.testDevices = data.testDevices

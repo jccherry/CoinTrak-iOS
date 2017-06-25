@@ -46,10 +46,20 @@ class SlideMenuTableViewController: UITableViewController, GADBannerViewDelegate
         }
     }
     
+    func adViewDidReceiveAd(bannerView: GADBannerView!) {
+        print("ad received")
+    }
+    
+    func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
+        print("fail to receive ad with error: \(error.localizedDescription)")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bannerView.adUnitID = "ca-app-pub-7526118464921133/2847092806"
+        bannerView.adSize = kGADAdSizeSmartBannerLandscape
+        bannerView.adUnitID = "ca-app-pub-7526118464921133/1863167208"
+        //bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.delegate = self
         bannerView.rootViewController = self
         let request = GADRequest()
