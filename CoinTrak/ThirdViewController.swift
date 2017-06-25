@@ -13,6 +13,7 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
 
     let data = Data.sharedInstance
     
+    
     @IBOutlet weak var tickerField: UITextField!
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var balanceLabel: UILabel!
@@ -24,23 +25,37 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
     
     @IBOutlet var bannerView: GADBannerView!
     
+    
+    
+    
+    
     @IBAction func actionButton(sender: AnyObject) {
         balanceLabel.text = String(data.getBalanceFromCoin(tickerField.text!, address: addressField.text!))
+        transactionTable.reloadData()
     }
     
     
     //Table View Delegate Methods
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.coinNames.count - 1 //-1 to account for usd as index position 0
+        return data.getTransactionNumberFromCoin(tickerField.text!, address: addressField.text!)
     }
     
     //determine data in each cell individually by indexPath, using indexPath+1 as index for the data arrays
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! TransactionCell
         
         //style make 0 margins for full seperator
         cell.layoutMargins = UIEdgeInsetsZero
         
+        let (wasSent, amount) = data.getTransactionInfoFromCoinAndPlace(tickerField.text!, address: addressField.text!, transactionNumber: indexPath.row)
+        
+        if wasSent {
+            cell.sentLabel.text = "sent"
+        } else {
+            cell.sentLabel.text = "recieved"
+        }
+        
+        cell.amountLabel.text = String(amount)
         
         //returns the cell with inserted data
         return cell
@@ -51,81 +66,6 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
     }
-    
-    /*
-    //view one
-    @IBOutlet var btcImage: UIImageView!
-    @IBOutlet var btcBalance: UILabel!
-    @IBOutlet var btcUSDLabel: UILabel!
-    @IBOutlet var btcTextField: UITextField!
-    @IBAction func btcButton(sender: AnyObject) {
-    
-        NSUserDefaults.standardUserDefaults().setObject(btcTextField.text, forKey: "btcAddress")
-        NSUserDefaults.standardUserDefaults().synchronize()
-        
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            //refresh data
-            var btcBalanceNum: Double = 0.0
-            btcBalanceNum = self.data.getBTCBalance(NSUserDefaults.standardUserDefaults().stringForKey("btcAddress")!)
-            dispatch_async(dispatch_get_main_queue()) {
-                self.btcBalance.text = String(btcBalanceNum)
-                self.updateDisplays()
-            }
-        }
-        
-        //btcBalance.text = String(data.getBTCBalance(NSUserDefaults.standardUserDefaults().stringForKey("btcAddress")!))
-    
-    }
-    
-    //view two
-    @IBOutlet var ethImage: UIImageView!
-    @IBOutlet var ethBalance: UILabel!
-    @IBOutlet var ethUSDLabel: UILabel!
-    @IBOutlet var ethTextField: UITextField!
-    @IBAction func ethButton(sender: AnyObject) {
-    
-        NSUserDefaults.standardUserDefaults().setObject(ethTextField.text, forKey: "ethAddress")
-        NSUserDefaults.standardUserDefaults().synchronize()
-        //ethBalance.text = String(data.getETHBalance(NSUserDefaults.standardUserDefaults().stringForKey("ethAddress")!))
-        
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            //refresh data
-            var ethBalanceNum: Double = 0.0
-            ethBalanceNum = self.data.getETHBalance(NSUserDefaults.standardUserDefaults().stringForKey("ethAddress")!)
-            dispatch_async(dispatch_get_main_queue()) {
-                self.ethBalance.text = String(ethBalanceNum)
-                self.updateDisplays()
-            }
-        }
-    
-    }
-    
-    //view three
-    @IBOutlet var dogeImage: UIImageView!
-    @IBOutlet var dogeBalance: UILabel!
-    @IBOutlet var dogeUSDLabel: UILabel!
-    @IBOutlet var dogeTextField: UITextField!
-    @IBAction func dogeButton(sender: AnyObject) {
-    
-        NSUserDefaults.standardUserDefaults().setObject(dogeTextField.text, forKey: "dogeAddress")
-        NSUserDefaults.standardUserDefaults().synchronize()
-        //dogeBalance.text = data.assessNumberStringFormat(data.getDOGEBalance(NSUserDefaults.standardUserDefaults().stringForKey("dogeAddress")!))
-        
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            //refresh data
-            var dogeBalanceNum: Double = 0.0
-            dogeBalanceNum = self.data.getDOGEBalance(NSUserDefaults.standardUserDefaults().stringForKey("dogeAddress")!)
-            dispatch_async(dispatch_get_main_queue()) {
-                self.dogeBalance.text = self.data.assessNumberStringFormat(dogeBalanceNum)
-                self.updateDisplays()
-            }
-        }
-        
-    }
-    */
     
     @IBAction func refreshButton(sender: UIBarButtonItem) {
         //updateDisplays()
@@ -138,35 +78,6 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
         
     }
     
-    /*
-    func updateDisplays() {
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            
-            //background thread
-            
-            //balance of addresses
-            let btcBalanceNum = self.data.getBTCBalance(NSUserDefaults.standardUserDefaults().stringForKey("btcAddress")!)
-            let ethBalanceNum = self.data.getETHBalance(NSUserDefaults.standardUserDefaults().stringForKey("ethAddress")!)
-            let dogeBalanceNum = self.data.getDOGEBalance(NSUserDefaults.standardUserDefaults().stringForKey("dogeAddress")!)
-            
-            let btcUSD = btcBalanceNum * self.data.getCurrentPriceFromID("bitcoin")
-            let ethUSD = ethBalanceNum * self.data.getCurrentPriceFromID("ethereum")
-            let dogeUSD = dogeBalanceNum * self.data.getCurrentPriceFromID("dogecoin")
-            
-            //main queue (where u can update UI)
-            dispatch_async(dispatch_get_main_queue()) {
-                self.btcBalance.text = String(btcBalanceNum)
-                self.ethBalance.text = String(ethBalanceNum)
-                self.dogeBalance.text = self.data.assessNumberStringFormat(dogeBalanceNum)
-                self.btcUSDLabel.text = self.data.formatMoneyString("$", amount: btcUSD, places: 2)
-                self.ethUSDLabel.text = self.data.formatMoneyString("$", amount: ethUSD, places: 2)
-                self.dogeUSDLabel.text = self.data.formatMoneyString("$", amount: dogeUSD, places: 2)
-                
-            }
-        }
-    }
-    */
     func adViewDidReceiveAd(bannerView: GADBannerView!) {
         print("ad received")
     }

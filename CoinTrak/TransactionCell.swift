@@ -10,6 +10,8 @@ import UIKit
 
 class TransactionCell: UITableViewCell {
 
+    @IBOutlet weak var sentLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
     
     
     override func awakeFromNib() {

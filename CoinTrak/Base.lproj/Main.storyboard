@@ -992,15 +992,42 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F30-PL-L8i">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="8E0-EK-1Oc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="8E0-EK-1Oc" customClass="TransactionCell" customModule="CoinTrak" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8E0-EK-1Oc" id="UT6-H8-l1r">
                                             <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMa-YJ-2Aj">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haL-S9-DL9">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gMa-YJ-2Aj" firstAttribute="baseline" secondItem="haL-S9-DL9" secondAttribute="baseline" id="12t-iV-dQj"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gMa-YJ-2Aj" secondAttribute="trailing" constant="317" id="3Pc-I0-Ctl"/>
+                                                <constraint firstItem="gMa-YJ-2Aj" firstAttribute="centerY" secondItem="UT6-H8-l1r" secondAttribute="centerY" id="8Ey-e9-fd7"/>
+                                                <constraint firstItem="haL-S9-DL9" firstAttribute="leading" secondItem="gMa-YJ-2Aj" secondAttribute="trailing" constant="25" id="Lzc-Pr-bhg"/>
+                                                <constraint firstItem="haL-S9-DL9" firstAttribute="trailing" secondItem="UT6-H8-l1r" secondAttribute="trailingMargin" id="q3L-Ra-Pwg"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="haL-S9-DL9" id="eAU-cJ-32c"/>
+                                            <outlet property="sentLabel" destination="gMa-YJ-2Aj" id="DA4-Ed-Brl"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="fzC-rK-Tge" id="jc8-qb-Eiu"/>
+                                    <outlet property="delegate" destination="fzC-rK-Tge" id="JdQ-sE-xBE"/>
+                                </connections>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7eG-B0-BOg">
                                 <nil key="textColor"/>
