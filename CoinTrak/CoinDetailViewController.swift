@@ -47,8 +47,6 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
     
     //update the info view on th ebottom of the page, identical to firstviewcontroller except it adds the priceLabel
     func updateInfoDisplay(){
-        //set image as the default so that coins without the ticker image hava a default, and if they have an image, then it gets changed to that
-        infoImage.image = UIImage(named: "image/defaultImage.png")
         
         var indexCell: Int = 1
         var localCoinNames: [String]
@@ -85,13 +83,7 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
             localPrices = data.favoritePrices
         }
         
-        var imageLoc = "images/\(localCoinTickers[indexCell]).png"
-        
-        if UIImage(named: imageLoc) == nil {
-            imageLoc = "images/defaultImage.png"
-        }
-        
-        infoImage.image = UIImage(named: imageLoc)
+        infoImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/CoinTrak/CoinTrak-Website/gh-pages/images/\(localCoinTickers[indexCell]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
         infoName.text = localCoinNames[indexCell]
         infoTicker.text = localCoinTickers[indexCell]
         

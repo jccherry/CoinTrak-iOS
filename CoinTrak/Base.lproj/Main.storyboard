@@ -313,7 +313,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="CoinTrak" id="wmE-2l-uni">
-                        <barButtonItem key="leftBarButtonItem" image="ic_menu_48pt" style="plain" id="bAn-X1-acV">
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu_48pt" id="bAn-X1-acV">
                             <connections>
                                 <action selector="menuRefresh:" destination="9pv-A4-QxB" id="Nwm-nY-1Kp"/>
                             </connections>
@@ -406,8 +406,7 @@
                                                     <constraint firstAttribute="height" constant="37" id="fEk-ie-3Pt"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNK-BM-gDl">
-                                                <frame key="frameInset" minX="214" minY="3" width="157" height="37"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNK-BM-gDl">
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -423,6 +422,7 @@
                                             <constraint firstItem="Q43-Zd-fE4" firstAttribute="baseline" secondItem="LNK-BM-gDl" secondAttribute="baseline" id="2LX-LH-oSB"/>
                                             <constraint firstItem="sBB-co-eGx" firstAttribute="top" secondItem="WoF-Yb-6gK" secondAttribute="top" constant="3" id="FaN-9g-UH1"/>
                                             <constraint firstAttribute="height" constant="43" id="Jkt-cH-6uU"/>
+                                            <constraint firstAttribute="trailing" secondItem="LNK-BM-gDl" secondAttribute="trailing" constant="8" id="L5p-6K-PJX"/>
                                             <constraint firstItem="sBB-co-eGx" firstAttribute="top" secondItem="LNK-BM-gDl" secondAttribute="top" id="OhX-bw-mQ7"/>
                                             <constraint firstItem="LNK-BM-gDl" firstAttribute="leading" secondItem="sBB-co-eGx" secondAttribute="trailing" constant="8" symbolic="YES" id="PpY-wg-1I2"/>
                                             <constraint firstItem="sBB-co-eGx" firstAttribute="centerX" secondItem="WoF-Yb-6gK" secondAttribute="centerX" id="S9x-n5-IVa"/>
@@ -645,7 +645,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDk-DB-p2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2263" y="967"/>
+            <point key="canvasLocation" x="2262.5" y="966.5"/>
         </scene>
         <!--Slide Menu Table View Controller-->
         <scene sceneID="IAd-G3-S4y">
@@ -1684,7 +1684,7 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Conversion Calculator" id="kGg-Pf-S2a">
-                        <barButtonItem key="leftBarButtonItem" image="ic_menu_48pt" style="plain" id="iW9-Nu-kZX"/>
+                        <barButtonItem key="leftBarButtonItem" image="ic_menu_48pt" id="iW9-Nu-kZX"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="aYP-I5-eZm">
                             <connections>
                                 <action selector="refreshButton:" destination="8rJ-Kc-sve" id="Icd-K8-DOi"/>
@@ -1768,7 +1768,7 @@
             <objects>
                 <navigationController storyboardIdentifier="tickerView" id="rsI-r6-2QH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tickers" image="ic_list_48pt" selectedImage="ic_list_48pt" id="LfD-9g-7am"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ymh-qp-R7H">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Ymh-qp-R7H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1806,7 +1806,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9vF-Cn-iai" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fyk-qH-6Qi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Fyk-qH-6Qi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1887,7 +1887,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTW-Dj-tTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-626" y="2327"/>
+            <point key="canvasLocation" x="-595" y="2327"/>
         </scene>
         <!--Contact Us-->
         <scene sceneID="qwz-e5-GGe">
@@ -1901,14 +1901,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="If you have any comments, questions, or suggestions, e-mail us and we'll get back to you as soon as possible" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZQ-9F-Utd">
-                                <frame key="frameInset" minX="20" minY="92" width="335" height="68"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you have any comments, questions, or suggestions, e-mail us and we'll get back to you as soon as possible" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZQ-9F-Utd">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARy-fW-EnH">
-                                <frame key="frameInset" minX="20" minY="168" width="66" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARy-fW-EnH">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="gke-xw-Hzo"/>
                                 </constraints>
@@ -1917,8 +1915,7 @@
                                     <action selector="emailButton:" destination="lif-eF-Xc4" eventType="touchUpInside" id="9Dy-9Q-pxj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAr-4P-Kiq">
-                                <frame key="frameInset" minX="20" minY="197" width="85" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAr-4P-Kiq">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="rh6-uu-rDp"/>
                                 </constraints>
@@ -1959,7 +1956,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N98-pf-aqr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-626" y="3065"/>
+            <point key="canvasLocation" x="-595" y="3066"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fad-Iz-Wpj">
@@ -1984,7 +1981,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EAJ-4o-dO6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sph-8k-JOc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sph-8k-JOc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2014,6 +2011,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rAh-xn-4CV"/>
-        <segue reference="n3f-V4-9RA"/>
+        <segue reference="h9r-rk-OUa"/>
     </inferredMetricsTieBreakers>
 </document>

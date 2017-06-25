@@ -17,8 +17,8 @@ class Data {
     init(){}
     
     //let testDevices: [AnyObject] = ["a602ccfafd871943181aea6dc7401ddf",kGADSimulatorID]
-    //let testDevices: [AnyObject] = []
-    let testDevices: [AnyObject] = [kGADSimulatorID]
+    let testDevices: [AnyObject] = []
+    //let testDevices: [AnyObject] = [kGADSimulatorID]
     
     //Coin data variable arrays
     var coinNames: [String] = []
