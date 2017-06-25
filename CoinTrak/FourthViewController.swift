@@ -47,7 +47,7 @@ class FourthViewController: UIViewController,UITableViewDataSource,UITableViewDe
             imageLoc = "images/defaultImage.png"
         }
         
-        infoImage.image = UIImage(named: imageLoc)
+        infoImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/CoinTrak/CoinTrak-Website/gh-pages/images/\(data.favoriteTickers[data.selectedFavoriteCell]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
         infoName.text = data.favoriteNames[data.selectedFavoriteCell]
         infoTicker.text = data.favoriteTickers[data.selectedFavoriteCell]
         
@@ -72,18 +72,7 @@ class FourthViewController: UIViewController,UITableViewDataSource,UITableViewDe
         //style make 0 margins for full seperator
         cell.layoutMargins = UIEdgeInsetsZero
         
-        //default image set, will be changed if the coin has a specific picture
-        cell.coinImage.image = UIImage(named: "images/defaultImage.png")
-        
-        //image path, must put the PNG images in image folder with the ticker in all caps ie: BTC.png
-        var imageLoc = "images/\(data.favoriteTickers[indexPath.row]).png"
-        
-        if UIImage(named: imageLoc) == nil {
-            imageLoc = "images/defaultImage.png"
-        }
-        
-        //set image to the predetermined image Path
-        cell.coinImage.image = UIImage(named: imageLoc)
+        cell.coinImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/CoinTrak/CoinTrak-Website/gh-pages/images/\(data.favoriteTickers[indexPath.row]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
         cell.name.text = data.favoriteNames[indexPath.row]
         cell.ticker.text = data.favoriteTickers[indexPath.row]
         cell.percent1hr.text = data.formatPercentage(data.favoriteChange1hr[indexPath.row])

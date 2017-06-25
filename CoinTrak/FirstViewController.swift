@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 
 class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
     
@@ -51,32 +51,22 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         //style make 0 margins for full seperator
         cell.layoutMargins = UIEdgeInsetsZero
         
+        
+        /*
         //default image set, will be changed if the coin has a specific picture
         cell.coinImage.image = UIImage(named: "images/defaultImage.png")
-        
-        //image path, must put the PNG images in image folder with the ticker in all caps ie: BTC.png
-
-        //var imageLoc = "images/\(data.coinTickers[indexPath.row+1]).png" //for the internal folder
-        
-        //var imageLoc = "http://cointrak.me/images/\(data.coinTickers[indexPath.row+1]).png"
         
         cell.coinImage.image = UIImage(named: "images/\(data.coinTickers[indexPath.row+1]).png")
         
         if UIImage(named: "images/\(data.coinTickers[indexPath.row+1]).png") == nil {
             cell.coinImage.image = UIImage(named: "images/defaultImage.png")
         }
+        */
         
-        
-        
-        
-        /*if UIImage(named: imageLoc) == nil {
-            imageLoc = "images/defaultImage.png"
-        }
- */
- 
-        //set image to the predetermined image Path
+        //cell.coinImage.sd_setImageWithURL(NSURL(string: "http://cointrak.me/images/\(data.coinTickers[indexPath.row+1]).png"), placeholderImage: UIImage(named: "images/defaultImage.png"))
+        cell.coinImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/CoinTrak/CoinTrak-Website/gh-pages/images/\(data.coinTickers[indexPath.row+1]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
 
-        
+
         
         
         //put data from data class into cells with index indexPath+1
@@ -219,14 +209,16 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
     //updates the data on the info view based on data and the selected cell
     func updateInfoDisplay(){
         
+        
         //if the coin doesnt have an image give it the default one
         var imageLoc = "images/\(data.coinTickers[data.selectedCell]).png"
         
         if UIImage(named: imageLoc) == nil {
             imageLoc = "images/defaultImage.png"
         }
+ 
         
-        infoImage.image = UIImage(named: imageLoc)
+        infoImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/CoinTrak/CoinTrak-Website/gh-pages/images/\(data.coinTickers[data.selectedCell]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
         infoName.text = data.coinNames[data.selectedCell]
         infoTicker.text = data.coinTickers[data.selectedCell]
         
@@ -354,8 +346,6 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         }
         
     }
-    
-
     
 }
 
