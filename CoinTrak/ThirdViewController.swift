@@ -9,16 +9,50 @@
 import UIKit
 import GoogleMobileAds
 
-class ThirdViewController: UIViewController, GADBannerViewDelegate {
+class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
     let data = Data.sharedInstance
-
-    var timesViewDidAppear: Int = 0
+    
+    @IBOutlet weak var tickerField: UITextField!
+    @IBOutlet weak var addressField: UITextField!
+    @IBOutlet weak var balanceLabel: UILabel!
+    
+    
+    @IBOutlet weak var transactionTable: UITableView!
     
     @IBOutlet var menuButton: UIBarButtonItem!
     
     @IBOutlet var bannerView: GADBannerView!
     
+    @IBAction func actionButton(sender: AnyObject) {
+        balanceLabel.text = String(data.getBalanceFromCoin(tickerField.text!, address: addressField.text!))
+    }
+    
+    
+    //Table View Delegate Methods
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.coinNames.count - 1 //-1 to account for usd as index position 0
+    }
+    
+    //determine data in each cell individually by indexPath, using indexPath+1 as index for the data arrays
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
+        
+        //style make 0 margins for full seperator
+        cell.layoutMargins = UIEdgeInsetsZero
+        
+        
+        //returns the cell with inserted data
+        return cell
+    }
+    
+    //func for when a cell is selected, also allows for proper segue
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+    }
+    
+    /*
     //view one
     @IBOutlet var btcImage: UIImageView!
     @IBOutlet var btcBalance: UILabel!
@@ -91,9 +125,10 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate {
         }
         
     }
+    */
     
     @IBAction func refreshButton(sender: UIBarButtonItem) {
-        updateDisplays()
+        //updateDisplays()
     }
 
     
@@ -103,6 +138,7 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate {
         
     }
     
+    /*
     func updateDisplays() {
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
@@ -130,7 +166,7 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate {
             }
         }
     }
-    
+    */
     func adViewDidReceiveAd(bannerView: GADBannerView!) {
         print("ad received")
     }
@@ -159,32 +195,6 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate {
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         
-        //three ifs so that for the first time running an app, it doesnt crash and blank addresses are stored
-        if NSUserDefaults.standardUserDefaults().stringForKey("btcAddress") == nil {
-            print("No BTC Address, adding blank one")
-            NSUserDefaults.standardUserDefaults().setObject("", forKey: "btcAddress")
-        }
-        
-        if NSUserDefaults.standardUserDefaults().stringForKey("ethAddress") == nil {
-            print("No ETH Address, adding blank one")
-            NSUserDefaults.standardUserDefaults().setObject("", forKey: "ethAddress")
-        }
-        
-        if NSUserDefaults.standardUserDefaults().stringForKey("dogeAddress") == nil {
-            print("No DOGE Address, adding a blank one")
-            NSUserDefaults.standardUserDefaults().setObject("", forKey: "dogeAddress")
-        }
-        
-        //set images
-        btcImage.image = UIImage(named: "images/BTC.png")
-        ethImage.image = UIImage(named: "images/ETH.png")
-        dogeImage.image = UIImage(named: "images/DOGE.png")
-        
-        //set the text boxes to the stored addresses
-        btcTextField.text = NSUserDefaults.standardUserDefaults().stringForKey("btcAddress")
-        ethTextField.text = NSUserDefaults.standardUserDefaults().stringForKey("ethAddress")
-        dogeTextField.text = NSUserDefaults.standardUserDefaults().stringForKey("dogeAddress")
-
         
     }
     
@@ -193,10 +203,8 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate {
         super.viewDidAppear(animated)
         
         print()
-        print("Wallet View Controller appeared~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("Block View Controller appeared~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print()
-        
-        updateDisplays()
         
         
         

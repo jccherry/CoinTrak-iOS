@@ -476,87 +476,6 @@ class Data {
         }
     }
     
-    func getBTCBalance(address: String) -> Double {
-        var balance : Double = 0.0
-        
-        let genURL = "https://blockchain.info/q/addressbalance/\(address)"
-        
-        //print(genURL)
-        
-        if address != "" {
-            if let url = NSURL(string: genURL){
-                if let data = try? NSData(contentsOfURL: url, options: []){
-                    let json = JSON(data: data)
-                
-                    balance = json.doubleValue/100000000
-                }
-            
-            }
-            
-            print("BTC Address \(address): \(balance)BTC")
-            
-        } else {
-             print("No BTC Adress entered, not fetching JSON")
-        }
-        
-        
-
-        return balance
-    }
-    
-    func getETHBalance(address: String) -> Double {
-        var balance: Double = 0.0
-    
-        let genURL = "https://etherchain.org/api/account/\(address)"
-        
-        //print(genURL)
-        
-        if address != "" {
-            if let url = NSURL(string: genURL){
-                if let data = try? NSData(contentsOfURL: url, options: []){
-                    let json = JSON(data: data)
-                    
-                    balance = json["data"][0]["balance"].doubleValue / 1000000000000000000
-                    
-                }
-                
-            }
-            
-            print("ETH Address \(address): \(balance)ETH")
-            
-        } else {
-            print("No ETH Adress entered, not fetching JSON")
-        }
-        
-        return balance
-    }
-    
-    func getDOGEBalance(address: String) -> Double{
-        var balance: Double = 0.0
-        
-        let genURL = "https://dogechain.info/api/v1/address/balance/\(address)"
-        
-        //print(genURL)
-        
-        if address != "" {
-            if let url = NSURL(string: genURL){
-                if let data = try? NSData(contentsOfURL: url, options: []){
-                    let json = JSON(data: data)
-                    
-                    balance = json["balance"].doubleValue
-                    
-                }
-                
-            }
-            
-            print("DOGE Address \(address): \(balance)DOGE")
-            
-        } else {
-            print("No DOGE Adress entered, not fetching JSON")
-        }
-        
-        return balance
-    }
     
     //get price for any coin from coinmarketcap api from the id within the api call
         //id in the coinmarketcap API is usually the coin's name in all lowercase, check api if its not
@@ -589,6 +508,7 @@ class Data {
     
     }
     
+    //does a string exist in an array
     func doesEqualStringInArray(item: String, array: [String]) -> Bool {
         var doesEqual: Bool = false
         
@@ -610,6 +530,7 @@ class Data {
     
     }
     
+    //format an NSDate Object into a readable string
     func stringTimeFromDate(date: NSDate) -> String {
         let dateFormatter = NSDateFormatter()
         //dateFormatter.locale = NSLocale.currentLocale()
@@ -622,6 +543,25 @@ class Data {
         let url = NSURL(string: url)!
         UIApplication.sharedApplication().openURL(url)
         
+    }
+    
+    func getBalanceFromCoin(coinTicker: String, address: String) -> Int {
+        var balance:Int = 0
+        
+        
+        let urlString:String = "https://api.blockcypher.com/v1/\(coinTicker.lowercaseString)/main/addrs/\(address)"
+        print(urlString)
+        
+        if let url = NSURL(string: urlString){
+            if let data = try? NSData(contentsOfURL: url, options: []){
+                let json = JSON(data: data)
+                balance = json["final_balance"].intValue
+            }
+        
+        }
+        
+        
+        return balance
     }
     
 }
