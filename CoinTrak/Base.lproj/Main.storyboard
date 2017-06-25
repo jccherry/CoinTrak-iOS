@@ -1012,9 +1012,10 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="gMa-YJ-2Aj" firstAttribute="baseline" secondItem="haL-S9-DL9" secondAttribute="baseline" id="12t-iV-dQj"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="gMa-YJ-2Aj" secondAttribute="trailing" constant="317" id="3Pc-I0-Ctl"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gMa-YJ-2Aj" secondAttribute="trailing" constant="266" id="3Pc-I0-Ctl"/>
                                                 <constraint firstItem="gMa-YJ-2Aj" firstAttribute="centerY" secondItem="UT6-H8-l1r" secondAttribute="centerY" id="8Ey-e9-fd7"/>
-                                                <constraint firstItem="haL-S9-DL9" firstAttribute="leading" secondItem="gMa-YJ-2Aj" secondAttribute="trailing" constant="25" id="Lzc-Pr-bhg"/>
+                                                <constraint firstItem="haL-S9-DL9" firstAttribute="leading" secondItem="gMa-YJ-2Aj" secondAttribute="trailing" constant="8" id="Lzc-Pr-bhg"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="gMa-YJ-2Aj" secondAttribute="leading" id="jKY-iV-lGa"/>
                                                 <constraint firstItem="haL-S9-DL9" firstAttribute="trailing" secondItem="UT6-H8-l1r" secondAttribute="trailingMargin" id="q3L-Ra-Pwg"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1051,9 +1052,7 @@
                                     <action selector="actionButton:" destination="fzC-rK-Tge" eventType="touchUpInside" id="Stq-vX-9f8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhk-Kx-j3o">
-                                <frame key="frameInset" minX="104" minY="137" width="255" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhk-Kx-j3o">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1069,12 +1068,16 @@
                             <constraint firstItem="V8p-5V-064" firstAttribute="centerX" secondItem="DVl-rS-1jS" secondAttribute="centerX" id="FAN-jT-SQz"/>
                             <constraint firstItem="fgo-h1-7f8" firstAttribute="top" secondItem="Lcr-Y8-sGh" secondAttribute="bottom" constant="8" symbolic="YES" id="FOR-DX-ozn"/>
                             <constraint firstItem="Lcr-Y8-sGh" firstAttribute="leading" secondItem="fgo-h1-7f8" secondAttribute="leading" id="G6R-Cf-cKr"/>
+                            <constraint firstItem="Qhk-Kx-j3o" firstAttribute="bottom" secondItem="fgo-h1-7f8" secondAttribute="bottom" id="Pa0-SM-PUu"/>
                             <constraint firstItem="fgo-h1-7f8" firstAttribute="centerX" secondItem="F30-PL-L8i" secondAttribute="centerX" constant="-131.5" id="TWD-vi-fGW"/>
                             <constraint firstItem="F30-PL-L8i" firstAttribute="leading" secondItem="DVl-rS-1jS" secondAttribute="leading" id="VjO-6p-8oh"/>
                             <constraint firstItem="Lcr-Y8-sGh" firstAttribute="baseline" secondItem="7eG-B0-BOg" secondAttribute="baseline" id="bK2-z0-mFo"/>
+                            <constraint firstItem="Qhk-Kx-j3o" firstAttribute="leading" secondItem="7eG-B0-BOg" secondAttribute="leading" id="fOX-Ju-FgO"/>
                             <constraint firstItem="7eG-B0-BOg" firstAttribute="leading" secondItem="Lcr-Y8-sGh" secondAttribute="trailing" constant="8" symbolic="YES" id="hFh-6n-eYG"/>
                             <constraint firstItem="F30-PL-L8i" firstAttribute="top" secondItem="fgo-h1-7f8" secondAttribute="bottom" constant="20" id="lWy-K9-hKv"/>
                             <constraint firstItem="7eG-B0-BOg" firstAttribute="trailing" secondItem="fgo-h1-7f8" secondAttribute="trailing" constant="263" id="pZh-ii-MDL"/>
+                            <constraint firstItem="Qhk-Kx-j3o" firstAttribute="top" secondItem="fgo-h1-7f8" secondAttribute="top" id="tJ8-0j-MGT"/>
+                            <constraint firstItem="Qhk-Kx-j3o" firstAttribute="trailing" secondItem="7eG-B0-BOg" secondAttribute="trailing" id="wy8-EF-S9t"/>
                             <constraint firstItem="Lcr-Y8-sGh" firstAttribute="leading" secondItem="DVl-rS-1jS" secondAttribute="leadingMargin" id="xaW-1U-O4c"/>
                         </constraints>
                         <connections>

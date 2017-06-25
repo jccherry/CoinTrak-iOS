@@ -8,11 +8,12 @@
 
 import UIKit
 import GoogleMobileAds
+import SwiftyJSON
 
 class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
     let data = Data.sharedInstance
-    
+    var json:JSON = JSON(data: NSData())
     
     @IBOutlet weak var tickerField: UITextField!
     @IBOutlet weak var addressField: UITextField!
@@ -27,17 +28,27 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
     
     
     
-    
-    
     @IBAction func actionButton(sender: AnyObject) {
-        balanceLabel.text = String(data.getBalanceFromCoin(tickerField.text!, address: addressField.text!))
+        //balanceLabel.text = String(data.getBalanceFromCoin(tickerField.text!, address: addressField.text!))
+        
+        
+        let urlString:String = "https://api.blockcypher.com/v1/\(tickerField.text!.lowercaseString)/main/addrs/\(addressField.text!)?token=53fadb28f590427e8854197595feb95a"
+        
+        if let url = NSURL(string: urlString){
+            if let data = try? NSData(contentsOfURL: url, options: []){
+                json = JSON(data: data)
+            }
+        }
+        
+        
         transactionTable.reloadData()
     }
     
     
     //Table View Delegate Methods
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.getTransactionNumberFromCoin(tickerField.text!, address: addressField.text!)
+        //return data.getTransactionNumberFromCoin(tickerField.text!, address: addressField.text!)
+        return json["final_n_tx"].intValue
     }
     
     //determine data in each cell individually by indexPath, using indexPath+1 as index for the data arrays
@@ -47,8 +58,24 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
         //style make 0 margins for full seperator
         cell.layoutMargins = UIEdgeInsetsZero
         
-        let (wasSent, amount) = data.getTransactionInfoFromCoinAndPlace(tickerField.text!, address: addressField.text!, transactionNumber: indexPath.row)
+        //var to see whether the transaction was sent or recieved
+        var wasSent:Bool = false
         
+        //json api has this as an int
+        let sentStatus: Int = json["txrefs"].arrayValue[indexPath.row]["tx_input_n"].intValue
+        
+        //interpret the int and change the valye of the bool accordingly
+        if sentStatus == 0 {
+            wasSent = true
+        } else {
+            wasSent = false
+        }
+        
+        //get amount
+        let amount:Int = json["txrefs"].arrayValue[indexPath.row]["value"].intValue
+        
+        
+        //change the cell's labels and things
         if wasSent {
             cell.sentLabel.text = "sent"
         } else {
@@ -56,6 +83,7 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
         }
         
         cell.amountLabel.text = String(amount)
+        
         
         //returns the cell with inserted data
         return cell
