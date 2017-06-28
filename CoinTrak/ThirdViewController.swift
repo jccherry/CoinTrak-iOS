@@ -10,15 +10,20 @@ import UIKit
 import GoogleMobileAds
 import SwiftyJSON
 
-class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewDataSource, UITableViewDelegate {
+class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     let data = Data.sharedInstance
     var json:JSON = JSON(data: NSData())
     
-    @IBOutlet weak var tickerField: UITextField!
+    var tickerArray = ["BTC", "ETH", "LTC"]
+    
+    var selectedRow:Int = 0
+    
+  
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var balanceLabel: UILabel!
     
+    @IBOutlet weak var pickerView: UIPickerView!
     
     @IBOutlet weak var transactionTable: UITableView!
     
@@ -27,12 +32,31 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
     @IBOutlet var bannerView: GADBannerView!
     
     
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return tickerArray[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return tickerArray.count
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        addressField.text = ""
+        selectedRow = row
+        transactionTable.reloadData()
+    }
     
     @IBAction func actionButton(sender: AnyObject) {
         //balanceLabel.text = String(data.getBalanceFromCoin(tickerField.text!, address: addressField.text!))
         
         
-        let urlString:String = "https://api.blockcypher.com/v1/\(tickerField.text!.lowercaseString)/main/addrs/\(addressField.text!)?token=53fadb28f590427e8854197595feb95a"
+        let urlString:String = "https://api.blockcypher.com/v1/\(tickerArray[selectedRow].lowercaseString)/main/addrs/\(addressField.text!)?token=53fadb28f590427e8854197595feb95a"
+        
+        print(urlString)
         
         if let url = NSURL(string: urlString){
             if let data = try? NSData(contentsOfURL: url, options: []){
@@ -118,6 +142,7 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
         super.viewDidLoad()
         
         print("Wallet View Controller Loaded")
+        
         
         
         //ad stuff
