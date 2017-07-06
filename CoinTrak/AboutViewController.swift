@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 
-class AboutViewController: UIViewController, GADBannerViewDelegate {
+class AboutViewController: UIViewController, GADBannerViewDelegate, UIWebViewDelegate {
 
     let data = Data.sharedInstance
     
@@ -19,31 +19,7 @@ class AboutViewController: UIViewController, GADBannerViewDelegate {
     //menu button
     @IBOutlet var menuButton: UIBarButtonItem!
     
-    //coinMarketCap link
-    @IBAction func cmcButton(sender: UIButton) {
-        data.openURL("http://coinmarketcap.com")
-    }
-    //cryptocompare link
-    @IBAction func cryptoCompButton(sender: UIButton) {
-        data.openURL("http://cryptocompare.com")
-    }
-    //blockchain.info link
-    @IBAction func blockChainButton(sender: UIButton) {
-        data.openURL("http://blockchain.info")
-    }
-    //etherchain.org link
-    @IBAction func etherChainButton(sender: UIButton) {
-        data.openURL("http://etherchain.org")
-    }
-    //dogechain.info link
-    @IBAction func dogeChainButton(sender: UIButton) {
-        data.openURL("http://dogechain.info")
-    }
-    //icons8 link
-    @IBAction func iconsEightButton(sender: UIButton) {
-        data.openURL("http://icons8.com")
-    }
-    
+    @IBOutlet weak var webView: UIWebView!
     
     func adViewDidReceiveAd(bannerView: GADBannerView!) {
         print("ad received")
@@ -53,11 +29,32 @@ class AboutViewController: UIViewController, GADBannerViewDelegate {
         print("fail to receive ad with error: \(error.localizedDescription)")
     }
     
+    func webViewDidStartLoad(webView: UIWebView) {
+        print("Web View Starting Load...")
+    }
+    func webViewDidFinishLoad(webView: UIWebView) {
+        print("Web View Finished Load")
+    }
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+        print("WEB VIEW ERROR: \(error)")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("About View Controller loaded")
         
+        //gets rid of top buffer space on web view
+        self.automaticallyAdjustsScrollViewInsets = false
+        
+        //web view to display my website
+        webView.delegate = self
+        let url = NSURL (string: "http://www.cointrak.me")
+        let requestObj = NSURLRequest(URL: url!)
+        webView.loadRequest(requestObj)
+        
+        //ad things
         bannerView.adSize = kGADAdSizeSmartBannerLandscape
         bannerView.adUnitID = "ca-app-pub-7526118464921133/3339900404"
         bannerView.rootViewController = self

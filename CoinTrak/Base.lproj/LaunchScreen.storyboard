@@ -3,8 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,13 +20,13 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CoinTrakLogo" translatesAutoresizingMaskIntoConstraints="NO" id="hZz-4Y-JYp">
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="hZz-4Y-JYp" secondAttribute="height" multiplier="1:1" id="tFV-uF-d9a"/>
+                                    <constraint firstAttribute="width" constant="179" id="w7g-h2-xgM"/>
+                                    <constraint firstAttribute="height" constant="179" id="xJu-wR-bWg"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="hZz-4Y-JYp" secondAttribute="trailing" constant="82" id="7Aa-tp-NP9"/>
                             <constraint firstItem="hZz-4Y-JYp" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="NXr-s6-FNR"/>
                             <constraint firstItem="hZz-4Y-JYp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RwK-qX-gt8"/>
                         </constraints>

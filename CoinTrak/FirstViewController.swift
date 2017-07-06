@@ -140,7 +140,12 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
                 print("\(self.data.coinNames[indexPath.row+1]) is already in Favorites.")
             }
             
+            tableView.setEditing(false, animated: true)
+            
+            
         })
+        
+
         
         return [favoriteAction]
     }

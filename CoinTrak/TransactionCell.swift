@@ -12,6 +12,7 @@ class TransactionCell: UITableViewCell {
 
     @IBOutlet weak var sentLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var usdLabel: UILabel!
     
     
     override func awakeFromNib() {

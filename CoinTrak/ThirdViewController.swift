@@ -16,12 +16,14 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
     var json:JSON = JSON(data: NSData())
     
     var tickerArray = ["BTC", "ETH", "LTC"]
+    var identifierArray = ["bitcoin","ethereum","litecoin"]
     
     var selectedRow:Int = 0
     
   
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var balanceLabel: UILabel!
+    @IBOutlet weak var usdBalanceLabel: UILabel!
     
     @IBOutlet weak var pickerView: UIPickerView!
     
@@ -46,6 +48,8 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         addressField.text = ""
+        balanceLabel.text = ""
+        json = JSON(data: NSData())
         selectedRow = row
         transactionTable.reloadData()
     }
@@ -64,6 +68,26 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
             }
         }
         
+        //divide by this power of ten to get the number reported by the api into the actual number, different for each currency
+        
+        var placesDown: Double = 10
+        
+        switch selectedRow{
+        case 0:
+            placesDown = 100000000
+            break
+        case 1:
+            placesDown = 1000000000000000000
+            break
+        case 2:
+            placesDown = 1000000000
+            break
+        default: break
+        }
+        
+        balanceLabel.text = "\(String(json["final_balance"].doubleValue / placesDown)) \(tickerArray[selectedRow])"
+        
+        usdBalanceLabel.text = "$\(String((json["final_balance"].doubleValue / placesDown) * data.getCurrentPriceFromID(identifierArray[selectedRow])))"
         
         transactionTable.reloadData()
     }
@@ -86,9 +110,13 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
         var wasSent:Bool = false
         
         //json api has this as an int
+        
         let sentStatus: Int = json["txrefs"].arrayValue[indexPath.row]["tx_input_n"].intValue
         
-        //interpret the int and change the valye of the bool accordingly
+        
+        
+        
+        //interpret the int and change the value of the bool accordingly
         if sentStatus == 0 {
             wasSent = true
         } else {
@@ -96,19 +124,38 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
         }
         
         //get amount
-        let amount:Int = json["txrefs"].arrayValue[indexPath.row]["value"].intValue
+        let amount:Double = json["txrefs"].arrayValue[indexPath.row]["value"].doubleValue
         
         
         //change the cell's labels and things
         if wasSent {
-            cell.sentLabel.text = "sent"
+            cell.sentLabel.text = "Sent"
         } else {
-            cell.sentLabel.text = "recieved"
+            cell.sentLabel.text = "Recieved"
         }
         
-        cell.amountLabel.text = String(amount)
+        
+        var placesDown: Double = 10
+        switch selectedRow{
+        case 0:
+            placesDown = 100000000
+            break
+        case 1:
+            placesDown = 1000000000000000000
+            break
+        case 2:
+            placesDown = 1000000000
+            break
+        default: break
+        }
+
+        cell.amountLabel.text = String(amount / placesDown) + " \(tickerArray[selectedRow])"
         
         
+        cell.usdLabel.text = "$" + String( (amount / placesDown) * data.getCurrentPriceFromID(identifierArray[selectedRow]))
+        
+        print(String(data.getCurrentPriceFromID(identifierArray[selectedRow])))
+            
         //returns the cell with inserted data
         return cell
     }
@@ -158,6 +205,12 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
         
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+        
+        //style the tableview
+        transactionTable.layoutMargins = UIEdgeInsetsZero
+        transactionTable.separatorInset = UIEdgeInsetsMake(0, 10, 0, 10)
+        //transactionTable.separatorColor = UIColor.blueColor()
+        
         
         
     }
