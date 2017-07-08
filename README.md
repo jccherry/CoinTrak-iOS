@@ -2,11 +2,7 @@
 Live Cryptocurrency Ticker, Calculator, and Investment Tracker for iOS/Android
 [Website](http://cointrak.me)
 
-**CoinTrak**'s iOS version is in late beta stages of development as of 1/22.
-
-
-### Welcome to CoinTrak
-CoinTrak is the ultimate Cryptocurrency Companion app for iPhone/Android.  CoinTrak allows you to keep your portfolio in check with live price updates, conversion between any two currencies, and even check into the balance of any BTC, ETH, or DOGE address on their respective blockchains.  *Keep your Cryptocurrency Portfolio on track with CoinTrak!*
-
+**CoinTrak** is officially on the App store as of 7/8/17!
+[Download Version 1.1.1 Here](https://itunes.apple.com/us/app/cointrak/id1252261298?ls=1&mt=8)
 
 CoinTrak is developed and maintained by John Chiaramonte [Twitter](http://twitter.com/jchiaramonte_) [GitHub](http://github.com/jccherry)
