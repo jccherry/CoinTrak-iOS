@@ -65,9 +65,11 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         */
         
         //cell.coinImage.sd_setImageWithURL(NSURL(string: "http://cointrak.me/images/\(data.coinTickers[indexPath.row+1]).png"), placeholderImage: UIImage(named: "images/defaultImage.png"))
-        cell.coinImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/CoinTrak/CoinTrak-Website/gh-pages/images/\(data.coinTickers[indexPath.row+1]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        //cell.coinImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/CoinTrak/CoinTrak-Website/gh-pages/images/\(data.coinTickers[indexPath.row+1]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
 
-
+        cell.coinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.coinIdentifiers[indexPath.row+1]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        
+        //http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/200x200/ripple.png
         
         
         //put data from data class into cells with index indexPath+1
@@ -224,7 +226,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         }
  
         
-        infoImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/CoinTrak/CoinTrak-Website/gh-pages/images/\(data.coinTickers[data.selectedCell]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        infoImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.coinIdentifiers[data.selectedCell]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
         infoName.text = data.coinNames[data.selectedCell]
         infoTicker.text = data.coinTickers[data.selectedCell]
         

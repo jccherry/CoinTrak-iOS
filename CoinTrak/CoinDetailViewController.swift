@@ -46,6 +46,7 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
     @IBOutlet var loadingLoop: UIActivityIndicatorView!
     
     //update the info view on th ebottom of the page, identical to firstviewcontroller except it adds the priceLabel
+    //basically updates the local arrays with either the total coin info from the data instance or the favorites coin data from data instance. see data.tickerPageLoaded
     func updateInfoDisplay(){
         
         var indexCell: Int = 1
@@ -58,6 +59,7 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
         var localVolume: [Double]
         var localTotalSupply: [Double]
         var localPrices: [Double]
+        var localCoinIdentifiers: [String]
         
         if data.tickerPageLoaded {
             indexCell = data.selectedCell
@@ -70,6 +72,7 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
             localVolume = data.coinVolume
             localTotalSupply = data.coinTotalSupply
             localPrices = data.coinPrices
+            localCoinIdentifiers = data.coinIdentifiers
         } else {
             indexCell = data.selectedFavoriteCell
             localCoinNames = data.favoriteNames
@@ -81,9 +84,10 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
             localVolume = data.favoriteVolume
             localTotalSupply = data.favoriteTotalSupply
             localPrices = data.favoritePrices
+            localCoinIdentifiers = data.favoriteIdentifiers
         }
         
-        infoImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/CoinTrak/CoinTrak-Website/gh-pages/images/\(localCoinTickers[indexCell]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        infoImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(localCoinIdentifiers[indexCell]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
         infoName.text = localCoinNames[indexCell]
         infoTicker.text = localCoinTickers[indexCell]
         

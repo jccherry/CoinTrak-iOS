@@ -48,7 +48,8 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         addressField.text = ""
-        balanceLabel.text = ""
+        balanceLabel.text = "Coin Balance"
+        usdBalanceLabel.text = "$0.0"
         json = JSON(data: NSData())
         selectedRow = row
         transactionTable.reloadData()
@@ -189,8 +190,6 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
         super.viewDidLoad()
         
         print("Wallet View Controller Loaded")
-        
-        
         
         //ad stuff
         bannerView.adSize = kGADAdSizeSmartBannerLandscape
