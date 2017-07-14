@@ -14,6 +14,8 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
 
     let data = Data.sharedInstance
     
+    @IBOutlet weak var navBar: UINavigationItem!
+    
     //chart views
     @IBOutlet var sixtyMinutesChart: LineChartView!
     @IBOutlet var twentyFourHourChart: LineChartView!
@@ -173,6 +175,8 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
         
         updateInfoDisplay()
         loadingLoop.startAnimating()
+        
+        navBar.title = infoName.text
         
         //blank no data text
         sixtyMinutesChart.noDataText = ""

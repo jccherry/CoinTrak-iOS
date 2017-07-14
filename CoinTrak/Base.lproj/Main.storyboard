@@ -631,6 +631,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="OXF-PH-baz"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="chartParentView" destination="Rm7-uT-tPg" id="YV3-P8-2l7"/>
@@ -645,6 +646,7 @@
                         <outlet property="infoViewHeader" destination="WoF-Yb-6gK" id="3Wo-wJ-5VM"/>
                         <outlet property="infoVol24" destination="B4g-E5-uwa" id="aFV-GI-dLn"/>
                         <outlet property="loadingLoop" destination="pvM-7C-Gej" id="HMq-Ub-X1u"/>
+                        <outlet property="navBar" destination="OXF-PH-baz" id="7pX-D9-H5g"/>
                         <outlet property="oneYearChart" destination="PKh-fU-JBn" id="10H-OA-b93"/>
                         <outlet property="priceLabel" destination="hCe-rZ-rla" id="I1S-eW-Lzj"/>
                         <outlet property="sixtyMinutesChart" destination="OIY-ca-m9y" id="q1E-PI-hF0"/>
@@ -654,7 +656,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VDk-DB-p2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2460" y="488"/>
+            <point key="canvasLocation" x="2230" y="478"/>
         </scene>
         <!--Slide Menu Table View Controller-->
         <scene sceneID="IAd-G3-S4y">
@@ -839,7 +841,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fle-h0-aja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2363" y="1573"/>
+            <point key="canvasLocation" x="-2523" y="1573"/>
         </scene>
         <!--About CoinTrak-->
         <scene sceneID="xqc-ZY-N7c">
@@ -885,7 +887,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwG-NC-TFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-594.39999999999998" y="1572.8635682158922"/>
+            <point key="canvasLocation" x="-594" y="1573"/>
         </scene>
         <!--Blockchain Explorer-->
         <scene sceneID="vba-qe-Cuh">
@@ -1711,13 +1713,29 @@
                                     <action selector="donateSegueButton:" destination="6ml-29-Zxf" eventType="touchUpInside" id="3zt-7F-RPm"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CoinTrakLogo" translatesAutoresizingMaskIntoConstraints="NO" id="lOJ-Tz-iwi">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="4Kj-KD-Ku5"/>
+                                    <constraint firstAttribute="height" constant="200" id="ijF-Zw-qpk"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aah-G7-m2Q">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="aah-G7-m2Q" firstAttribute="centerX" secondItem="lOJ-Tz-iwi" secondAttribute="centerX" id="46f-o8-PY4"/>
                             <constraint firstItem="PrN-Dw-6GU" firstAttribute="centerX" secondItem="EZA-SL-d0f" secondAttribute="centerX" id="EeT-7p-OaG"/>
+                            <constraint firstItem="lOJ-Tz-iwi" firstAttribute="top" secondItem="aah-G7-m2Q" secondAttribute="bottom" constant="29" id="Ewp-90-A52"/>
+                            <constraint firstItem="aah-G7-m2Q" firstAttribute="leading" secondItem="qyQ-An-y0i" secondAttribute="leadingMargin" id="GGX-Nl-rWw"/>
                             <constraint firstItem="EZA-SL-d0f" firstAttribute="top" secondItem="PrN-Dw-6GU" secondAttribute="bottom" constant="7" id="Knc-c6-Ghr"/>
                             <constraint firstItem="PrN-Dw-6GU" firstAttribute="width" secondItem="EZA-SL-d0f" secondAttribute="width" id="Kqe-O3-pCs"/>
+                            <constraint firstItem="lOJ-Tz-iwi" firstAttribute="centerY" secondItem="qyQ-An-y0i" secondAttribute="centerY" id="Vjs-Jc-Q2A"/>
                             <constraint firstItem="GLI-xz-4bW" firstAttribute="top" secondItem="EZA-SL-d0f" secondAttribute="bottom" id="Zjx-SJ-5Kd"/>
+                            <constraint firstItem="lOJ-Tz-iwi" firstAttribute="centerX" secondItem="qyQ-An-y0i" secondAttribute="centerX" id="eue-GM-TfB"/>
                             <constraint firstItem="EZA-SL-d0f" firstAttribute="centerX" secondItem="qyQ-An-y0i" secondAttribute="centerX" id="y8J-gc-KRb"/>
                         </constraints>
                     </view>
@@ -1909,7 +1927,6 @@
                             <constraint firstItem="7Xr-Ri-x1D" firstAttribute="top" secondItem="jVt-B6-2WS" secondAttribute="bottom" constant="6" id="3pM-ti-ZoJ"/>
                             <constraint firstItem="jVt-B6-2WS" firstAttribute="trailing" secondItem="7Xr-Ri-x1D" secondAttribute="trailing" id="5To-sZ-K3a"/>
                             <constraint firstItem="hsy-B5-1qO" firstAttribute="leading" secondItem="dFv-bB-kON" secondAttribute="leading" id="6Ht-26-FMi"/>
-                            <constraint firstItem="8YU-fV-ZUQ" firstAttribute="top" secondItem="yde-6M-A1D" secondAttribute="bottom" constant="185" id="6bw-od-upU"/>
                             <constraint firstItem="7Xr-Ri-x1D" firstAttribute="leading" secondItem="EOS-dj-Kxz" secondAttribute="leading" id="7LD-DM-VRc"/>
                             <constraint firstItem="hsy-B5-1qO" firstAttribute="trailing" secondItem="dFv-bB-kON" secondAttribute="trailing" id="7Xr-UP-DE6"/>
                             <constraint firstItem="Hgf-F2-RK4" firstAttribute="top" secondItem="EOS-dj-Kxz" secondAttribute="bottom" constant="8" symbolic="YES" id="8uy-XS-tqS"/>
