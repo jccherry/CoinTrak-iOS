@@ -15,6 +15,8 @@ class SlideMenuTableViewController: UITableViewController, GADBannerViewDelegate
     
     @IBOutlet var bannerView: GADBannerView!
     
+    @IBOutlet weak var bottomCell: UITableViewCell!
+    
     //main table view for the view controller
     @IBOutlet var menuTable: UITableView!
     
@@ -22,9 +24,8 @@ class SlideMenuTableViewController: UITableViewController, GADBannerViewDelegate
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let cellNum = indexPath.row
         
-        switch cellNum{
+        switch indexPath.row{
             case 1:
                 self.performSegueWithIdentifier("tickerSegue", sender: UITableViewCell.self)
                 break
@@ -69,6 +70,8 @@ class SlideMenuTableViewController: UITableViewController, GADBannerViewDelegate
         //styling separator
         menuTable.layoutMargins = UIEdgeInsetsZero
         menuTable.separatorInset = UIEdgeInsetsZero
+        
+        bottomCell.bounds = self.view.bounds
         
     }
     

@@ -25,7 +25,7 @@
 		5268D3CE1D7CA2D40071CD56 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3CD1D7CA2D40071CD56 /* AdSupport.framework */; };
 		5278BB901D7540AB0017FC66 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278BB8F1D7540AB0017FC66 /* AboutViewController.swift */; };
 		5278BB921D7540C10017FC66 /* ContributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278BB911D7540C10017FC66 /* ContributeViewController.swift */; };
-		5278BB941D7540D40017FC66 /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278BB931D7540D40017FC66 /* DonateViewController.swift */; };
+		5278BB941D7540D40017FC66 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278BB931D7540D40017FC66 /* ContactUsViewController.swift */; };
 		529291331D1CED9600F63D3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529291321D1CED9600F63D3E /* AppDelegate.swift */; };
 		529291351D1CED9600F63D3E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529291341D1CED9600F63D3E /* FirstViewController.swift */; };
 		529291371D1CED9600F63D3E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529291361D1CED9600F63D3E /* SecondViewController.swift */; };
@@ -38,6 +38,7 @@
 		52C8CEEA1D1D9EC500B0E063 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8CEE91D1D9EC500B0E063 /* CustomCell.swift */; };
 		52C8CF001D2471F400B0E063 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C8CEFF1D2471F400B0E063 /* SWRevealViewController.m */; };
 		52C8CF0A1D275E3500B0E063 /* SlideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8CF091D275E3500B0E063 /* SlideMenuTableViewController.swift */; };
+		52D8E8D51F1956D800556CFF /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D8E8D41F1956D800556CFF /* DonateViewController.swift */; };
 		52E1C9181D62AB6500CEF455 /* refreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52E1C9171D62AB6500CEF455 /* refreshView.xib */; };
 		52E51CEA1D540D0A00F4B910 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E51CE91D540D0A00F4B910 /* FourthViewController.swift */; };
 		52FAAAC51D28B9A400E078FA /* CoinDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAAAC41D28B9A400E078FA /* CoinDetailViewController.swift */; };
@@ -81,7 +82,7 @@
 		5268D3CD1D7CA2D40071CD56 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		5278BB8F1D7540AB0017FC66 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		5278BB911D7540C10017FC66 /* ContributeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributeViewController.swift; sourceTree = "<group>"; };
-		5278BB931D7540D40017FC66 /* DonateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
+		5278BB931D7540D40017FC66 /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		5292912F1D1CED9600F63D3E /* CoinTrak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinTrak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		529291321D1CED9600F63D3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		529291341D1CED9600F63D3E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 		52C8CEFE1D2471F400B0E063 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		52C8CEFF1D2471F400B0E063 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		52C8CF091D275E3500B0E063 /* SlideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuTableViewController.swift; sourceTree = "<group>"; };
+		52D8E8D41F1956D800556CFF /* DonateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
 		52E1C9171D62AB6500CEF455 /* refreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = refreshView.xib; sourceTree = "<group>"; };
 		52E51CE91D540D0A00F4B910 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		52FAAAC41D28B9A400E078FA /* CoinDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinDetailViewController.swift; sourceTree = "<group>"; };
@@ -247,9 +249,10 @@
 		52AF0FC21EFE23890035C30E /* Slide Menu VCs */ = {
 			isa = PBXGroup;
 			children = (
+				52D8E8D41F1956D800556CFF /* DonateViewController.swift */,
 				52C8CF091D275E3500B0E063 /* SlideMenuTableViewController.swift */,
 				5278BB8F1D7540AB0017FC66 /* AboutViewController.swift */,
-				5278BB931D7540D40017FC66 /* DonateViewController.swift */,
+				5278BB931D7540D40017FC66 /* ContactUsViewController.swift */,
 				5278BB911D7540C10017FC66 /* ContributeViewController.swift */,
 			);
 			name = "Slide Menu VCs";
@@ -567,9 +570,10 @@
 				529291371D1CED9600F63D3E /* SecondViewController.swift in Sources */,
 				525ED6B91D3C216C00ADBF67 /* ThirdViewController.swift in Sources */,
 				5278BB901D7540AB0017FC66 /* AboutViewController.swift in Sources */,
+				52D8E8D51F1956D800556CFF /* DonateViewController.swift in Sources */,
 				52E51CEA1D540D0A00F4B910 /* FourthViewController.swift in Sources */,
 				529291331D1CED9600F63D3E /* AppDelegate.swift in Sources */,
-				5278BB941D7540D40017FC66 /* DonateViewController.swift in Sources */,
+				5278BB941D7540D40017FC66 /* ContactUsViewController.swift in Sources */,
 				52C8CF0A1D275E3500B0E063 /* SlideMenuTableViewController.swift in Sources */,
 				52C8CEEA1D1D9EC500B0E063 /* CustomCell.swift in Sources */,
 				5278BB921D7540C10017FC66 /* ContributeViewController.swift in Sources */,

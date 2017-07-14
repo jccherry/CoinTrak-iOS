@@ -1,5 +1,5 @@
 //
-//  ContributeViewController.swift
+//  DonateViewController.swift
 //  CoinTrak
 //
 //  Created by John Chiaramonte on 8/30/16.
@@ -9,22 +9,22 @@
 import UIKit
 import GoogleMobileAds
 
-class ContributeViewController: UIViewController, GADBannerViewDelegate {
+class ContactUsViewController: UIViewController {
 
     let data = Data.sharedInstance
     
-    @IBOutlet var menuButton: UIBarButtonItem!
-    
+    //banner ad view
     @IBOutlet var bannerView: GADBannerView!
     
-    @IBAction func githubButton(sender: AnyObject) {
-        data.openURL("http://github.com/cointrak/cointrak-ios")
+    @IBOutlet var menuButton: UIBarButtonItem!
+    
+    @IBAction func emailButton(sender: AnyObject) {
+        data.openURL("mailto:cointrak@gmail.com")
     }
     
     @IBAction func websiteButton(sender: AnyObject) {
         data.openURL("http://cointrak.me")
     }
-    
     @IBAction func donateSegueButton(sender: AnyObject) {
         self.performSegueWithIdentifier("donateSegue", sender: UIButton.self)
     }
@@ -39,21 +39,22 @@ class ContributeViewController: UIViewController, GADBannerViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        print("Contribute View Controller Loaded")
+
+        print("Donate View Controller Loaded")
         
         bannerView.adSize = kGADAdSizeSmartBannerLandscape
-        bannerView.adUnitID = "ca-app-pub-7526118464921133/6293366807"
+        bannerView.adUnitID = "ca-app-pub-7526118464921133/4816633601"
         bannerView.rootViewController = self
         let request = GADRequest()
         request.testDevices = data.testDevices
         bannerView.loadRequest(request)
-
+        
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         
         //gesture recognizer to open reveal view controller
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
+
 
 }

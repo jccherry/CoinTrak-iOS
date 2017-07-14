@@ -2,56 +2,44 @@
 //  DonateViewController.swift
 //  CoinTrak
 //
-//  Created by John Chiaramonte on 8/30/16.
-//  Copyright © 2016 John Chiaramonte. All rights reserved.
+//  Created by John Chiaramonte on 7/14/17.
+//  Copyright © 2017 John Chiaramonte. All rights reserved.
 //
 
 import UIKit
-import GoogleMobileAds
 
 class DonateViewController: UIViewController {
 
-    let data = Data.sharedInstance
-    
-    //banner ad view
-    @IBOutlet var bannerView: GADBannerView!
-    
-    @IBOutlet var menuButton: UIBarButtonItem!
-    
-    @IBAction func emailButton(sender: AnyObject) {
-        data.openURL("mailto:cointrak@gmail.com")
+    @IBAction func copyBTCButton(sender: AnyObject) {
+        UIPasteboard.generalPasteboard().string = "1F9wJhF6ZXhK6BKr8ReuMzEwtwggUGkri"
     }
     
-    @IBAction func websiteButton(sender: AnyObject) {
-        data.openURL("http://cointrak.me")
+    @IBAction func copyETHButton(sender: AnyObject) {
+        UIPasteboard.generalPasteboard().string = "0xa789e795e5b72b214ab6da93282a4669884f862e"
     }
     
-    func adViewDidReceiveAd(bannerView: GADBannerView!) {
-        print("ad received")
+    @IBAction func copyETCButton(sender: AnyObject) {
+        UIPasteboard.generalPasteboard().string = "0x8e362ef16a9fabb458a3a841685052a469a2c60c"
     }
     
-    func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
-        print("fail to receive ad with error: \(error.localizedDescription)")
+    @IBAction func copyLTCButton(sender: AnyObject) {
+        UIPasteboard.generalPasteboard().string = "LhyMe2aPJm5vSP19oJByYHf1AvyzQ8Rgre"
+    }
+    
+    @IBAction func copyZECButton(sender: AnyObject) {
+        UIPasteboard.generalPasteboard().string = "t1XSD6fpXeeoy3LazZkFKJ7Kw4LAPPbjxze"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("Donate View Controller Loaded")
-        
-        bannerView.adSize = kGADAdSizeSmartBannerLandscape
-        bannerView.adUnitID = "ca-app-pub-7526118464921133/4816633601"
-        bannerView.rootViewController = self
-        let request = GADRequest()
-        request.testDevices = data.testDevices
-        bannerView.loadRequest(request)
-        
-        menuButton.target = self.revealViewController()
-        menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-        
-        //gesture recognizer to open reveal view controller
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        // Do any additional setup after loading the view.
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
 
 }
