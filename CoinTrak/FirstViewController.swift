@@ -51,21 +51,6 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         //style make 0 margins for full seperator
         cell.layoutMargins = UIEdgeInsetsZero
-        
-        
-        /*
-        //default image set, will be changed if the coin has a specific picture
-        cell.coinImage.image = UIImage(named: "images/defaultImage.png")
-        
-        cell.coinImage.image = UIImage(named: "images/\(data.coinTickers[indexPath.row+1]).png")
-        
-        if UIImage(named: "images/\(data.coinTickers[indexPath.row+1]).png") == nil {
-            cell.coinImage.image = UIImage(named: "images/defaultImage.png")
-        }
-        */
-        
-        //cell.coinImage.sd_setImageWithURL(NSURL(string: "http://cointrak.me/images/\(data.coinTickers[indexPath.row+1]).png"), placeholderImage: UIImage(named: "images/defaultImage.png"))
-        //cell.coinImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/CoinTrak/CoinTrak-Website/gh-pages/images/\(data.coinTickers[indexPath.row+1]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
 
         cell.coinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.coinIdentifiers[indexPath.row+1]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
         
@@ -86,7 +71,6 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         } else {
             cell.percent1hr.textColor = UIColor.blackColor()
         }
-        
         
         
         //actually put text into the text label for the

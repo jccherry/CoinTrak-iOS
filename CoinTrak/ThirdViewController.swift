@@ -112,51 +112,67 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
         
         //json api has this as an int
         
-        let sentStatus: Int = json["txrefs"].arrayValue[indexPath.row]["tx_input_n"].intValue
+        var sentStatus: Int = 0
         
-        
-        
-        
-        //interpret the int and change the value of the bool accordingly
-        if sentStatus == 0 {
-            wasSent = true
-        } else {
-            wasSent = false
-        }
-        
-        //get amount
-        let amount:Double = json["txrefs"].arrayValue[indexPath.row]["value"].doubleValue
-        
-        
-        //change the cell's labels and things
-        if wasSent {
-            cell.sentLabel.text = "Sent"
-        } else {
-            cell.sentLabel.text = "Recieved"
-        }
-        
-        
-        var placesDown: Double = 10
-        switch selectedRow{
-        case 0:
-            placesDown = 100000000
-            break
-        case 1:
-            placesDown = 1000000000000000000
-            break
-        case 2:
-            placesDown = 1000000000
-            break
-        default: break
-        }
-
-        cell.amountLabel.text = String(amount / placesDown) + " \(tickerArray[selectedRow])"
-        
-        
-        cell.usdLabel.text = "$" + String( (amount / placesDown) * data.getCurrentPriceFromID(identifierArray[selectedRow]))
-        
-        print(String(data.getCurrentPriceFromID(identifierArray[selectedRow])))
+        if json["txrefs"].arrayValue[indexPath.row] != nil {
+            sentStatus = json["txrefs"].arrayValue[indexPath.row]["tx_input_n"].intValue
             
+            
+            //interpret the int and change the value of the bool accordingly
+            if sentStatus == 0 {
+                wasSent = true
+            } else {
+                wasSent = false
+            }
+            
+            //get amount
+            let amount:Double = json["txrefs"].arrayValue[indexPath.row]["value"].doubleValue
+            
+            
+            //change the cell's labels and things
+            if wasSent {
+                cell.sentLabel.text = "Sent"
+            } else {
+                cell.sentLabel.text = "Recieved"
+            }
+            
+            
+            var placesDown: Double = 10
+            switch selectedRow{
+            case 0:
+                placesDown = 100000000
+                break
+            case 1:
+                placesDown = 1000000000000000000
+                break
+            case 2:
+                placesDown = 1000000000
+                break
+            default: break
+            }
+            
+            cell.amountLabel.text = String(amount / placesDown) + " \(tickerArray[selectedRow])"
+            
+            
+            cell.usdLabel.text = "$" + String( (amount / placesDown) * data.getCurrentPriceFromID(identifierArray[selectedRow]))
+            
+            print(String(data.getCurrentPriceFromID(identifierArray[selectedRow])))
+
+        } else {
+            let alertController = UIAlertController(title: "No Confirmed Transactions", message: "Wait a few minutes for confirmations", preferredStyle: .Alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
+            cell.sentLabel.text = ""
+            cell.amountLabel.text = ""
+            cell.usdLabel.text = ""
+        }
+        
+        
         //returns the cell with inserted data
         return cell
     }
