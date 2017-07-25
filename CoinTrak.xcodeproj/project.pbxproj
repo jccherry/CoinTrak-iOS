@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00C5C213C120A1E6FC3A68F8 /* Pods_CoinTrakUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0D66C83D0BCC1214F51A53 /* Pods_CoinTrakUITests.framework */; };
-		203ED6F689B99137E15C0610 /* Pods_CoinTrakTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A83B74961F74656DB5D68DD5 /* Pods_CoinTrakTests.framework */; };
+		522331821F27E424001777BE /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522331811F27E424001777BE /* Coin.swift */; };
 		5246CDC11EFF6E7600A45DB4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5246CDC01EFF6E7600A45DB4 /* GoogleService-Info.plist */; };
 		5246CDC31F00354A00A45DB4 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246CDC21F00354A00A45DB4 /* TransactionCell.swift */; };
 		525ED6B91D3C216C00ADBF67 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525ED6B81D3C216C00ADBF67 /* ThirdViewController.swift */; };
@@ -23,6 +22,8 @@
 		5268D3CA1D7CA2C00071CD56 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3C91D7CA2C00071CD56 /* AudioToolbox.framework */; };
 		5268D3CC1D7CA2C90071CD56 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3CB1D7CA2C90071CD56 /* AVFoundation.framework */; };
 		5268D3CE1D7CA2D40071CD56 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3CD1D7CA2D40071CD56 /* AdSupport.framework */; };
+		52724D1D1F238D4500E86EBE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52724D1C1F238D4500E86EBE /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		52724D1F1F238D5700E86EBE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52724D1E1F238D5700E86EBE /* CFNetwork.framework */; };
 		5278BB901D7540AB0017FC66 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278BB8F1D7540AB0017FC66 /* AboutViewController.swift */; };
 		5278BB921D7540C10017FC66 /* ContributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278BB911D7540C10017FC66 /* ContributeViewController.swift */; };
 		5278BB941D7540D40017FC66 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5278BB931D7540D40017FC66 /* ContactUsViewController.swift */; };
@@ -32,8 +33,6 @@
 		5292913A1D1CED9600F63D3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529291381D1CED9600F63D3E /* Main.storyboard */; };
 		5292913C1D1CED9600F63D3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5292913B1D1CED9600F63D3E /* Assets.xcassets */; };
 		5292913F1D1CED9600F63D3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5292913D1D1CED9600F63D3E /* LaunchScreen.storyboard */; };
-		5292914A1D1CED9600F63D3E /* CoinTrakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529291491D1CED9600F63D3E /* CoinTrakTests.swift */; };
-		529291551D1CED9700F63D3E /* CoinTrakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529291541D1CED9700F63D3E /* CoinTrakUITests.swift */; };
 		529291631D1CEEAE00F63D3E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529291621D1CEEAE00F63D3E /* Data.swift */; };
 		52C8CEEA1D1D9EC500B0E063 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C8CEE91D1D9EC500B0E063 /* CustomCell.swift */; };
 		52C8CF001D2471F400B0E063 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C8CEFF1D2471F400B0E063 /* SWRevealViewController.m */; };
@@ -65,7 +64,8 @@
 /* Begin PBXFileReference section */
 		1F3A3CECF9878B4EA61CED3D /* Pods-CoinTrak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinTrak.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinTrak/Pods-CoinTrak.debug.xcconfig"; sourceTree = "<group>"; };
 		510039309F7DCC497421F7CA /* Pods-CoinTrakUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinTrakUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinTrakUITests/Pods-CoinTrakUITests.release.xcconfig"; sourceTree = "<group>"; };
-		523E05B91EFEDBF00044A4D1 /* CoinTrak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoinTrak.entitlements; sourceTree = "<group>"; };
+		522331811F27E424001777BE /* Coin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		523E05B91EFEDBF00044A4D1 /* CoinTrak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = CoinTrak.entitlements; path = CoinTrak/CoinTrak.entitlements; sourceTree = "<group>"; };
 		5246CDC01EFF6E7600A45DB4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5246CDC21F00354A00A45DB4 /* TransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		525ED6B81D3C216C00ADBF67 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +80,8 @@
 		5268D3C91D7CA2C00071CD56 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5268D3CB1D7CA2C90071CD56 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5268D3CD1D7CA2D40071CD56 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		52724D1C1F238D4500E86EBE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		52724D1E1F238D5700E86EBE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5278BB8F1D7540AB0017FC66 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		5278BB911D7540C10017FC66 /* ContributeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributeViewController.swift; sourceTree = "<group>"; };
 		5278BB931D7540D40017FC66 /* ContactUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
@@ -92,11 +94,7 @@
 		5292913E1D1CED9600F63D3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		529291401D1CED9600F63D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = CoinTrak/Info.plist; sourceTree = "<group>"; };
 		529291451D1CED9600F63D3E /* CoinTrakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinTrakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		529291491D1CED9600F63D3E /* CoinTrakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTrakTests.swift; sourceTree = "<group>"; };
-		5292914B1D1CED9700F63D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		529291501D1CED9700F63D3E /* CoinTrakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinTrakUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		529291541D1CED9700F63D3E /* CoinTrakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTrakUITests.swift; sourceTree = "<group>"; };
-		529291561D1CED9700F63D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		529291621D1CEEAE00F63D3E /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		52C8CEE91D1D9EC500B0E063 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		52C8CEFD1D2471F300B0E063 /* CoinTrak-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoinTrak-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -109,11 +107,9 @@
 		52FAAAC41D28B9A400E078FA /* CoinDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoinDetailViewController.swift; sourceTree = "<group>"; };
 		8E008C90E104951BD9673496 /* Pods-CoinTrakTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinTrakTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinTrakTests/Pods-CoinTrakTests.release.xcconfig"; sourceTree = "<group>"; };
 		A4405BCE515DB66053F6B76F /* Pods-CoinTrakUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinTrakUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinTrakUITests/Pods-CoinTrakUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A83B74961F74656DB5D68DD5 /* Pods_CoinTrakTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinTrakTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA19FE53B99B34952EFFC1F3 /* Pods-CoinTrakTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinTrakTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoinTrakTests/Pods-CoinTrakTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E805C50E2161200847AC954A /* Pods-CoinTrak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinTrak.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoinTrak/Pods-CoinTrak.release.xcconfig"; sourceTree = "<group>"; };
 		EA252E4E17A6DD4CDA200181 /* Pods_CoinTrak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinTrak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB0D66C83D0BCC1214F51A53 /* Pods_CoinTrakUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinTrakUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +117,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52724D1F1F238D5700E86EBE /* CFNetwork.framework in Frameworks */,
+				52724D1D1F238D4500E86EBE /* StoreKit.framework in Frameworks */,
 				5268D3CE1D7CA2D40071CD56 /* AdSupport.framework in Frameworks */,
 				5268D3CC1D7CA2C90071CD56 /* AVFoundation.framework in Frameworks */,
 				5268D3CA1D7CA2C00071CD56 /* AudioToolbox.framework in Frameworks */,
@@ -140,7 +138,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				203ED6F689B99137E15C0610 /* Pods_CoinTrakTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +145,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00C5C213C120A1E6FC3A68F8 /* Pods_CoinTrakUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +154,8 @@
 		06621BD61822EA58525D24D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52724D1E1F238D5700E86EBE /* CFNetwork.framework */,
+				52724D1C1F238D4500E86EBE /* StoreKit.framework */,
 				5268D3CD1D7CA2D40071CD56 /* AdSupport.framework */,
 				5268D3CB1D7CA2C90071CD56 /* AVFoundation.framework */,
 				5268D3C91D7CA2C00071CD56 /* AudioToolbox.framework */,
@@ -169,21 +167,26 @@
 				5268D3BD1D7CA2740071CD56 /* MessageUI.framework */,
 				5268D3BB1D7CA2670071CD56 /* SystemConfiguration.framework */,
 				EA252E4E17A6DD4CDA200181 /* Pods_CoinTrak.framework */,
-				A83B74961F74656DB5D68DD5 /* Pods_CoinTrakTests.framework */,
-				FB0D66C83D0BCC1214F51A53 /* Pods_CoinTrakUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52724D191F238CBC00E86EBE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				523E05B91EFEDBF00044A4D1 /* CoinTrak.entitlements */,
+				5246CDC01EFF6E7600A45DB4 /* GoogleService-Info.plist */,
+				529291401D1CED9600F63D3E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		529291261D1CED9600F63D3E = {
 			isa = PBXGroup;
 			children = (
-				5246CDC01EFF6E7600A45DB4 /* GoogleService-Info.plist */,
-				529291401D1CED9600F63D3E /* Info.plist */,
 				5268D3B91D7C97460071CD56 /* GoogleMobileAds.framework */,
 				529291311D1CED9600F63D3E /* CoinTrak */,
-				529291481D1CED9600F63D3E /* CoinTrakTests */,
-				529291531D1CED9700F63D3E /* CoinTrakUITests */,
 				529291301D1CED9600F63D3E /* Products */,
 				6A8D9F2A486FABD180E6BE25 /* Pods */,
 				06621BD61822EA58525D24D8 /* Frameworks */,
@@ -203,7 +206,6 @@
 		529291311D1CED9600F63D3E /* CoinTrak */ = {
 			isa = PBXGroup;
 			children = (
-				523E05B91EFEDBF00044A4D1 /* CoinTrak.entitlements */,
 				52AF0FC41EFE23AB0035C30E /* Other */,
 				52AF0FC11EFE23620035C30E /* Home VCs */,
 				52AF0FC31EFE239B0035C30E /* Storyboards */,
@@ -214,24 +216,6 @@
 				52C8CEFD1D2471F300B0E063 /* CoinTrak-Bridging-Header.h */,
 			);
 			path = CoinTrak;
-			sourceTree = "<group>";
-		};
-		529291481D1CED9600F63D3E /* CoinTrakTests */ = {
-			isa = PBXGroup;
-			children = (
-				529291491D1CED9600F63D3E /* CoinTrakTests.swift */,
-				5292914B1D1CED9700F63D3E /* Info.plist */,
-			);
-			path = CoinTrakTests;
-			sourceTree = "<group>";
-		};
-		529291531D1CED9700F63D3E /* CoinTrakUITests */ = {
-			isa = PBXGroup;
-			children = (
-				529291541D1CED9700F63D3E /* CoinTrakUITests.swift */,
-				529291561D1CED9700F63D3E /* Info.plist */,
-			);
-			path = CoinTrakUITests;
 			sourceTree = "<group>";
 		};
 		52AF0FC11EFE23620035C30E /* Home VCs */ = {
@@ -271,10 +255,12 @@
 		52AF0FC41EFE23AB0035C30E /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				52724D191F238CBC00E86EBE /* Supporting Files */,
 				529291321D1CED9600F63D3E /* AppDelegate.swift */,
 				52C8CEE91D1D9EC500B0E063 /* CustomCell.swift */,
 				529291621D1CEEAE00F63D3E /* Data.swift */,
 				5246CDC21F00354A00A45DB4 /* TransactionCell.swift */,
+				522331811F27E424001777BE /* Coin.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -580,6 +566,7 @@
 				52FAAAC51D28B9A400E078FA /* CoinDetailViewController.swift in Sources */,
 				529291351D1CED9600F63D3E /* FirstViewController.swift in Sources */,
 				529291631D1CEEAE00F63D3E /* Data.swift in Sources */,
+				522331821F27E424001777BE /* Coin.swift in Sources */,
 				52C8CF001D2471F400B0E063 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,7 +575,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5292914A1D1CED9600F63D3E /* CoinTrakTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,7 +582,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				529291551D1CED9700F63D3E /* CoinTrakUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

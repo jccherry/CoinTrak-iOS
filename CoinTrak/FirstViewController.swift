@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
+class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, UITabBarDelegate{
     
     //open shared data instance with the Data class
     let data = Data.sharedInstance
@@ -52,9 +52,8 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         //style make 0 margins for full seperator
         cell.layoutMargins = UIEdgeInsetsZero
 
+        /*
         cell.coinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.coinIdentifiers[indexPath.row+1]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
-        
-        //http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/200x200/ripple.png
         
         
         //put data from data class into cells with index indexPath+1
@@ -75,6 +74,23 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         //actually put text into the text label for the
         cell.percent1hr.text = data.formatPercentage(data.coinChange1hr[indexPath.row+1])
+        */
+        
+        cell.coinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.coins[indexPath.row+1].coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        
+        cell.name.text = data.coins[indexPath.row+1].coinName
+        cell.ticker.text = data.coins[indexPath.row+1].coinTicker
+        cell.price.text = "$\(data.coins[indexPath.row+1].coinPrice)"
+        
+        if data.coins[indexPath.row+1].coinChange1hr > 0{
+            cell.percent1hr.textColor = UIColor.greenColor()
+        } else if data.coinChange1hr[indexPath.row+1] < 0 {
+            cell.percent1hr.textColor = UIColor.redColor()
+        } else {
+            cell.percent1hr.textColor = UIColor.blackColor()
+        }
+        
+        cell.percent1hr.text = data.formatPercentage(data.coins[indexPath.row+1].coinChange1hr)
         
         //returns the cell with inserted data
         return cell
@@ -89,7 +105,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
             performSegueWithIdentifier("DetailSegue", sender: UITableViewCell())
             print("Double Tap! Segueing into Coin Detail View Controller")
         } else {
-            print("Cell \(data.selectedCell) Tapped (\(data.coinNames[indexPath.row+1]))")
+            print("Cell \(data.selectedCell) Tapped (\(data.coins[indexPath.row+1].coinName))")
         }
         
         //set the selected cell var in the data class for use in the CoinDetailViewController
@@ -291,7 +307,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         //initialize the data arrays and update the data
             //i store only 100 coins by default, but using initArrays i can change that
-        data.initArrays(100)
+        data.initArrays(1000)
         //init the favorites arrays for the 4th view controller
         data.initFavoriteArrays(data.favoriteIdentifiers.count)
         
@@ -300,7 +316,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         updateInfoDisplay()
         
     }
-
+    
     //called every time view appears
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -336,6 +352,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
             }
         
         }
+        
         
     }
     

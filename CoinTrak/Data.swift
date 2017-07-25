@@ -20,6 +20,8 @@ class Data {
     let testDevices: [AnyObject] = []
     //let testDevices: [AnyObject] = [kGADSimulatorID]
     
+    var coins: [Coin] = []
+    
     //Coin data variable arrays
     var coinNames: [String] = []
     var coinTickers: [String] = []
@@ -39,7 +41,7 @@ class Data {
     var selectedCell: Int = 1
     var selectedFavoriteCell: Int = 0
     
-    //arrays for chart
+    //arrays for charts
     var sixtyMinutesDates : [NSDate] = []
     var twentyFourHoursDates : [NSDate] = []
     var thirtyDaysDates : [NSDate] = []
@@ -175,6 +177,11 @@ class Data {
         coinTotalSupply = newCoinTotalSupply
 
         
+        //coin Object initialization
+        for _ in 0...totalPlaces{
+            coins.append(Coin(name: "Dollar", ticker: "USD", identifier: "usd", price: 1, change1hr: 0, change24hr: 0, change7d: 0, totalSupply: 0, marketCap: 0))
+        }
+        
         refreshData()
         
     }
@@ -205,6 +212,11 @@ class Data {
                     coinTotalSupply[i] = json[i-1]["total_supply"].doubleValue
                     coinVolume[i] = json[i-1]["24h_volume_usd"].doubleValue
                     coinMarketCap[i] = json[i-1]["market_cap_usd"].doubleValue
+                }
+                
+                //coin object data update
+                for i in 1...totalPlaces{
+                    coins[i] = Coin(name: json[i-1]["name"].stringValue, ticker: json[i-1]["symbol"].stringValue, identifier: json[i-1]["id"].stringValue, price: json[i-1]["price_usd"].doubleValue, change1hr: json[i-1]["percent_change_1h"].doubleValue, change24hr: json[i-1]["percent_change_24h"].doubleValue, change7d: json[i-1]["percent_change_7d"].doubleValue, totalSupply: json[i-1]["total_supply"].doubleValue, marketCap: json[i-1]["market_cap_usd"].doubleValue)
                 }
                 
                 //if the oldprices are = to the updated prices, then update the dateUpdated
