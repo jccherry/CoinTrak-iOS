@@ -18,9 +18,10 @@ class Coin {
     var coinChange24hr: Double
     var coinChange7d: Double
     var coinTotalSupply: Double
+    var coinVolume: Double
     var coinMarketCap: Double
     
-    init(name: String, ticker: String, identifier: String, price: Double, change1hr: Double, change24hr: Double, change7d: Double, totalSupply: Double, marketCap: Double){
+    init(name: String, ticker: String, identifier: String, price: Double, change1hr: Double, change24hr: Double, change7d: Double, totalSupply: Double, volume: Double, marketCap: Double){
         coinName = name
         coinTicker = ticker
         coinIdentifier = identifier
@@ -29,6 +30,7 @@ class Coin {
         coinChange24hr = change24hr
         coinChange7d = change7d
         coinTotalSupply = totalSupply
+        coinVolume = volume
         coinMarketCap = marketCap
     }
     

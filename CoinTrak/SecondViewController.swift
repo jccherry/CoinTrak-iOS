@@ -50,11 +50,11 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
     
     //set outward label of each cell in the picker view
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return data.coinTickers[row]
+        return data.coins[row].coinTicker
     }
     //number of options in the picker view, equal to convertcells var in data class, plus one for USD
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return data.coinPrices.count
+        return data.coins.count
     }
     //only one title in the picker view
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -67,12 +67,12 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
         if pickerView.tag == 1{
 
             firstPickerRowSelected = row
-            firstCoin.text = "$" + String(data.coinPrices[firstPickerRowSelected])
+            firstCoin.text = "$" + String(data.coins[firstPickerRowSelected].coinPrice)
             
         } else {
 
             secondPickerRowSelected = row
-            secondCoin.text = "$" + String(data.coinPrices[secondPickerRowSelected])
+            secondCoin.text = "$" + String(data.coins[secondPickerRowSelected].coinPrice)
             
         }
         
@@ -87,13 +87,13 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
         print("Converting...")
         
         //the reason that this conditional is cringingly long is so that because they were problems with extracting doubles from empty text boxes
-        if (firstTextField.text != "" && Double(firstTextField.text!)! != firstCoinCurrent) || (firstTextField.text != "" && secondTextField.text! == "") || ((data.coinPrices[firstPickerRowSelected] != lastConvertedPriceFirst || data.coinPrices[secondPickerRowSelected] != lastConvertedPriceSecond) && firstTextField.text != ""){
+        if (firstTextField.text != "" && Double(firstTextField.text!)! != firstCoinCurrent) || (firstTextField.text != "" && secondTextField.text! == "") || ((data.coins[firstPickerRowSelected].coinPrice != lastConvertedPriceFirst || data.coins[secondPickerRowSelected].coinPrice != lastConvertedPriceSecond) && firstTextField.text != ""){
             
             //set the text fields value to the current value
             firstCoinCurrent = Double(firstTextField.text!)!
             
             //set the second value to the converted value based on the prices
-            secondCoinCurrent = (firstCoinCurrent * data.coinPrices[firstPickerRowSelected]) / data.coinPrices[secondPickerRowSelected]
+            secondCoinCurrent = (firstCoinCurrent * data.coins[firstPickerRowSelected].coinPrice) / data.coins[secondPickerRowSelected].coinPrice
             
             //output the double to the other text box, with 6 decimals
             secondTextField.text = String(format: "%.6f", secondCoinCurrent)
@@ -104,15 +104,15 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
         } else if (secondTextField.text != "" && Double(secondTextField.text!)! != secondCoinCurrent) || (secondTextField.text != "" && firstTextField.text! == ""){
             
             secondCoinCurrent = Double(secondTextField.text!)!
-            firstCoinCurrent = (secondCoinCurrent * data.coinPrices[secondPickerRowSelected]) / data.coinPrices[firstPickerRowSelected]
+            firstCoinCurrent = (secondCoinCurrent * data.coins[secondPickerRowSelected].coinPrice) / data.coins[firstPickerRowSelected].coinPrice
             firstTextField.text = String(format: "%.6f",firstCoinCurrent)
             firstCoinCurrent = Double(firstTextField.text!)!
             
         }
         
         //set the current prices to the last ones converted if a user switches the coin without switching values
-        lastConvertedPriceFirst = data.coinPrices[firstPickerRowSelected]
-        lastConvertedPriceSecond = data.coinPrices[secondPickerRowSelected]
+        lastConvertedPriceFirst = data.coins[firstPickerRowSelected].coinPrice
+        lastConvertedPriceSecond = data.coins[secondPickerRowSelected].coinPrice
         
     }
     
@@ -134,8 +134,8 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
                 self.firstCoinPicker.reloadAllComponents()
                 self.secondCoinPicker.reloadAllComponents()
                 
-                self.firstCoin.text = "$\(self.data.coinPrices[self.firstPickerRowSelected])"
-                self.secondCoin.text = "$\(self.data.coinPrices[self.secondPickerRowSelected])"
+                self.firstCoin.text = "$\(self.data.coins[self.firstPickerRowSelected].coinPrice)"
+                self.secondCoin.text = "$\(self.data.coins[self.secondPickerRowSelected].coinPrice)"
             }
         
         }
@@ -176,8 +176,8 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
         
         
         //load the coin prices into the text by default (it doesnt by default)
-        firstCoin.text = "$" + String(data.coinPrices[firstPickerRowSelected])
-        secondCoin.text = "$" + String(data.coinPrices[secondPickerRowSelected])
+        firstCoin.text = "$" + String(data.coins[firstPickerRowSelected].coinPrice)
+        secondCoin.text = "$" + String(data.coins[secondPickerRowSelected].coinPrice)
         
         //set the tags of each picker so that i can distinguish
         firstCoinPicker.tag = 1
@@ -204,8 +204,8 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
                 self.firstCoinPicker.reloadAllComponents()
                 self.secondCoinPicker.reloadAllComponents()
                 
-                self.firstCoin.text = "$\(self.data.coinPrices[self.firstPickerRowSelected])"
-                self.secondCoin.text = "$\(self.data.coinPrices[self.secondPickerRowSelected])"
+                self.firstCoin.text = "$\(self.data.coins[self.firstPickerRowSelected].coinPrice)"
+                self.secondCoin.text = "$\(self.data.coins[self.secondPickerRowSelected].coinPrice)"
             }
         }
     }

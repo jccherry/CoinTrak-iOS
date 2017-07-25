@@ -42,7 +42,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     //number of cells in the tableview is equal to data.tableCells, which is determined by the sliders in the SWRevealViewController menu
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.coinNames.count - 1 //-1 to account for usd as index position 0
+        return data.coins.count - 1 //-1 to account for usd as index position 0
     }
 
     //determine data in each cell individually by indexPath, using indexPath+1 as index for the data arrays
@@ -51,30 +51,6 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         //style make 0 margins for full seperator
         cell.layoutMargins = UIEdgeInsetsZero
-
-        /*
-        cell.coinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.coinIdentifiers[indexPath.row+1]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
-        
-        
-        //put data from data class into cells with index indexPath+1
-            //always add 1 to exclude USD data
-        cell.name.text = data.coinNames[indexPath.row+1]
-        cell.ticker.text = data.coinTickers[indexPath.row+1]
-        cell.price.text = "$\(data.coinPrices[indexPath.row+1])"
-        
-        //change color on the percentage label in the cell based on pos/neg/0 percent change
-        if data.coinChange1hr[indexPath.row+1] > 0{
-            cell.percent1hr.textColor = UIColor.greenColor()
-        } else if data.coinChange1hr[indexPath.row+1] < 0 {
-            cell.percent1hr.textColor = UIColor.redColor()
-        } else {
-            cell.percent1hr.textColor = UIColor.blackColor()
-        }
-        
-        
-        //actually put text into the text label for the
-        cell.percent1hr.text = data.formatPercentage(data.coinChange1hr[indexPath.row+1])
-        */
         
         cell.coinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.coins[indexPath.row+1].coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
         
@@ -84,7 +60,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         if data.coins[indexPath.row+1].coinChange1hr > 0{
             cell.percent1hr.textColor = UIColor.greenColor()
-        } else if data.coinChange1hr[indexPath.row+1] < 0 {
+        } else if data.coins[indexPath.row+1].coinChange1hr < 0 {
             cell.percent1hr.textColor = UIColor.redColor()
         } else {
             cell.percent1hr.textColor = UIColor.blackColor()
@@ -128,10 +104,10 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         let favoriteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Favorite" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             
-            if !self.data.doesEqualStringInArray(self.data.coinIdentifiers[indexPath.row+1], array: self.data.favoriteIdentifiers){
+            if !self.data.doesEqualStringInArray(self.data.coins[indexPath.row+1].coinIdentifier, array: self.data.favoriteIdentifiers){
                 
-                self.data.favoriteIdentifiers.append(self.data.coinIdentifiers[indexPath.row+1])
-                print("Added \(self.data.coinNames[indexPath.row + 1]) to Favorites.")
+                self.data.favoriteIdentifiers.append(self.data.coins[indexPath.row+1].coinIdentifier)
+                print("Added \(self.data.coins[indexPath.row + 1].coinName) to Favorites.")
             
                 NSUserDefaults.standardUserDefaults().setObject(self.data.favoriteIdentifiers, forKey: "favoriteIdentifiers")
                 NSUserDefaults.standardUserDefaults().synchronize()
@@ -139,7 +115,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
                 
                 
             } else {
-                print("\(self.data.coinNames[indexPath.row+1]) is already in Favorites.")
+                print("\(self.data.coins[indexPath.row+1].coinName) is already in Favorites.")
             }
             
             tableView.setEditing(false, animated: true)
@@ -171,7 +147,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
                 //update UI
                 self.updateInfoDisplay()
                 
-                if self.data.coinNames[1] == "" {
+                if self.data.coins[1].coinName == "" {
                     print("No Internet, No Coin Data")
                     
                     let alertController = UIAlertController(title: "Error", message:
@@ -218,25 +194,17 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
     func updateInfoDisplay(){
         
         
-        //if the coin doesnt have an image give it the default one
-        var imageLoc = "images/\(data.coinTickers[data.selectedCell]).png"
+        infoImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.coins[data.selectedCell].coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        infoName.text = data.coins[data.selectedCell].coinName
+        infoTicker.text = data.coins[data.selectedCell].coinTicker
         
-        if UIImage(named: imageLoc) == nil {
-            imageLoc = "images/defaultImage.png"
-        }
- 
+        infoChange1hr.text = data.formatPercentage(data.coins[data.selectedCell].coinChange1hr)
+        infoChange24hr.text = data.formatPercentage(data.coins[data.selectedCell].coinChange24hr)
+        infoChange7d.text = data.formatPercentage(data.coins[data.selectedCell].coinChange7d)
         
-        infoImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.coinIdentifiers[data.selectedCell]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
-        infoName.text = data.coinNames[data.selectedCell]
-        infoTicker.text = data.coinTickers[data.selectedCell]
-        
-        infoChange1hr.text = data.formatPercentage(data.coinChange1hr[data.selectedCell])
-        infoChange24hr.text = data.formatPercentage(data.coinChange24hr[data.selectedCell])
-        infoChange7d.text = data.formatPercentage(data.coinChange7d[data.selectedCell])
-        
-        infoMarketCap.text = data.assessNumberStringFormat(data.coinMarketCap[data.selectedCell])
-        infoVol24.text = data.assessNumberStringFormat(data.coinVolume[data.selectedCell])
-        infoSupply.text = data.assessNumberStringFormat(data.coinTotalSupply[data.selectedCell])
+        infoMarketCap.text = data.assessNumberStringFormat(data.coins[data.selectedCell].coinMarketCap)
+        infoVol24.text = data.assessNumberStringFormat(data.coins[data.selectedCell].coinVolume)
+        infoSupply.text = data.assessNumberStringFormat(data.coins[data.selectedCell].coinTotalSupply)
     }
 
     //top right refresh button
@@ -338,12 +306,12 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
                 self.coinTable.reloadData()
                 self.updateInfoDisplay()
                 
-                if self.data.coinNames[1] == "" {
+                if self.data.coins[1].coinName == "" {
                     print("No Internet, No Coin Data")
                     
                     let alertController = UIAlertController(title: "Error", message:
-                        "No Internet, No Data", preferredStyle: UIAlertControllerStyle.Alert)
-                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+                        "Cannot Connect to the Internet.  Check your connection", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default,handler: nil))
                     
                     self.presentViewController(alertController, animated: true, completion: nil)
                     

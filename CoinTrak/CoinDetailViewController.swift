@@ -52,55 +52,41 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
     func updateInfoDisplay(){
         
         var indexCell: Int = 1
-        var localCoinNames: [String]
-        var localCoinTickers: [String]
-        var localChange1hr: [Double]
-        var localChange24hr: [Double]
-        var localChange7d: [Double]
-        var localMarketCap: [Double]
-        var localVolume: [Double]
-        var localTotalSupply: [Double]
-        var localPrices: [Double]
-        var localCoinIdentifiers: [String]
         
-        if data.tickerPageLoaded {
+        if data.tickerPageLoaded{
             indexCell = data.selectedCell
-            localCoinNames = data.coinNames
-            localCoinTickers = data.coinTickers
-            localChange1hr = data.coinChange1hr
-            localChange24hr = data.coinChange24hr
-            localChange7d = data.coinChange7d
-            localMarketCap = data.coinMarketCap
-            localVolume = data.coinVolume
-            localTotalSupply = data.coinTotalSupply
-            localPrices = data.coinPrices
-            localCoinIdentifiers = data.coinIdentifiers
+            infoImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.coins[indexCell].coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+            infoName.text = data.coins[indexCell].coinName
+            infoTicker.text = data.coins[indexCell].coinTicker
+            
+            infoChange1hr.text = data.formatPercentage(data.coins[indexCell].coinChange1hr)
+            infoChange24hr.text = data.formatPercentage(data.coins[indexCell].coinChange24hr)
+            infoChange7d.text = data.formatPercentage(data.coins[indexCell].coinChange7d)
+            
+            infoMarketCap.text = data.assessNumberStringFormat(data.coins[indexCell].coinMarketCap)
+            infoVol24.text = data.assessNumberStringFormat(data.coins[indexCell].coinVolume)
+            infoSupply.text = data.assessNumberStringFormat(data.coins[indexCell].coinTotalSupply)
+            
+            priceLabel.text = "$\(data.coins[indexCell].coinPrice)"
+            
         } else {
             indexCell = data.selectedFavoriteCell
-            localCoinNames = data.favoriteNames
-            localCoinTickers = data.favoriteTickers
-            localChange1hr = data.favoriteChange1hr
-            localChange24hr = data.favoriteChange24hr
-            localChange7d = data.favoriteChange7d
-            localMarketCap = data.favoriteMarketCap
-            localVolume = data.favoriteVolume
-            localTotalSupply = data.favoriteTotalSupply
-            localPrices = data.favoritePrices
-            localCoinIdentifiers = data.favoriteIdentifiers
+            infoImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.favoriteIdentifiers[indexCell]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+            infoName.text = data.favoriteNames[indexCell]
+            infoTicker.text = data.favoriteTickers[indexCell]
+            
+            infoChange1hr.text = data.formatPercentage(data.favoriteChange1hr[indexCell])
+            infoChange24hr.text = data.formatPercentage(data.favoriteChange24hr[indexCell])
+            infoChange7d.text = data.formatPercentage(data.favoriteChange7d[indexCell])
+            
+            infoMarketCap.text = data.assessNumberStringFormat(data.favoriteMarketCap[indexCell])
+            infoVol24.text = data.assessNumberStringFormat(data.favoriteVolume[indexCell])
+            infoSupply.text = data.assessNumberStringFormat(data.favoriteTotalSupply[indexCell])
+            
+            priceLabel.text = "$\(data.favoritePrices[indexCell])"
         }
         
-        infoImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(localCoinIdentifiers[indexCell]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
-        infoName.text = localCoinNames[indexCell]
-        infoTicker.text = localCoinTickers[indexCell]
         
-        infoChange1hr.text = data.formatPercentage(localChange1hr[indexCell])
-        infoChange24hr.text = data.formatPercentage(localChange24hr[indexCell])
-        infoChange7d.text = data.formatPercentage(localChange7d[indexCell])
-        
-        infoMarketCap.text = data.assessNumberStringFormat(localMarketCap[indexCell])
-        infoVol24.text = data.assessNumberStringFormat(localVolume[indexCell])
-        infoSupply.text = data.assessNumberStringFormat(localTotalSupply[indexCell])
-        priceLabel.text = "$\(localPrices[indexCell])"
     }
 
     //set chart, dset data and display data

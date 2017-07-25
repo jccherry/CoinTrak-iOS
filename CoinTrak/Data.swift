@@ -17,22 +17,13 @@ class Data {
     init(){}
     
     //let testDevices: [AnyObject] = ["a602ccfafd871943181aea6dc7401ddf",kGADSimulatorID]
-    let testDevices: [AnyObject] = []
-    //let testDevices: [AnyObject] = [kGADSimulatorID]
+    //let testDevices: [AnyObject] = []
+    let testDevices: [AnyObject] = [kGADSimulatorID]
     
     var coins: [Coin] = []
     
     //Coin data variable arrays
     var coinNames: [String] = []
-    var coinTickers: [String] = []
-    var coinIdentifiers: [String] = []
-    var coinPrices:[Double] = []
-    var coinChange1hr:[Double] = []
-    var coinChange24hr:[Double] = []
-    var coinChange7d: [Double] = []
-    var coinTotalSupply: [Double] = []
-    var coinMarketCap: [Double] = []
-    var coinVolume: [Double] = []
     
     //var that determines how many coins' data is stored
     var totalPlaces: Int = 10
@@ -137,49 +128,10 @@ class Data {
         
         self.totalPlaces = totalPlaces
         
-        //create new temp arrays to copy to the main ones later //also insert USD info
-        var newCoinNames: [String] = ["US Dollar"]
-        var newCoinTickers: [String] = ["USD"]
-        var newCoinIdentifiers: [String] = ["dollar"]
-        var newCoinPrices: [Double] = [1]
-        var newCoinChange1hr: [Double] = [0]
-        var newCoinChange24hr: [Double] = [0]
-        var newCoinChange7d: [Double] = [0]
-        var newCoinTotalSupply: [Double] = [0]
-        var newCoinVolume: [Double] = [0]
-        var newCoinMarketCap: [Double] = [0]
-
-        
-        //insert blank space initializers
-        for _ in 1...totalPlaces {
-            newCoinNames.append("")
-            newCoinTickers.append("")
-            newCoinIdentifiers.append("")
-            newCoinPrices.append(0)
-            newCoinChange1hr.append(0)
-            newCoinChange24hr.append(0)
-            newCoinChange7d.append(0)
-            newCoinTotalSupply.append(0)
-            newCoinVolume.append(0)
-            newCoinMarketCap.append(0)
-        }
-        
-        //copy the new arrays to the main ones
-        coinNames = newCoinNames
-        coinTickers = newCoinTickers
-        coinIdentifiers = newCoinIdentifiers
-        coinPrices = newCoinPrices
-        coinChange1hr = newCoinChange1hr
-        coinChange24hr = newCoinChange24hr
-        coinChange7d = newCoinChange7d
-        coinVolume = newCoinVolume
-        coinMarketCap = newCoinMarketCap
-        coinTotalSupply = newCoinTotalSupply
-
-        
         //coin Object initialization
         for _ in 0...totalPlaces{
-            coins.append(Coin(name: "Dollar", ticker: "USD", identifier: "usd", price: 1, change1hr: 0, change24hr: 0, change7d: 0, totalSupply: 0, marketCap: 0))
+            coins.append(Coin(name: "Dollar", ticker: "USD", identifier: "usd", price: 1, change1hr: 0, change24hr: 0, change7d: 0, totalSupply: 0, volume: 0, marketCap: 0))
+            coinNames.append("Dollar")
         }
         
         refreshData()
@@ -194,33 +146,20 @@ class Data {
     func refreshData(){
         
         //date = NSDate()
-        let oldPrices = coinPrices
+        let oldPrices = [coins[1].coinPrice,coins[2].coinPrice,coins[3].coinPrice]
         
         
         if let url = NSURL(string: apiURL){
             if let data = try? NSData(contentsOfURL: url, options: []){
                 let json = JSON(data: data)
                 
-                for i in 1...totalPlaces {
-                    coinNames[i] = json[i-1]["name"].stringValue
-                    coinTickers[i] = json[i-1]["symbol"].stringValue
-                    coinIdentifiers[i] = json[i-1]["id"].stringValue
-                    coinPrices[i] = json[i-1]["price_usd"].doubleValue
-                    coinChange1hr[i] = json[i-1]["percent_change_1h"].doubleValue
-                    coinChange24hr[i] = json[i-1]["percent_change_24h"].doubleValue
-                    coinChange7d[i] = json[i-1]["percent_change_7d"].doubleValue
-                    coinTotalSupply[i] = json[i-1]["total_supply"].doubleValue
-                    coinVolume[i] = json[i-1]["24h_volume_usd"].doubleValue
-                    coinMarketCap[i] = json[i-1]["market_cap_usd"].doubleValue
-                }
-                
                 //coin object data update
                 for i in 1...totalPlaces{
-                    coins[i] = Coin(name: json[i-1]["name"].stringValue, ticker: json[i-1]["symbol"].stringValue, identifier: json[i-1]["id"].stringValue, price: json[i-1]["price_usd"].doubleValue, change1hr: json[i-1]["percent_change_1h"].doubleValue, change24hr: json[i-1]["percent_change_24h"].doubleValue, change7d: json[i-1]["percent_change_7d"].doubleValue, totalSupply: json[i-1]["total_supply"].doubleValue, marketCap: json[i-1]["market_cap_usd"].doubleValue)
+                    coins[i] = Coin(name: json[i-1]["name"].stringValue, ticker: json[i-1]["symbol"].stringValue, identifier: json[i-1]["id"].stringValue, price: json[i-1]["price_usd"].doubleValue, change1hr: json[i-1]["percent_change_1h"].doubleValue, change24hr: json[i-1]["percent_change_24h"].doubleValue, change7d: json[i-1]["percent_change_7d"].doubleValue, totalSupply: json[i-1]["total_supply"].doubleValue, volume: json[i-1]["24h_volume_usd"].doubleValue,marketCap: json[i-1]["market_cap_usd"].doubleValue)
                 }
                 
                 //if the oldprices are = to the updated prices, then update the dateUpdated
-                if oldPrices != coinPrices{
+                if oldPrices != [coins[1].coinPrice,coins[2].coinPrice,coins[3].coinPrice]{
                     dateUpdated = NSDate()
                     //printCoins()
                     print("Coin Prices Updated--\(dateUpdated)")
@@ -289,8 +228,8 @@ class Data {
         print()
         print("Last updated \(dateUpdated)")
         print()
-        for i in 0...coinNames.count-1 {
-            print("\(coinNames[i]), \(coinTickers[i]): \(coinPrices[i]) 1hr: \(coinChange1hr[i])%, 24hr: \(coinChange24hr[i])%")
+        for i in 0...coins.count-1 {
+            print("\(coins[i].coinName), \(coins[i].coinTicker): \(coins[i].coinPrice) 1hr: \(coins[i].coinChange1hr)%, 24hr: \(coins[i].coinChange24hr)%")
         }
     }
     
@@ -347,23 +286,23 @@ class Data {
 
     func fillChartArrays(){
         
-        var indexCell: Int = 1
-        var localTickers: [String]
+        //var indexCell: Int = 1
+        var localTicker: String
         
         if tickerPageLoaded {
-            indexCell = selectedCell
-            localTickers = coinTickers
+            //indexCell = selectedCell
+            localTicker = coins[selectedCell].coinTicker
         } else {
-            indexCell = selectedFavoriteCell
-            localTickers = favoriteTickers
+            //indexCell = selectedFavoriteCell
+            localTicker = favoriteTickers[selectedFavoriteCell]
         }
         
         //URL API requests based on the ticker of the coin that you wanted to check the data from
-        let sixtyMinutesURL : String = "https://www.cryptocompare.com/api/data/histominute/?aggregate=1&e=CCCAGG&fsym=\(localTickers[indexCell])&limit=60&tsym=USD"
-        let twentyFourHoursURL : String = "https://www.cryptocompare.com/api/data/histohour/?aggregate=1&e=CCCAGG&fsym=\(localTickers[indexCell])&limit=24&tsym=USD"
+        let sixtyMinutesURL : String = "https://www.cryptocompare.com/api/data/histominute/?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=60&tsym=USD"
+        let twentyFourHoursURL : String = "https://www.cryptocompare.com/api/data/histohour/?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=24&tsym=USD"
         
-        let thirtyDaysURL : String = "https://www.cryptocompare.com/api/data/histoday/?aggregate=1&e=CCCAGG&fsym=\(localTickers[indexCell])&limit=30&tsym=USD"
-        let oneYearURL: String = "https://www.cryptocompare.com/api/data/histoday/?aggregate=1&e=CCCAGG&fsym=\(localTickers[indexCell])&limit=365&tsym=USD"
+        let thirtyDaysURL : String = "https://www.cryptocompare.com/api/data/histoday/?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=30&tsym=USD"
+        let oneYearURL: String = "https://www.cryptocompare.com/api/data/histoday/?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=365&tsym=USD"
         
         /*
         //print the URLS into console for checking purposes
