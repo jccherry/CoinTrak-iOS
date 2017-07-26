@@ -22,6 +22,10 @@ class Data {
     
     var coins: [Coin] = []
     
+    var filteredCoins: [Coin] = [Coin]()
+    
+    var selectedCoin:Coin = Coin(name: "Dollar", ticker: "USD", identifier: "usd", price: 1, change1hr: 0, change24hr: 0, change7d: 0, totalSupply: 0, volume: 0, marketCap: 0)
+    
     //Coin data variable arrays
     var coinNames: [String] = []
     
@@ -296,6 +300,8 @@ class Data {
             //indexCell = selectedFavoriteCell
             localTicker = favoriteTickers[selectedFavoriteCell]
         }
+        
+        localTicker = selectedCoin.coinTicker
         
         //URL API requests based on the ticker of the coin that you wanted to check the data from
         let sixtyMinutesURL : String = "https://www.cryptocompare.com/api/data/histominute/?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=60&tsym=USD"

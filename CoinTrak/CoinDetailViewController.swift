@@ -49,8 +49,23 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
     
     //update the info view on th ebottom of the page, identical to firstviewcontroller except it adds the priceLabel
     //basically updates the local arrays with either the total coin info from the data instance or the favorites coin data from data instance. see data.tickerPageLoaded
-    func updateInfoDisplay(){
+    func updateInfoDisplay(coin: Coin){
         
+        infoImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(coin.coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        infoName.text = coin.coinName
+        infoTicker.text = coin.coinTicker
+        
+        infoChange1hr.text = data.formatPercentage(coin.coinChange1hr)
+        infoChange24hr.text = data.formatPercentage(coin.coinChange24hr)
+        infoChange7d.text = data.formatPercentage(coin.coinChange7d)
+        
+        infoMarketCap.text = data.assessNumberStringFormat(coin.coinMarketCap)
+        infoVol24.text = data.assessNumberStringFormat(coin.coinVolume)
+        infoSupply.text = data.assessNumberStringFormat(coin.coinTotalSupply)
+        
+        priceLabel.text = "$\(coin.coinPrice)"
+        
+        /*
         var indexCell: Int = 1
         
         if data.tickerPageLoaded{
@@ -85,7 +100,7 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
             
             priceLabel.text = "$\(data.favoritePrices[indexCell])"
         }
-        
+        */
         
     }
 
@@ -159,7 +174,7 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
         infoViewHeader.layer.borderColor = UIColor.blueColor().CGColor
         infoViewHeader.layer.borderWidth = 0.5
         
-        updateInfoDisplay()
+        updateInfoDisplay(data.selectedCoin)
         loadingLoop.startAnimating()
         
         navBar.title = infoName.text

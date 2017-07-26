@@ -228,11 +228,11 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="46" id="YXX-in-vaJ" customClass="CustomCell" customModule="CoinTrak" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="46" id="YXX-in-vaJ" customClass="CustomCell" customModule="CoinTrak" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24" width="375" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YXX-in-vaJ" id="Ao1-JF-7Fp">
-                                            <frame key="frameInset" width="375" height="45.5"/>
+                                            <frame key="frameInset" width="375" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwB-Gx-fRF">
@@ -306,6 +306,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="4bD-NZ-chc" firstAttribute="top" secondItem="KjW-4g-eLi" secondAttribute="bottom" id="73B-tb-MGm"/>
                             <constraint firstItem="4bD-NZ-chc" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="373" id="BYL-vC-lKa"/>
@@ -346,6 +347,7 @@
                         <outlet property="infoViewHeader" destination="KOy-5q-CjN" id="ukb-JW-aLp"/>
                         <outlet property="infoVol24" destination="foD-JR-96g" id="LDQ-cL-OuX"/>
                         <outlet property="menuButton" destination="bAn-X1-acV" id="tuJ-Ys-5PM"/>
+                        <outlet property="navigationBar" destination="wmE-2l-uni" id="DY5-2p-dOG"/>
                         <segue destination="jAD-mt-HAh" kind="show" identifier="DetailSegue" id="h9r-rk-OUa"/>
                     </connections>
                 </viewController>
@@ -914,7 +916,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="8E0-EK-1Oc" customClass="TransactionCell" customModule="CoinTrak" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="8E0-EK-1Oc" customClass="TransactionCell" customModule="CoinTrak" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8E0-EK-1Oc" id="UT6-H8-l1r">
@@ -2011,8 +2013,8 @@
         <image name="ic_swap_horiz_48pt" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rAh-xn-4CV"/>
-        <segue reference="AZC-Rh-gGf"/>
+        <segue reference="oV4-XU-6nH"/>
         <segue reference="h9r-rk-OUa"/>
+        <segue reference="AZC-Rh-gGf"/>
     </inferredMetricsTieBreakers>
 </document>

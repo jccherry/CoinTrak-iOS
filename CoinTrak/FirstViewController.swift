@@ -9,10 +9,13 @@
 import UIKit
 import SDWebImage
 
-class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, UITabBarDelegate{
+class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, UITabBarDelegate, UISearchBarDelegate, UISearchResultsUpdating{
+    
     
     //open shared data instance with the Data class
     let data = Data.sharedInstance
+    
+    @IBOutlet weak var navigationBar: UINavigationItem!
     
     //connect menu bar button
     @IBOutlet var menuButton: UIBarButtonItem!
@@ -38,11 +41,24 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
     //main table view for the tickers
     @IBOutlet var coinTable: UITableView!
     
-
+    //search controller
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    //search controller "delegate" method
+    func updateSearchResultsForSearchController(searchController: UISearchController){
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
     
     //number of cells in the tableview is equal to data.tableCells, which is determined by the sliders in the SWRevealViewController menu
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.active && searchController.searchBar.text != "" {
+            return data.filteredCoins.count
+        }
         return data.coins.count - 1 //-1 to account for usd as index position 0
+    }
+    
+    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+        coinTable.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), atScrollPosition: .Top, animated: true)
     }
 
     //determine data in each cell individually by indexPath, using indexPath+1 as index for the data arrays
@@ -52,21 +68,28 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         //style make 0 margins for full seperator
         cell.layoutMargins = UIEdgeInsetsZero
         
-        cell.coinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.coins[indexPath.row+1].coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        let coin: Coin
+        if searchController.active && searchController.searchBar.text != "" {
+            coin = data.filteredCoins[indexPath.row]
+        } else {
+            coin = data.coins[indexPath.row+1]
+        }
         
-        cell.name.text = data.coins[indexPath.row+1].coinName
-        cell.ticker.text = data.coins[indexPath.row+1].coinTicker
-        cell.price.text = "$\(data.coins[indexPath.row+1].coinPrice)"
+        cell.coinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(coin.coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
         
-        if data.coins[indexPath.row+1].coinChange1hr > 0{
+        cell.name.text = coin.coinName
+        cell.ticker.text = coin.coinTicker
+        cell.price.text = "$\(coin.coinPrice)"
+        
+        if coin.coinChange1hr > 0{
             cell.percent1hr.textColor = UIColor.greenColor()
-        } else if data.coins[indexPath.row+1].coinChange1hr < 0 {
+        } else if coin.coinChange1hr < 0 {
             cell.percent1hr.textColor = UIColor.redColor()
         } else {
             cell.percent1hr.textColor = UIColor.blackColor()
         }
         
-        cell.percent1hr.text = data.formatPercentage(data.coins[indexPath.row+1].coinChange1hr)
+        cell.percent1hr.text = data.formatPercentage(coin.coinChange1hr)
         
         //returns the cell with inserted data
         return cell
@@ -76,19 +99,29 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+        let coin: Coin
+        if searchController.active && searchController.searchBar.text != "" {
+            coin = data.filteredCoins[indexPath.row]
+        } else {
+            coin = data.coins[indexPath.row+1]
+        }
+        
+        data.selectedCoin = coin
+        
         //if double tap, show CoinDetailViewController
         if data.selectedCell == indexPath.row+1 {
             performSegueWithIdentifier("DetailSegue", sender: UITableViewCell())
             print("Double Tap! Segueing into Coin Detail View Controller")
         } else {
-            print("Cell \(data.selectedCell) Tapped (\(data.coins[indexPath.row+1].coinName))")
+            print("Cell \(data.selectedCell) Tapped (\(coin.coinName))")
         }
         
         //set the selected cell var in the data class for use in the CoinDetailViewController
         data.selectedCell = indexPath.row+1
         
         //update the display (no double tap needed)
-        updateInfoDisplay()
+        updateInfoDisplay(coin)
+        
         
         
  
@@ -102,11 +135,18 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
+        let coin: Coin
+        if searchController.active && searchController.searchBar.text != "" {
+            coin = data.filteredCoins[indexPath.row]
+        } else {
+            coin = data.coins[indexPath.row+1]
+        }
+        
         let favoriteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Favorite" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             
-            if !self.data.doesEqualStringInArray(self.data.coins[indexPath.row+1].coinIdentifier, array: self.data.favoriteIdentifiers){
+            if !self.data.doesEqualStringInArray(coin.coinIdentifier, array: self.data.favoriteIdentifiers){
                 
-                self.data.favoriteIdentifiers.append(self.data.coins[indexPath.row+1].coinIdentifier)
+                self.data.favoriteIdentifiers.append(coin.coinIdentifier)
                 print("Added \(self.data.coins[indexPath.row + 1].coinName) to Favorites.")
             
                 NSUserDefaults.standardUserDefaults().setObject(self.data.favoriteIdentifiers, forKey: "favoriteIdentifiers")
@@ -115,7 +155,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
                 
                 
             } else {
-                print("\(self.data.coins[indexPath.row+1].coinName) is already in Favorites.")
+                print("\(coin.coinName) is already in Favorites.")
             }
             
             tableView.setEditing(false, animated: true)
@@ -145,7 +185,8 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
             self.data.refreshData()
             dispatch_async(dispatch_get_main_queue()) {
                 //update UI
-                self.updateInfoDisplay()
+                self.data.selectedCoin = self.data.coins[self.data.selectedCell]
+                self.updateInfoDisplay(self.data.selectedCoin)
                 
                 if self.data.coins[1].coinName == "" {
                     print("No Internet, No Coin Data")
@@ -191,20 +232,20 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
     }
     
     //updates the data on the info view based on data and the selected cell
-    func updateInfoDisplay(){
+    func updateInfoDisplay(coin: Coin){
         
         
-        infoImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.coins[data.selectedCell].coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
-        infoName.text = data.coins[data.selectedCell].coinName
-        infoTicker.text = data.coins[data.selectedCell].coinTicker
+        infoImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(coin.coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        infoName.text = coin.coinName
+        infoTicker.text = coin.coinTicker
         
-        infoChange1hr.text = data.formatPercentage(data.coins[data.selectedCell].coinChange1hr)
-        infoChange24hr.text = data.formatPercentage(data.coins[data.selectedCell].coinChange24hr)
-        infoChange7d.text = data.formatPercentage(data.coins[data.selectedCell].coinChange7d)
+        infoChange1hr.text = data.formatPercentage(coin.coinChange1hr)
+        infoChange24hr.text = data.formatPercentage(coin.coinChange24hr)
+        infoChange7d.text = data.formatPercentage(coin.coinChange7d)
         
-        infoMarketCap.text = data.assessNumberStringFormat(data.coins[data.selectedCell].coinMarketCap)
-        infoVol24.text = data.assessNumberStringFormat(data.coins[data.selectedCell].coinVolume)
-        infoSupply.text = data.assessNumberStringFormat(data.coins[data.selectedCell].coinTotalSupply)
+        infoMarketCap.text = data.assessNumberStringFormat(coin.coinMarketCap)
+        infoVol24.text = data.assessNumberStringFormat(coin.coinVolume)
+        infoSupply.text = data.assessNumberStringFormat(coin.coinTotalSupply)
     }
 
     //top right refresh button
@@ -229,7 +270,8 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
                     
                 }
                 
-                self.updateInfoDisplay()
+                self.data.selectedCoin = self.data.coins[self.data.selectedCell]
+                self.updateInfoDisplay(self.data.selectedCoin)
                 self.loadCustomRefreshView()
                 self.coinTable.reloadData()
             }
@@ -238,15 +280,36 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
     }
     
+    //search filtering
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        data.filteredCoins = data.coins.filter { coin in
+            return coin.coinName.lowercaseString.containsString(searchText.lowercaseString)
+        }
+        
+        coinTable.reloadData()
+    }
+
+    
     //runs when the view loads in, not when it appears
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         print("~~~~~~~~~~~~~~~~~~~~~~Welcome to CoinTrak!~~~~~~~~~~~~~~~~~~~~~~")
         print()
         print()
         
         print("Ticker View Controller Loaded")
+        
+        coinTable.setContentOffset(CGPoint(x: 0,y: 10), animated: true)
+        
+        //configuring search bar
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        coinTable.tableHeaderView = searchController.searchBar
+        
         
         //gesture recognizer to open reveal view controller
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -279,11 +342,13 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         //init the favorites arrays for the 4th view controller
         data.initFavoriteArrays(data.favoriteIdentifiers.count)
         
-        
+        data.selectedCoin = data.coins[1]
         //update the info display to the default, BTC
-        updateInfoDisplay()
+        updateInfoDisplay(data.selectedCoin)
+        
         
     }
+    
     
     //called every time view appears
     override func viewDidAppear(animated: Bool) {
@@ -303,8 +368,9 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
             self.data.refreshData()
             dispatch_async(dispatch_get_main_queue()) {
                 //update UI
+                self.data.selectedCoin = self.data.coins[self.data.selectedCell]
                 self.coinTable.reloadData()
-                self.updateInfoDisplay()
+                self.updateInfoDisplay(self.data.selectedCoin)
                 
                 if self.data.coins[1].coinName == "" {
                     print("No Internet, No Coin Data")
@@ -325,4 +391,6 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
     }
     
 }
+
+
 

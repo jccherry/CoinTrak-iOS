@@ -133,12 +133,15 @@ class FourthViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+        data.selectedCoin = Coin(name: data.favoriteNames[indexPath.row], ticker: data.favoriteTickers[indexPath.row], identifier: data.favoriteIdentifiers[indexPath.row], price: data.favoritePrices[indexPath.row], change1hr: data.favoriteChange1hr[indexPath.row], change24hr: data.favoriteChange24hr[indexPath.row], change7d: data.favoriteChange7d[indexPath.row], totalSupply: data.favoriteTotalSupply[indexPath.row], volume: data.favoriteVolume[indexPath.row], marketCap: data.favoriteMarketCap[indexPath.row])
+        
         if data.selectedFavoriteCell == indexPath.row{
             performSegueWithIdentifier("DetailSegue", sender: UITableViewCell())
             print("Double Tap! Segueing into Coin Detail View Controller")
         } else {
             print("Cell \(data.selectedFavoriteCell) Tapped (\(data.favoriteNames[indexPath.row]))")
         }
+        
         
         data.selectedFavoriteCell = indexPath.row
         updateInfoDisplay()
