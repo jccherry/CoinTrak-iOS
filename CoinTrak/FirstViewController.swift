@@ -99,6 +99,8 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+        view.endEditing(true)
+        
         let coin: Coin
         if searchController.active && searchController.searchBar.text != "" {
             coin = data.filteredCoins[indexPath.row]

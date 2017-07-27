@@ -291,15 +291,7 @@ class Data {
     func fillChartArrays(){
         
         //var indexCell: Int = 1
-        var localTicker: String
-        
-        if tickerPageLoaded {
-            //indexCell = selectedCell
-            localTicker = coins[selectedCell].coinTicker
-        } else {
-            //indexCell = selectedFavoriteCell
-            localTicker = favoriteTickers[selectedFavoriteCell]
-        }
+        var localTicker: String = selectedCoin.coinTicker
         
         localTicker = selectedCoin.coinTicker
         
