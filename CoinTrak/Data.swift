@@ -145,7 +145,7 @@ class Data {
     
     var dateUpdated = NSDate()
     
-    let apiURL = "https://api.coinmarketcap.com/v1/ticker/"
+    let apiURL = "https://api.coinmarketcap.com/v1/ticker/?limit=1000"
     
     func refreshData(){
         
@@ -296,11 +296,12 @@ class Data {
         localTicker = selectedCoin.coinTicker
         
         //URL API requests based on the ticker of the coin that you wanted to check the data from
-        let sixtyMinutesURL : String = "https://www.cryptocompare.com/api/data/histominute/?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=60&tsym=USD"
-        let twentyFourHoursURL : String = "https://www.cryptocompare.com/api/data/histohour/?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=24&tsym=USD"
+        //let sixtyMinutesURL : String = "https://min-api.cryptocompare.com/data/histominute/?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=60&tsym=USD"
+        let sixtyMinutesURL: String = "https://min-api.cryptocompare.com/data/histominute?fsym=\(localTicker)&tsym=USD&limit=60&aggregate=1"
+        let twentyFourHoursURL : String = "https://min-api.cryptocompare.com/data/histohour?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=24&tsym=USD"
         
-        let thirtyDaysURL : String = "https://www.cryptocompare.com/api/data/histoday/?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=30&tsym=USD"
-        let oneYearURL: String = "https://www.cryptocompare.com/api/data/histoday/?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=365&tsym=USD"
+        let thirtyDaysURL : String = "https://min-api.cryptocompare.com/data/histoday?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=30&tsym=USD"
+        let oneYearURL: String = "https://min-api.cryptocompare.com/data/histoday?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=365&tsym=USD"
         
         /*
         //print the URLS into console for checking purposes

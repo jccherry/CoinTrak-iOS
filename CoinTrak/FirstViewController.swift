@@ -8,8 +8,9 @@
 
 import UIKit
 import SDWebImage
+import GoogleMobileAds
 
-class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, UITabBarDelegate, UISearchBarDelegate, UISearchResultsUpdating{
+class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, UITabBarDelegate, UISearchBarDelegate, UISearchResultsUpdating, GADBannerViewDelegate{
     
     
     //open shared data instance with the Data class
@@ -63,6 +64,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
 
     //determine data in each cell individually by indexPath, using indexPath+1 as index for the data arrays
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
         
         //style make 0 margins for full seperator
@@ -75,21 +77,43 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
             coin = data.coins[indexPath.row+1]
         }
         
-        cell.coinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(coin.coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
-        
-        cell.name.text = coin.coinName
-        cell.ticker.text = coin.coinTicker
-        cell.price.text = "$\(coin.coinPrice)"
-        
-        if coin.coinChange1hr > 0{
-            cell.percent1hr.textColor = UIColor.greenColor()
-        } else if coin.coinChange1hr < 0 {
-            cell.percent1hr.textColor = UIColor.redColor()
+        if coin.isAd {
+            for view in cell.subviews {
+                view.removeFromSuperview()
+            }
+            
+            let adCell = GADBannerView()
+            adCell.adSize = GADAdSize(size: CGSize(width: cell.bounds.width, height: cell.bounds.height), flags: 0)
+            adCell.adUnitID = "ca-app-pub-7526118464921133/7770100007"
+            adCell.rootViewController = self
+            let request = GADRequest()
+            request.testDevices = data.testDevices
+            adCell.loadRequest(request)
+            adCell.bounds = cell.bounds
+            cell.addSubview(adCell)
+            
+            
+            
+            
         } else {
-            cell.percent1hr.textColor = UIColor.blackColor()
+            cell.coinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(coin.coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+            
+            cell.name.text = coin.coinName
+            cell.ticker.text = coin.coinTicker
+            cell.price.text = "$\(coin.coinPrice)"
+            
+            if coin.coinChange1hr > 0{
+                cell.percent1hr.textColor = UIColor.greenColor()
+            } else if coin.coinChange1hr < 0 {
+                cell.percent1hr.textColor = UIColor.redColor()
+            } else {
+                cell.percent1hr.textColor = UIColor.blackColor()
+            }
+            
+            cell.percent1hr.text = data.formatPercentage(coin.coinChange1hr)
         }
         
-        cell.percent1hr.text = data.formatPercentage(coin.coinChange1hr)
+
         
         //returns the cell with inserted data
         return cell

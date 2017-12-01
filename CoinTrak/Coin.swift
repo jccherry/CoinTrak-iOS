@@ -20,6 +20,7 @@ class Coin {
     var coinTotalSupply: Double
     var coinVolume: Double
     var coinMarketCap: Double
+    var isAd: Bool = false
     
     init(name: String, ticker: String, identifier: String, price: Double, change1hr: Double, change24hr: Double, change7d: Double, totalSupply: Double, volume: Double, marketCap: Double){
         coinName = name
