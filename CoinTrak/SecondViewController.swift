@@ -86,7 +86,12 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
         
         print("Converting...")
         
-        //the reason that this conditional is cringingly long is so that because they were problems with extracting doubles from empty text boxes
+        //replace instances of commas in each string with periods (for that one guy who emailed me)
+        firstTextField.text = firstTextField.text?.stringByReplacingOccurrencesOfString(",", withString: ".")
+        secondTextField.text = secondTextField.text?.stringByReplacingOccurrencesOfString(",", withString: ".")
+
+        
+        //the reason that this conditional is cringingly long is so that because they were problems with extracting doubles from empty text boxes and crashes happened
         if (firstTextField.text != "" && Double(firstTextField.text!)! != firstCoinCurrent) || (firstTextField.text != "" && secondTextField.text! == "") || ((data.coins[firstPickerRowSelected].coinPrice != lastConvertedPriceFirst || data.coins[secondPickerRowSelected].coinPrice != lastConvertedPriceSecond) && firstTextField.text != ""){
             
             //set the text fields value to the current value

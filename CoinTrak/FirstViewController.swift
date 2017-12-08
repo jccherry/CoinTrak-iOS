@@ -309,7 +309,8 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
     //search filtering
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         data.filteredCoins = data.coins.filter { coin in
-            return coin.coinName.lowercaseString.containsString(searchText.lowercaseString)
+            return coin.coinName.lowercaseString.containsString(searchText.lowercaseString) || coin.coinTicker.lowercaseString.containsString(searchText.lowercaseString)
+            // the or allows for searching of both names and tickers simultaneouslyx
         }
         
         coinTable.reloadData()

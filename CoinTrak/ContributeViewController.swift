@@ -17,12 +17,10 @@ class ContributeViewController: UIViewController, GADBannerViewDelegate {
     
     @IBOutlet var bannerView: GADBannerView!
     
-    @IBAction func githubButton(sender: AnyObject) {
-        data.openURL("http://github.com/cointrak/cointrak-ios")
-    }
+    @IBOutlet weak var adSwitchStatus: UISwitch!
     
-    @IBAction func websiteButton(sender: AnyObject) {
-        data.openURL("http://cointrak.me")
+    @IBAction func adSwitch(sender: AnyObject) {
+        NSUserDefaults.standardUserDefaults().setBool(adSwitchStatus.on, forKey: "adsActivated")
     }
     
     @IBAction func donateSegueButton(sender: AnyObject) {
@@ -49,6 +47,8 @@ class ContributeViewController: UIViewController, GADBannerViewDelegate {
         request.testDevices = data.testDevices
         bannerView.loadRequest(request)
 
+        adSwitchStatus.on = NSUserDefaults.standardUserDefaults().boolForKey("adsActivated")
+        
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         

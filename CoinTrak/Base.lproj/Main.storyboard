@@ -232,7 +232,7 @@
                                         <rect key="frame" x="0.0" y="24" width="375" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YXX-in-vaJ" id="Ao1-JF-7Fp">
-                                            <frame key="frameInset" width="375" height="45"/>
+                                            <frame key="frameInset" width="375" height="45.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwB-Gx-fRF">
@@ -928,7 +928,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJx-dp-PUK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJx-dp-PUK">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="116" id="tPE-FI-nvJ"/>
                                                     </constraints>
@@ -1726,18 +1726,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4I9-f2-Mmx">
+                                <connections>
+                                    <action selector="adSwitch:" destination="6ml-29-Zxf" eventType="valueChanged" id="QGe-e6-Chx"/>
+                                </connections>
+                            </switch>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omk-BX-why">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aah-G7-m2Q" firstAttribute="centerX" secondItem="lOJ-Tz-iwi" secondAttribute="centerX" id="46f-o8-PY4"/>
+                            <constraint firstItem="4I9-f2-Mmx" firstAttribute="top" secondItem="omk-BX-why" secondAttribute="bottom" constant="8" symbolic="YES" id="C9T-Xs-VqY"/>
                             <constraint firstItem="PrN-Dw-6GU" firstAttribute="centerX" secondItem="EZA-SL-d0f" secondAttribute="centerX" id="EeT-7p-OaG"/>
                             <constraint firstItem="lOJ-Tz-iwi" firstAttribute="top" secondItem="aah-G7-m2Q" secondAttribute="bottom" constant="29" id="Ewp-90-A52"/>
                             <constraint firstItem="aah-G7-m2Q" firstAttribute="leading" secondItem="qyQ-An-y0i" secondAttribute="leadingMargin" id="GGX-Nl-rWw"/>
                             <constraint firstItem="EZA-SL-d0f" firstAttribute="top" secondItem="PrN-Dw-6GU" secondAttribute="bottom" constant="7" id="Knc-c6-Ghr"/>
                             <constraint firstItem="PrN-Dw-6GU" firstAttribute="width" secondItem="EZA-SL-d0f" secondAttribute="width" id="Kqe-O3-pCs"/>
+                            <constraint firstItem="omk-BX-why" firstAttribute="centerX" secondItem="4I9-f2-Mmx" secondAttribute="centerX" id="RR8-vy-yHA"/>
+                            <constraint firstItem="4I9-f2-Mmx" firstAttribute="centerX" secondItem="PrN-Dw-6GU" secondAttribute="centerX" id="THI-QP-CuP"/>
                             <constraint firstItem="lOJ-Tz-iwi" firstAttribute="centerY" secondItem="qyQ-An-y0i" secondAttribute="centerY" id="Vjs-Jc-Q2A"/>
                             <constraint firstItem="GLI-xz-4bW" firstAttribute="top" secondItem="EZA-SL-d0f" secondAttribute="bottom" id="Zjx-SJ-5Kd"/>
                             <constraint firstItem="lOJ-Tz-iwi" firstAttribute="centerX" secondItem="qyQ-An-y0i" secondAttribute="centerX" id="eue-GM-TfB"/>
+                            <constraint firstItem="omk-BX-why" firstAttribute="top" secondItem="lOJ-Tz-iwi" secondAttribute="bottom" constant="21" id="vvU-0X-Yhz"/>
                             <constraint firstItem="EZA-SL-d0f" firstAttribute="centerX" secondItem="qyQ-An-y0i" secondAttribute="centerX" id="y8J-gc-KRb"/>
                         </constraints>
                     </view>
@@ -1745,6 +1759,7 @@
                         <barButtonItem key="leftBarButtonItem" image="ic_menu_48pt" id="6ax-AP-aKC"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="adSwitchStatus" destination="4I9-f2-Mmx" id="pBW-D4-eIy"/>
                         <outlet property="bannerView" destination="EZA-SL-d0f" id="bgp-PX-OQP"/>
                         <outlet property="menuButton" destination="6ax-AP-aKC" id="6fC-Cp-Jbu"/>
                         <segue destination="Ytj-DL-8ss" kind="show" identifier="donateSegue" id="AZC-Rh-gGf"/>

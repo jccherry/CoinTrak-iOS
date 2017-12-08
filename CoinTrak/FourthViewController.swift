@@ -120,6 +120,11 @@ class FourthViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 self.data.selectedFavoriteCell = 0
                 self.updateInfoDisplay()
                 //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
+            } else {
+                let alertVC = UIAlertController(title: "Error", message: "Please don't remove \(self.data.favoriteNames[indexPath.row]) from favorites.  It's my favorite cryptocurrency.", preferredStyle: UIAlertControllerStyle.Alert)
+                let okayAction = UIAlertAction(title: "Okay, I guess", style: UIAlertActionStyle.Default, handler: nil)
+                alertVC.addAction(okayAction)
+                self.presentViewController(alertVC, animated: true, completion: nil)
             }
 
         })

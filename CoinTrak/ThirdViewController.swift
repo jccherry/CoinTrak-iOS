@@ -86,9 +86,9 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
         default: break
         }
         
-        balanceLabel.text = "\(String(json["final_balance"].doubleValue / placesDown)) \(tickerArray[selectedRow])"
+        balanceLabel.text = "\(String(format: "%.8f", json["final_balance"].doubleValue / placesDown)) \(tickerArray[selectedRow])"
         
-        usdBalanceLabel.text = "$\(String((json["final_balance"].doubleValue / placesDown) * data.getCurrentPriceFromID(identifierArray[selectedRow])))"
+        usdBalanceLabel.text = "$\(String(format: "%.2f", (json["final_balance"].doubleValue / placesDown) * data.getCurrentPriceFromID(identifierArray[selectedRow])))"
         
         transactionTable.reloadData()
     }
@@ -151,10 +151,10 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
             default: break
             }
             
-            cell.amountLabel.text = String(amount / placesDown) + " \(tickerArray[selectedRow])"
+            cell.amountLabel.text = String(format: "%.8f", amount / placesDown) + " \(tickerArray[selectedRow])"
             
             
-            cell.usdLabel.text = "$" + String( (amount / placesDown) * data.getCurrentPriceFromID(identifierArray[selectedRow]))
+            cell.usdLabel.text = "$" + String(format: "%.2f", (amount / placesDown) * data.getCurrentPriceFromID(identifierArray[selectedRow]))
             
             print(String(data.getCurrentPriceFromID(identifierArray[selectedRow])))
 
@@ -205,7 +205,7 @@ class ThirdViewController: UIViewController, GADBannerViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Wallet View Controller Loaded")
+        print("Block Explorer View Controller Loaded")
         
         //ad stuff
         bannerView.adSize = kGADAdSizeSmartBannerLandscape

@@ -295,6 +295,18 @@ class Data {
         
         localTicker = selectedCoin.coinTicker
         
+        //switch for cases where CoinMarketCap Ticker does not agree with Cryptocompare ticker
+        
+        switch localTicker{
+            case "MIOTA":
+                localTicker = "IOT"
+                break
+            case "BCC":
+                localTicker = "BCCOIN"
+            default:
+                break
+        }
+        
         //URL API requests based on the ticker of the coin that you wanted to check the data from
         //let sixtyMinutesURL : String = "https://min-api.cryptocompare.com/data/histominute/?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=60&tsym=USD"
         let sixtyMinutesURL: String = "https://min-api.cryptocompare.com/data/histominute?fsym=\(localTicker)&tsym=USD&limit=60&aggregate=1"

@@ -19,7 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        GADMobileAds.configureWithApplicationID("ca-app-pub-7526118464921133~7909700802")
+        
+        print("aMEMEd status\(NSUserDefaults.standardUserDefaults().boolForKey("adsActivated"))")
+        print("for score and seven years ago, i drew a portrait of a young man")
+        
+        if (NSUserDefaults.standardUserDefaults().boolForKey("adsActivated")){
+            GADMobileAds.configureWithApplicationID("ca-app-pub-7526118464921133~7909700802")
+            
+
+        }
+        //GADMobileAds.configureWithApplicationID("ca-app-pub-7526118464921133~7909700802")
+        
+        
         FIRApp.configure()
         return true
     }
