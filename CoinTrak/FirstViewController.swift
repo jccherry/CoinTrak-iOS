@@ -50,7 +50,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         filterContentForSearchText(searchController.searchBar.text!)
     }
     
-    //number of cells in the tableview is equal to data.tableCells, which is determined by the sliders in the SWRevealViewController menu
+    //number of cells in the tableview
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.active && searchController.searchBar.text != "" {
             return data.filteredCoins.count

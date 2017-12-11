@@ -65,6 +65,17 @@ class Data {
     var favoriteMarketCap: [Double] = []
     var favoriteVolume: [Double] = []
     
+    
+    //variables used in SecondViewController.swift that manage what coins are selected on either side
+    var firstCoinSelectedRow:Int = 0
+    var secondCoinSelectedRow:Int = 0
+    var isFirstCoinSelected:Bool = true
+    
+    var firstCoin: Coin = Coin(name: "Dollar", ticker: "USD", identifier: "usd", price: 1, change1hr: 0, change24hr: 0, change7d: 0, totalSupply: 0, volume: 0, marketCap: 0)
+    var secondCoin: Coin = Coin(name: "Dollar", ticker: "USD", identifier: "usd", price: 1, change1hr: 0, change24hr: 0, change7d: 0, totalSupply: 0, volume: 0, marketCap: 0)
+    
+    //
+    
     //runs at startup, makes it so that the favoritesarray is either created in userdefaults if there isnt one and then loaded to the local favoritesarray, or the favoritesarray from nsuserdefaults is loaded onto the local favoritesarray
     func favoriteSetup(){
         if NSUserDefaults.standardUserDefaults().arrayForKey("favoriteIdentifiers") == nil || (NSUserDefaults.standardUserDefaults().arrayForKey("favoriteIdentifiers") as? [String])! == []{

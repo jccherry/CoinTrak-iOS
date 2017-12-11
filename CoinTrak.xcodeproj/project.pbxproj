@@ -10,6 +10,8 @@
 		522331821F27E424001777BE /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522331811F27E424001777BE /* Coin.swift */; };
 		5246CDC11EFF6E7600A45DB4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5246CDC01EFF6E7600A45DB4 /* GoogleService-Info.plist */; };
 		5246CDC31F00354A00A45DB4 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5246CDC21F00354A00A45DB4 /* TransactionCell.swift */; };
+		524F984D1FDE0DA200F02A69 /* PickConvertCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524F984C1FDE0DA200F02A69 /* PickConvertCoinViewController.swift */; };
+		524F984F1FDE0EF800F02A69 /* ConvertCoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524F984E1FDE0EF800F02A69 /* ConvertCoinCell.swift */; };
 		525ED6B91D3C216C00ADBF67 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525ED6B81D3C216C00ADBF67 /* ThirdViewController.swift */; };
 		5268D3BA1D7C97460071CD56 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3B91D7C97460071CD56 /* GoogleMobileAds.framework */; };
 		5268D3BC1D7CA2670071CD56 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5268D3BB1D7CA2670071CD56 /* SystemConfiguration.framework */; };
@@ -68,6 +70,8 @@
 		523E05B91EFEDBF00044A4D1 /* CoinTrak.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = CoinTrak.entitlements; path = CoinTrak/CoinTrak.entitlements; sourceTree = "<group>"; };
 		5246CDC01EFF6E7600A45DB4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5246CDC21F00354A00A45DB4 /* TransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		524F984C1FDE0DA200F02A69 /* PickConvertCoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickConvertCoinViewController.swift; sourceTree = "<group>"; };
+		524F984E1FDE0EF800F02A69 /* ConvertCoinCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertCoinCell.swift; sourceTree = "<group>"; };
 		525ED6B81D3C216C00ADBF67 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		5268D3B91D7C97460071CD56 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		5268D3BB1D7CA2670071CD56 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -224,6 +228,7 @@
 				52FAAAC41D28B9A400E078FA /* CoinDetailViewController.swift */,
 				529291341D1CED9600F63D3E /* FirstViewController.swift */,
 				529291361D1CED9600F63D3E /* SecondViewController.swift */,
+				524F984C1FDE0DA200F02A69 /* PickConvertCoinViewController.swift */,
 				52E51CE91D540D0A00F4B910 /* FourthViewController.swift */,
 				525ED6B81D3C216C00ADBF67 /* ThirdViewController.swift */,
 			);
@@ -261,6 +266,7 @@
 				529291621D1CEEAE00F63D3E /* Data.swift */,
 				5246CDC21F00354A00A45DB4 /* TransactionCell.swift */,
 				522331811F27E424001777BE /* Coin.swift */,
+				524F984E1FDE0EF800F02A69 /* ConvertCoinCell.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -562,11 +568,13 @@
 				5278BB941D7540D40017FC66 /* ContactUsViewController.swift in Sources */,
 				52C8CF0A1D275E3500B0E063 /* SlideMenuTableViewController.swift in Sources */,
 				52C8CEEA1D1D9EC500B0E063 /* CustomCell.swift in Sources */,
+				524F984F1FDE0EF800F02A69 /* ConvertCoinCell.swift in Sources */,
 				5278BB921D7540C10017FC66 /* ContributeViewController.swift in Sources */,
 				52FAAAC51D28B9A400E078FA /* CoinDetailViewController.swift in Sources */,
 				529291351D1CED9600F63D3E /* FirstViewController.swift in Sources */,
 				529291631D1CEEAE00F63D3E /* Data.swift in Sources */,
 				522331821F27E424001777BE /* Coin.swift in Sources */,
+				524F984D1FDE0DA200F02A69 /* PickConvertCoinViewController.swift in Sources */,
 				52C8CF001D2471F400B0E063 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

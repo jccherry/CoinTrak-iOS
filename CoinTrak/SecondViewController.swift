@@ -23,6 +23,24 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
     //price labels
     @IBOutlet weak var firstCoin: UILabel!
     @IBOutlet weak var secondCoin: UILabel!
+    @IBOutlet weak var conversionRateLabel: UILabel!
+    
+    //images
+    @IBOutlet weak var firstCoinImage: UIImageView!
+    @IBOutlet weak var secondCoinImage: UIImageView!
+    
+    //coin buttons
+    @IBOutlet weak var firstCoinButtonOutlet: UIButton!
+    @IBAction func firstCoinButton(sender: AnyObject) {
+        data.isFirstCoinSelected = true
+        self.performSegueWithIdentifier("chooseConvertSegue", sender: UIButton.self)
+    }
+    
+    @IBOutlet weak var secondCoinButtonOutlet: UIButton!
+    @IBAction func secondCoinButon(sender: AnyObject) {
+        data.isFirstCoinSelected = false
+        self.performSegueWithIdentifier("chooseConvertSegue", sender: UIButton.self)
+    }
     
     //record the last converted prices, to that if a user switches coins without switching values, it still converts
     var lastConvertedPriceFirst : Double = 0.0
@@ -36,47 +54,7 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
     //menu Button
     @IBOutlet var menuButton: UIBarButtonItem!
     
-    //ints to save which row is selected in each picker view
-    var firstPickerRowSelected: Int = 1
-    var secondPickerRowSelected: Int = 0
     
-    
-    //picker views
-    @IBOutlet weak var firstCoinPicker: UIPickerView!
-    @IBOutlet weak var secondCoinPicker: UIPickerView!
-
-    
-    //series of functions for the UIPickers
-    
-    //set outward label of each cell in the picker view
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return data.coins[row].coinTicker
-    }
-    //number of options in the picker view, equal to convertcells var in data class, plus one for USD
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return data.coins.count
-    }
-    //only one title in the picker view
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    //what happens when an option is selected
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        //the tags are for the left and right piker view, 1left 2right
-        if pickerView.tag == 1{
-
-            firstPickerRowSelected = row
-            firstCoin.text = "$" + String(data.coins[firstPickerRowSelected].coinPrice)
-            
-        } else {
-
-            secondPickerRowSelected = row
-            secondCoin.text = "$" + String(data.coins[secondPickerRowSelected].coinPrice)
-            
-        }
-        
-    }
 
     @IBAction func convertButton(sender: UIButton) {
         convert()
@@ -92,13 +70,13 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
 
         
         //the reason that this conditional is cringingly long is so that because they were problems with extracting doubles from empty text boxes and crashes happened
-        if (firstTextField.text != "" && Double(firstTextField.text!)! != firstCoinCurrent) || (firstTextField.text != "" && secondTextField.text! == "") || ((data.coins[firstPickerRowSelected].coinPrice != lastConvertedPriceFirst || data.coins[secondPickerRowSelected].coinPrice != lastConvertedPriceSecond) && firstTextField.text != ""){
+        if (firstTextField.text != "" && Double(firstTextField.text!)! != firstCoinCurrent) || (firstTextField.text != "" && secondTextField.text! == "") || ((data.firstCoin.coinPrice != lastConvertedPriceFirst || data.secondCoin.coinPrice != lastConvertedPriceSecond) && firstTextField.text != ""){
             
             //set the text fields value to the current value
             firstCoinCurrent = Double(firstTextField.text!)!
             
             //set the second value to the converted value based on the prices
-            secondCoinCurrent = (firstCoinCurrent * data.coins[firstPickerRowSelected].coinPrice) / data.coins[secondPickerRowSelected].coinPrice
+            secondCoinCurrent = (firstCoinCurrent * data.firstCoin.coinPrice) / data.secondCoin.coinPrice
             
             //output the double to the other text box, with 6 decimals
             secondTextField.text = String(format: "%.6f", secondCoinCurrent)
@@ -109,15 +87,15 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
         } else if (secondTextField.text != "" && Double(secondTextField.text!)! != secondCoinCurrent) || (secondTextField.text != "" && firstTextField.text! == ""){
             
             secondCoinCurrent = Double(secondTextField.text!)!
-            firstCoinCurrent = (secondCoinCurrent * data.coins[secondPickerRowSelected].coinPrice) / data.coins[firstPickerRowSelected].coinPrice
+            firstCoinCurrent = (secondCoinCurrent * data.secondCoin.coinPrice) / data.firstCoin.coinPrice
             firstTextField.text = String(format: "%.6f",firstCoinCurrent)
             firstCoinCurrent = Double(firstTextField.text!)!
             
         }
         
         //set the current prices to the last ones converted if a user switches the coin without switching values
-        lastConvertedPriceFirst = data.coins[firstPickerRowSelected].coinPrice
-        lastConvertedPriceSecond = data.coins[secondPickerRowSelected].coinPrice
+        lastConvertedPriceFirst = data.firstCoin.coinPrice
+        lastConvertedPriceSecond = data.secondCoin.coinPrice
         
     }
     
@@ -127,25 +105,6 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
         view.endEditing(true) //close the keyboard!!
     }
     
-
-    @IBAction func refreshButton(sender: AnyObject) {
-        
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            //refresh data
-            self.data.refreshData()
-            dispatch_async(dispatch_get_main_queue()) {
-                //reload all picker view components
-                self.firstCoinPicker.reloadAllComponents()
-                self.secondCoinPicker.reloadAllComponents()
-                
-                self.firstCoin.text = "$\(self.data.coins[self.firstPickerRowSelected].coinPrice)"
-                self.secondCoin.text = "$\(self.data.coins[self.secondPickerRowSelected].coinPrice)"
-            }
-        
-        }
-        
-    }
     
     func adViewDidReceiveAd(bannerView: GADBannerView!) {
         print("ad received")
@@ -153,6 +112,27 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
     
     func adView(bannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
         print("fail to receive ad with error: \(error.localizedDescription)")
+    }
+    
+
+    
+    //updates the UI with coin info and convert
+    func setActiveCoins() {
+        firstCoin.text = "$\(data.firstCoin.coinPrice)"
+        secondCoin.text = "$\(data.secondCoin.coinPrice)"
+        
+        conversionRateLabel.text = "1 \(data.firstCoin.coinTicker) = \(String(format: "%.8f",(data.firstCoin.coinPrice/data.secondCoin.coinPrice))) \(data.secondCoin.coinTicker)"
+        
+        firstCoinButtonOutlet.setTitle(data.firstCoin.coinTicker, forState: .Normal)
+        secondCoinButtonOutlet.setTitle(data.secondCoin.coinTicker, forState: .Normal)
+        
+        firstCoinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.firstCoin.coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        secondCoinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.secondCoin.coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        convert()
+        
+        
+        
+        
     }
     
     override func viewDidLoad() {
@@ -171,26 +151,20 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
         //gesture recognizer to open reveal view controller
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
-        //reload all picker view components by default
-        firstCoinPicker.reloadAllComponents()
-        secondCoinPicker.reloadAllComponents()
+        //load coin objects into memory (BTC and USD)
+        data.firstCoin = data.coins[1]
+        data.secondCoin = data.coins[0]
+        setActiveCoins()
+        
+
         
         //set up menu button
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         
         
-        //load the coin prices into the text by default (it doesnt by default)
-        firstCoin.text = "$" + String(data.coins[firstPickerRowSelected].coinPrice)
-        secondCoin.text = "$" + String(data.coins[secondPickerRowSelected].coinPrice)
-        
-        //set the tags of each picker so that i can distinguish
-        firstCoinPicker.tag = 1
-        secondCoinPicker.tag = 2
-        
-        
-        //select row one with BTC as default for the second picker
-        firstCoinPicker.selectRow(1, inComponent: 0, animated: true)
+
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -200,19 +174,10 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
         print("Converter View Controller appeared~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print()
         
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            //refresh data
-            self.data.refreshData()
-            dispatch_async(dispatch_get_main_queue()) {
-                //update UI
-                self.firstCoinPicker.reloadAllComponents()
-                self.secondCoinPicker.reloadAllComponents()
-                
-                self.firstCoin.text = "$\(self.data.coins[self.firstPickerRowSelected].coinPrice)"
-                self.secondCoin.text = "$\(self.data.coins[self.secondPickerRowSelected].coinPrice)"
-            }
-        }
+
+        setActiveCoins()
+        
+
     }
     
     

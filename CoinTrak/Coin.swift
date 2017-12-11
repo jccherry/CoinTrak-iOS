@@ -21,6 +21,7 @@ class Coin {
     var coinVolume: Double
     var coinMarketCap: Double
     var isAd: Bool = false
+    var coinRank: Int = 0
     
     init(name: String, ticker: String, identifier: String, price: Double, change1hr: Double, change24hr: Double, change7d: Double, totalSupply: Double, volume: Double, marketCap: Double){
         coinName = name
@@ -33,6 +34,7 @@ class Coin {
         coinTotalSupply = totalSupply
         coinVolume = volume
         coinMarketCap = marketCap
+ 
     }
     
 }
