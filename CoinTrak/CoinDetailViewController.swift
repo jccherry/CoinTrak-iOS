@@ -51,7 +51,7 @@ class CoinDetailViewController: UIViewController, ChartViewDelegate {
     //basically updates the local arrays with either the total coin info from the data instance or the favorites coin data from data instance. see data.tickerPageLoaded
     func updateInfoDisplay(coin: Coin){
         
-        infoImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(coin.coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        infoImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/\(coin.coinTicker.lowercaseString).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
         infoName.text = coin.coinName
         infoTicker.text = coin.coinTicker
         

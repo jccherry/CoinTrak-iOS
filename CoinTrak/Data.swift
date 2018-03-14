@@ -171,6 +171,7 @@ class Data {
                 //coin object data update
                 for i in 1...totalPlaces{
                     coins[i] = Coin(name: json[i-1]["name"].stringValue, ticker: json[i-1]["symbol"].stringValue, identifier: json[i-1]["id"].stringValue, price: json[i-1]["price_usd"].doubleValue, change1hr: json[i-1]["percent_change_1h"].doubleValue, change24hr: json[i-1]["percent_change_24h"].doubleValue, change7d: json[i-1]["percent_change_7d"].doubleValue, totalSupply: json[i-1]["total_supply"].doubleValue, volume: json[i-1]["24h_volume_usd"].doubleValue,marketCap: json[i-1]["market_cap_usd"].doubleValue)
+                    coins[i].coinRank = json[i-1]["rank"].intValue
                 }
                 
                 //if the oldprices are = to the updated prices, then update the dateUpdated
@@ -326,13 +327,13 @@ class Data {
         let thirtyDaysURL : String = "https://min-api.cryptocompare.com/data/histoday?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=30&tsym=USD"
         let oneYearURL: String = "https://min-api.cryptocompare.com/data/histoday?aggregate=1&e=CCCAGG&fsym=\(localTicker)&limit=365&tsym=USD"
         
-        /*
+        
         //print the URLS into console for checking purposes
         print("sixty mins URL: \(sixtyMinutesURL)")
         print("twenty four hours URL: \(twentyFourHoursURL)")
         print("thirty days URL: \(thirtyDaysURL)")
         print("one year URL: \(oneYearURL)")
-        */
+        
         
         //set them to blank, then refill
         //arrays for chart

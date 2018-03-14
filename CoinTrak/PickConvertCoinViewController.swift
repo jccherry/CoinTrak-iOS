@@ -38,7 +38,8 @@ class PickConvertCoinViewController: UIViewController, UITableViewDataSource, UI
         if searchController.active && searchController.searchBar.text != "" {
             return data.filteredCoins.count
         }
-        return data.coins.count
+        //return data.coins.count
+        return 250
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -81,7 +82,7 @@ class PickConvertCoinViewController: UIViewController, UITableViewDataSource, UI
             currentCoin = data.coins[indexPath.row]
         }
         
-        cell.coinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(currentCoin.coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        cell.coinImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/\(currentCoin.coinTicker.lowercaseString).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
         cell.nameLabel.text = currentCoin.coinName
         cell.tickerLabel.text = currentCoin.coinTicker
         cell.priceLabel.text = "$\(currentCoin.coinPrice)"

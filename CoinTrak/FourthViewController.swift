@@ -47,7 +47,12 @@ class FourthViewController: UIViewController,UITableViewDataSource,UITableViewDe
             imageLoc = "images/defaultImage.png"
         }
         
-        infoImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.favoriteIdentifiers[data.selectedFavoriteCell]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        infoImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/\(data.favoriteTickers[data.selectedFavoriteCell].lowercaseString).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        
+        //https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/\(coin.coinTicker.lowercaseString).png
+        
+        //data.favoriteIdentifiers[data.selectedFavoriteCell]
+        
         infoName.text = data.favoriteNames[data.selectedFavoriteCell]
         infoTicker.text = data.favoriteTickers[data.selectedFavoriteCell]
         
@@ -72,7 +77,11 @@ class FourthViewController: UIViewController,UITableViewDataSource,UITableViewDe
         //style make 0 margins for full seperator
         cell.layoutMargins = UIEdgeInsetsZero
         
-        cell.coinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.favoriteIdentifiers[indexPath.row]).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        cell.coinImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/\(data.favoriteTickers[indexPath.row].lowercaseString).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        
+        //https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/\(data.favoriteTickers[data.selectedFavoriteCell].lowercaseString).png
+        //data.favoriteIdentifiers[indexPath.row]
+        
         cell.name.text = data.favoriteNames[indexPath.row]
         cell.ticker.text = data.favoriteTickers[indexPath.row]
         cell.percent1hr.text = data.formatPercentage(data.favoriteChange1hr[indexPath.row])

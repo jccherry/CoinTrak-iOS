@@ -126,8 +126,11 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
         firstCoinButtonOutlet.setTitle(data.firstCoin.coinTicker, forState: .Normal)
         secondCoinButtonOutlet.setTitle(data.secondCoin.coinTicker, forState: .Normal)
         
-        firstCoinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.firstCoin.coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
-        secondCoinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(data.secondCoin.coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        firstCoinImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/\(data.firstCoin.coinTicker.lowercaseString).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        
+       // https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/\(data.favoriteTickers[data.selectedFavoriteCell].lowercaseString).png
+        
+        secondCoinImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/\(data.secondCoin.coinTicker.lowercaseString).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
         convert()
         
         
@@ -151,7 +154,9 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
         //gesture recognizer to open reveal view controller
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
-        //load coin objects into memory (BTC and USD)
+        
+        
+        //load coin objects into memory (BTC and USD) (i don't update them in viewDidLoad() load assuming that the user has already loaded initial data from the first view controller)
         data.firstCoin = data.coins[1]
         data.secondCoin = data.coins[0]
         setActiveCoins()
@@ -174,8 +179,34 @@ class SecondViewController: UIViewController, UITextViewDelegate, GADBannerViewD
         print("Converter View Controller appeared~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print()
         
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        dispatch_async(dispatch_get_global_queue(priority, 0)) {
+            //refresh data
+            self.data.refreshData()
+            dispatch_async(dispatch_get_main_queue()) {
+                //update UI
+                /*
+                self.data.selectedCoin = self.data.coins[self.data.selectedCell]
+                
+                if self.data.coins[1].coinName == "" {
+                    print("No Internet, No Coin Data")
+                    
+                    let alertController = UIAlertController(title: "Error", message:
+                        "Cannot Connect to the Internet.  Check your connection", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default,handler: nil))
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                    
+                }
+                 */
+                //self.data.firstCoin = self.data.coins[1]
+                //self.data.secondCoin = self.data.coins[0]
+                self.setActiveCoins()
+            }
+            
+        }
 
-        setActiveCoins()
+        
         
 
     }

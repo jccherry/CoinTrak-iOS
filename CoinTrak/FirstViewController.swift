@@ -29,6 +29,8 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
     @IBOutlet var infoTicker: UILabel!
     @IBOutlet var infoImage: UIImageView!
     
+    @IBOutlet weak var rankLabel: UILabel!
+    
     //info display stat outlets
         //first column, percentages
     @IBOutlet var infoChange1hr: UILabel!
@@ -55,7 +57,8 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         if searchController.active && searchController.searchBar.text != "" {
             return data.filteredCoins.count
         }
-        return data.coins.count - 1 //-1 to account for usd as index position 0
+        //return data.coins.count - 1 //-1 to account for usd as index position 0
+        return 250
     }
     
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
@@ -96,7 +99,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
             
             
         } else {
-            cell.coinImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(coin.coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+            cell.coinImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/\(coin.coinTicker.lowercaseString).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
             
             cell.name.text = coin.coinName
             cell.ticker.text = coin.coinTicker
@@ -261,7 +264,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
     func updateInfoDisplay(coin: Coin){
         
         
-        infoImage.sd_setImageWithURL(NSURL(string: "http://files.coinmarketcap.com.s3-website-us-east-1.amazonaws.com/static/img/coins/128x128/\(coin.coinIdentifier).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
+        infoImage.sd_setImageWithURL(NSURL(string: "https://raw.githubusercontent.com/cjdowner/cryptocurrency-icons/master/128/color/\(coin.coinTicker.lowercaseString).png"),placeholderImage: UIImage(named: "CoinTrakLogo"))
         infoName.text = coin.coinName
         infoTicker.text = coin.coinTicker
         
@@ -272,6 +275,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         infoMarketCap.text = data.assessNumberStringFormat(coin.coinMarketCap)
         infoVol24.text = data.assessNumberStringFormat(coin.coinVolume)
         infoSupply.text = data.assessNumberStringFormat(coin.coinTotalSupply)
+        rankLabel.text = "#\(coin.coinRank)"
     }
 
     //top right refresh button
@@ -365,7 +369,7 @@ class FirstViewController: UIViewController,UITableViewDataSource,UITableViewDel
         
         //initialize the data arrays and update the data
             //i store only 100 coins by default, but using initArrays i can change that
-        data.initArrays(1000)
+        data.initArrays(500)
         //init the favorites arrays for the 4th view controller
         data.initFavoriteArrays(data.favoriteIdentifiers.count)
         
