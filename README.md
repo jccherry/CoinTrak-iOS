@@ -2,11 +2,8 @@
 Live Cryptocurrency Ticker, Calculator, and Investment Tracker for iOS<br>
 [Website](http://cointrak.me)
 
-~~CoinTrak is officially on the App store as of 7/8/17!<br>
-[Download The Latest Version Here](https://itunes.apple.com/us/app/cointrak/id1252261298?ls=1&mt=8)~~
-
-Due to Financial Constraint, CoinTrak has been removed from the App Store as of 5/17/2018
+During its one-year run on the app store, CoinTrak was able to gain over 6000 downloads and 150,000 User Sessions
 
 CoinTrak is developed and maintained by John Chiaramonte ([Twitter](http://twitter.com/jchiaramonte_))
 
-Copyright © 2017 Andrea Chiaramonte, All Rights Reserved.
+Copyright © 2018 John Chiaramonte, All Rights Reserved.
